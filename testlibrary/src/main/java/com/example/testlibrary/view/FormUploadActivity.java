@@ -86,11 +86,8 @@ public class FormUploadActivity extends BaseActivity {
         if (i == R.id.selectImage) {// 选择图片
             ImagePickActivity.start(FormUploadActivity.this, 5, ImagePickActivity.MODE_MULTIPLE,
                     true, true, false, ImagePickActivity.REQUEST_IMAGE);
-
         } else if (i == R2.id.formUpload) {// 上传图片
             formUpload();
-
-        } else {
         }
     }
 

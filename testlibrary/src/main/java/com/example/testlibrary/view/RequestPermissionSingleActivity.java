@@ -67,7 +67,7 @@ public class RequestPermissionSingleActivity extends BaseActivity {
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.tv_call_phone) {
-           // RequestPermissionSingleActivityPermissionsDispatcher.showCameraWithCheck(this);
+            RequestPermissionSingleActivityPermissionsDispatcher.showCameraWithCheck(this);
         }
     }
 
@@ -115,7 +115,7 @@ public class RequestPermissionSingleActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-      //  RequestPermissionSingleActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        RequestPermissionSingleActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
     /**

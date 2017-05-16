@@ -74,7 +74,7 @@ public class RequestPermissionMultipleActivity extends BaseActivity {
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.tv_read_sms) {
-            //RequestPermissionMultipleActivityPermissionsDispatcher.readSMSWithCheck(this);
+            RequestPermissionMultipleActivityPermissionsDispatcher.readSMSWithCheck(this);
         }
     }
 
@@ -122,7 +122,7 @@ public class RequestPermissionMultipleActivity extends BaseActivity {
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //RequestPermissionMultipleActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        RequestPermissionMultipleActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 

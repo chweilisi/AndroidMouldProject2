@@ -145,7 +145,6 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
         if (i1 == R.id.selectImage) {// 选择图片
             ImagePickActivity.start(OkGoRequestActivity.this, 5, ImagePickActivity.MODE_MULTIPLE,
                     true, true, false, ImagePickActivity.REQUEST_IMAGE);
-
         } else if (i1 == R.id.formUpload) {// 上传图片
             ArrayList<File> files = new ArrayList<>();
             if (imageItems != null && imageItems.size() > 0) {
@@ -154,11 +153,8 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
                 }
             }
             mPresenter.uploadFile(files);
-
         } else if (i1 == R.id.fileDownload) {// 文件下载
             mPresenter.downloadFile();
-
-        } else {
         }
     }
 

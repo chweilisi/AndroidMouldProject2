@@ -19,7 +19,6 @@ public class TestActivity extends BaseActivity {
 
     //#################################################################### 自定义变量 start
 
-
     //#################################################################### 自定义变量 end
 
     //#################################################################### 重写自定义方法 start
@@ -53,23 +52,23 @@ public class TestActivity extends BaseActivity {
             R2.id.requestPermissionMultiple})
     public void onClick(View v) {
         int i = v.getId();
-        if (i == R2.id.okgo_request) {
+        if (i == R.id.okgo_request) {
             //  okgo 网络请求测试
             UIFactory.startOkGoTestActivity(this, RESULT_OK);
-        } else if (i == R2.id.sync) {
+        } else if (i == R.id.sync) {
             // 同步请求
             UIFactory.startSyncActivity(this, RESULT_OK);
-        } else if (i == R2.id.upload) {
+        } else if (i == R.id.upload) {
             // 文件上传
             UIFactory.startFormUploadActivity(this, RESULT_OK);
-        } else if (i == R2.id.download) {
+        } else if (i == R.id.download) {
             // 文件下载
             UIFactory.startFileDownloadActivity(this, RESULT_OK);
-        } else if (i == R2.id.requestPermissionSingle) {
-            //
+        } else if (i == R.id.requestPermissionSingle) {
+            // 6.0及之后权限申请
             UIFactory.startRequestPermissionSingleActivity(this, RESULT_OK);
-        } else if (i == R2.id.requestPermissionMultiple) {
-            //
+        } else if (i == R.id.requestPermissionMultiple) {
+            // 6.0及之后权限申请
             UIFactory.startRequestPermissionMultipleActivity(this, RESULT_OK);
         }
     }

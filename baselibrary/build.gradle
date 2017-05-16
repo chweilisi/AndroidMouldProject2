@@ -1,7 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'android-apt' // 注释处理
-apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 25
@@ -55,9 +53,6 @@ dependencies {
     }
     //=== ali httpdns (https://github.com/aliyun/alicloud-android-demo)
     compile 'com.aliyun.ams:alicloud-android-httpdns:1.0.10'
-    //=== 6.0动态获取权限框架 PermissionDispatcher(https://github.com/hotchemi/PermissionsDispatcher)
-    compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
-    apt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
 
     //=== leakcanary(https://github.com/square/leakcanary)
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
@@ -112,9 +107,4 @@ dependencies {
     compile 'com.github.jhy:jsoup:jsoup-1.10.2'
     //=== greendao  (https://github.com/greenrobot/greenDAO)
     compile 'org.greenrobot:greendao:3.2.2'
-
-    //=== Butter Knife  (https://github.com/JakeWharton/butterknife)
-    // 和Dagger2配合使用需要注意把annotationProcessor改为apt
-    compile 'com.jakewharton:butterknife:8.5.1'
-    apt 'com.jakewharton:butterknife-compiler:8.5.1'
 }
