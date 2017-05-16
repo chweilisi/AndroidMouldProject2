@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BaseLibrary</string>
+    <!-- module project app base -->
+    <string name="module_project_host">moduleproject</string>
+    <string name="module_project_scheme">x1</string>
+    <string name="module_project_port">8888</string>
+    <!-- test library app base -->
+    <string name="test_library_host">testlibrary</string>
+    <string name="test_library_scheme">x2</string>
+    <string name="test_library_port">8888</string>
+</resources>

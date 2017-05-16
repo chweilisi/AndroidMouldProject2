@@ -1,0 +1,120 @@
+apply plugin: 'com.android.library'
+apply plugin: 'android-apt' // 注释处理
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    testCompile 'junit:junit:4.12'
+
+    //################## git上第三方库
+    //=== AndroidBaseModule(https://github.com/BrillantZhao/AndroidBaseModule)
+    compile 'com.github.BrillantZhao:AndroidBaseModule:1.1.2.30'
+    //=== AndroidFilePicker(https://github.com/BrillantZhao/AndroidFilePicker)
+    compile 'com.github.BrillantZhao:AndroidFilePicker:1.0.4'
+
+    //=== file picker(https://github.com/Angads25/android-filepicker)
+    compile 'com.github.angads25:filepicker:1.0.6'
+    //=== okhttp-OkGo  (https://github.com/jeasonlzy/okhttp-OkGo)
+    compile 'com.lzy.net:okgo:2.1.4'
+    //可以单独使用，不需要依赖下方的扩展包
+    compile 'com.lzy.net:okrx:0.1.2'
+    //RxJava扩展支持，根据需要添加
+    compile 'com.lzy.net:okserver:1.1.3'
+    //下载管理和上传管理扩展，根据需要添加
+    //=== ali hotfix 传递性依赖utdid这个sdk, 所以不需要重复依赖utdid.但是另一方面其它阿里系SDK也可能依赖了utdid这个SDK,
+    // 如果编译期间报utdid重复, 所以此时进行如下处理即可, 关闭传递性依赖
+    compile('com.taobao.android:alisdk-hotfix:2.0.6') {
+        exclude(module: 'utdid4all')
+        transitive = false // 防止和 ali httpdns重复导入
+    }
+    //=== ali httpdns (https://github.com/aliyun/alicloud-android-demo)
+    compile 'com.aliyun.ams:alicloud-android-httpdns:1.0.10'
+    //=== 6.0动态获取权限框架 PermissionDispatcher(https://github.com/hotchemi/PermissionsDispatcher)
+    compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
+    apt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
+
+    //=== leakcanary(https://github.com/square/leakcanary)
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //=== rxjava(https://github.com/ReactiveX/RxJava)
+    compile 'io.reactivex:rxjava:1.1.9'
+    //=== rxandroid(https://github.com/ReactiveX/RxAndroid)
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //=== rxbinding(https://github.com/JakeWharton/RxBinding)
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    //=== RxLifecycle(https://github.com/trello/RxLifecycle)
+    compile 'com.trello:rxlifecycle:1.0'
+    compile 'com.trello:rxlifecycle-components:1.0'
+    //=== RxPermissions(https://github.com/tbruyelle/RxPermissions)
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
+    //=== dagger(https://github.com/google/dagger)
+    apt 'com.google.dagger:dagger-compiler:2.6'
+    compile 'com.google.dagger:dagger:2.6'
+    //=== retrofit(https://github.com/square/retrofit)
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //=== slider(https://github.com/daimajia/AndroidImageSlider)
+    compile 'com.daimajia.slider:library:1.1.5'
+    //=== picasso, slider 库需要用到下面两个库,这样有点多余，可以选择别的库
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    //=== recyclerview-animators(https://github.com/wasabeef/recyclerview-animators)
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
+    //=== html text(https://github.com/zzhoujay/RichText)
+    compile 'com.zzhoujay.richtext:richtext:2.0.9'
+    //=== LabelView(https://github.com/H07000223/FlycoLabelView)
+    compile 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar'
+    //=== photoview(https://github.com/chrisbanes/PhotoView)
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    //=== dragsloplayout(https://github.com/Rukey7/DragSlopLayout)
+    compile 'com.github.Rukey7:DragSlopLayout:1.0.3'
+    //=== TagLayout(https://github.com/Rukey7/TagLayout)
+    compile 'com.github.Rukey7:TagLayout:1.0.3'
+    //=== shine button(https://github.com/ChadCSong/ShineButton)
+    compile 'com.sackcentury:shinebutton:0.1.6'
+    //=== tab layout(https://github.com/H07000223/FlycoTabLayout)
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
+    //=== progressbar(https://github.com/daimajia/NumberProgressBar)
+    compile 'com.daimajia.numberprogressbar:library:1.2'
+    //=== Dialog(https://github.com/H07000223/FlycoDialog_Master)
+    compile 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
+    //=== jsoup(https://github.com/jhy/jsoup)
+    compile 'com.github.jhy:jsoup:jsoup-1.10.2'
+    //=== greendao  (https://github.com/greenrobot/greenDAO)
+    compile 'org.greenrobot:greendao:3.2.2'
+
+    //=== Butter Knife  (https://github.com/JakeWharton/butterknife)
+    // 和Dagger2配合使用需要注意把annotationProcessor改为apt
+    compile 'com.jakewharton:butterknife:8.5.1'
+    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+}

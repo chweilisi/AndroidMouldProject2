@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.brilliant"
+    android:hardwareAccelerated="true">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".AndroidAPP"
+        android:allowBackup="true"
+        android:icon="${APP_ICON}"
+        android:label="${APP_NAME}"
+        android:roundIcon="${APP_ICON}"
+        android:supportsRtl="true"
+        android:theme="@style/AppBaseTheme"
+        tools:replace="android:label">
+
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <!--要想在别的App上能成功调起App，必须添加intent过滤器-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--协议部分，随便设置-->
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.SplashActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ################################## activity start ################################## -->
+
+        <!-- 引导页 -->
+        <activity
+            android:name=".module.GuideActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.module.GuideActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <!-- 首页 -->
+        <activity
+            android:name=".module.HomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.module.HomeActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ################################## activity end ################################## -->
+
+        <!-- ################################## shareSDK start ################################## -->
+
+        <!-- ################################## shareSDK end ################################## -->
+
+        <!-- ################################## 百度地图 start ################################## -->
+
+        <!-- ################################## 百度地图 end ################################## -->
+
+        <!-- ################################## UMeng start ################################## -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_APPKEY}"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}"></meta-data>
+        <!-- ################################## UMeng start ################################## -->
+
+        <!-- ################################## GETUI start ################################## -->
+
+
+        <!-- ################################## GETUI end ################################## -->
+
+        <!-- ################################## hotfix start ################################## -->
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="App ID" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="App Secret" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="RSA密钥" />
+
+        <!-- ################################## hotfix end ################################## -->
+
+        <!-- ################################## 诸葛io start ################################## -->
+        <meta-data
+            android:name="ZHUGE_APPKEY"
+            android:value="5dcdfe6fce614c31ab89a8d3c68f6486" />
+        <meta-data
+            android:name="ZHUGE_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <!-- ################################## 诸葛io end ################################## -->
+
+        <!-- ################################# service start ################################# -->
+
+        <!-- ################################# service end ################################# -->
+
+        <!-- ################################# receiver start ################################# -->
+
+        <!-- ################################# receiver end ################################# -->
+    </application>
+
+    <!-- ################################# permission start ################################# -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /><!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /><!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /><!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /><!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" /><!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /><!--用户拨打电话的权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <!-- 地方放分享和登录权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 读联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 拨号权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 读短信权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!--申请拍照的权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- ################################# permission end ################################# -->
+
+</manifest>
