@@ -88,7 +88,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_okgo_post;
+        return R.layout.testlibrary_activity_okgo_post;
     }
 
     @Override

@@ -10,8 +10,8 @@ def getDate() {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     signingConfigs {
         release {
@@ -23,14 +23,14 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.brilliant"
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 1
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true // Enabling multidex support.
+        applicationId rootProject.ext.android["applicationId"]
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
         versionName APP_VERSION
         resValue("string", 'app_version', APP_VERSION)
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true // Enabling multidex support.
     }
 
     buildTypes {
@@ -197,18 +197,17 @@ dependencies {
     })
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile rootProject.ext.dependencies["junit"]
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.android.support:cardview-v7:25.3.0'
-    compile 'com.android.support:support-v4:25.3.0'
-    compile 'com.android.support:design:25.3.0'
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile rootProject.ext.dependencies["cardview-v7"]
+    compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["design"]
     //################## 引入第三方jar包
-    //################## git上第三方库
 
-    //=== Butter Knife  (https://github.com/JakeWharton/butterknife)
-    // 和Dagger2配合使用需要注意把annotationProcessor改为apt
-    compile 'com.jakewharton:butterknife:8.5.1'
-    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+    //################## git上第三方库
+    //=== Butter Knife
+    compile rootProject.ext.dependencies["butterknife"]
+    apt rootProject.ext.dependencies["butterknife-compiler"]
 
     //################## 引用第三方工程
     if (isBuildModule.toBoolean()) {

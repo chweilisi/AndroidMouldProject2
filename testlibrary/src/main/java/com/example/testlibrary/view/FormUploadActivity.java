@@ -58,7 +58,7 @@ public class FormUploadActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.test_library_activity_form_upload;
+        return R.layout.testlibrary_activity_form_upload;
     }
 
     @Override

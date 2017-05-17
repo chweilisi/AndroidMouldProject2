@@ -51,7 +51,7 @@ public class RequestPermissionMultipleActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_request_permission_multiple;
+        return R.layout.testlibrary_activity_request_permission_multiple;
     }
 
     @Override

@@ -39,7 +39,7 @@ public class SyncActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_sync;
+        return R.layout.testlibrary_activity_sync;
     }
 
     @Override

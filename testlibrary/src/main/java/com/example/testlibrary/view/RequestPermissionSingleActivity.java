@@ -44,7 +44,7 @@ public class RequestPermissionSingleActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_request_permission_single;
+        return R.layout.testlibrary_activity_request_permission_single;
     }
 
     @Override
