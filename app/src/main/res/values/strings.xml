@@ -4,4 +4,7 @@
     <string name="app_name_debug">AndroidMouldDebug</string>
     <string name="app_exit_confirm">再按一次退出程序</string>
 
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
 </resources>
