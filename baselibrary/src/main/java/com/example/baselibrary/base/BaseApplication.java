@@ -26,6 +26,7 @@ import com.taobao.sophix.util.PatchStatus;
 import java.io.DataInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -174,7 +175,7 @@ public class BaseApplication extends IBaseApplication {
      * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
      * 重要的事情说三遍，以下代码不要直接使用
      */
-    private class SafeTrustManager implements X509TrustManager {
+    private static class SafeTrustManager implements X509TrustManager {
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }
@@ -200,7 +201,7 @@ public class BaseApplication extends IBaseApplication {
      * 这里只是我谁便写的认证规则，具体每个业务是否需要验证，以及验证规则是什么，请与服务端或者leader确定
      * 重要的事情说三遍，以下代码不要直接使用
      */
-    private class SafeHostnameVerifier implements HostnameVerifier {
+    private static class SafeHostnameVerifier implements HostnameVerifier {
         @Override
         public boolean verify(String hostname, SSLSession session) {
             //验证主机名是否匹配
@@ -208,7 +209,6 @@ public class BaseApplication extends IBaseApplication {
             return true;
         }
     }
-
 
     /**
      * Hotfix 热修复
@@ -292,7 +292,7 @@ public class BaseApplication extends IBaseApplication {
                         byte[] buff = new byte[4096];
                         StringBuilder response = new StringBuilder();
                         while ((len = dis.read(buff)) != -1) {
-                            response.append(new String(buff, 0, len));
+                            response.append(new String(buff, 0, len, Charset.defaultCharset()));
                         }
                         Logger.d("Response: " + response.toString());
 
@@ -312,7 +312,7 @@ public class BaseApplication extends IBaseApplication {
                         response = new StringBuilder();
                         dis = new DataInputStream(conn.getInputStream());
                         while ((len = dis.read(buff)) != -1) {
-                            response.append(new String(buff, 0, len));
+                            response.append(new String(buff, 0, len, Charset.defaultCharset()));
                         }
                         Logger.d("Response: " + response.toString());
 

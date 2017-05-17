@@ -41,6 +41,7 @@ public class CustomProgressDialog extends Dialog {
         animationDrawable.start();
     }
 
+    @Override
     public void onWindowFocusChanged(boolean hasFocus) {
 
     }
