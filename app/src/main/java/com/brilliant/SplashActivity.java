@@ -5,7 +5,6 @@ import com.basemodule.widget.SimpleButton;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
-import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,8 +38,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initView() {
         _doSkip();
-        Logger.i("hello world ");
-        Logger.i("HELLO ");
     }
 
     @Override
@@ -64,10 +61,7 @@ public class SplashActivity extends BaseActivity {
                 UIFactory.startGuideActivity(this, RESULT_OK);
             } else {
                 // 正常的页面流程
-//                 UIFactory.startHomeActivity(this, RESULT_OK);
-
-                // 代码示例--测试
-                UIFactory.startTestActivity(this, RESULT_OK);
+                UIFactory.startHomeActivity(this, RESULT_OK);
             }
             //===
             finish();

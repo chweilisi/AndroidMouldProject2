@@ -65,7 +65,9 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void initView() {
         // 下载升级
-//        downloadUpdateAPK(download_url);
+        // downloadUpdateAPK(download_url);
+
+        UIFactory.startTestActivity(this, RESULT_OK);
     }
 
     @Override

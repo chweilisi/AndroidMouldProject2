@@ -1,4 +1,4 @@
-package com.brilliant;
+package com.example.testmanager;
 
 import com.example.baselibrary.base.BaseApplication;
 

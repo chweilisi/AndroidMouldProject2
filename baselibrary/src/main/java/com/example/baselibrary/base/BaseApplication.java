@@ -8,6 +8,7 @@ import com.alibaba.sdk.android.httpdns.HttpDns;
 import com.alibaba.sdk.android.httpdns.HttpDnsService;
 import com.basemodule.base.IBaseApplication;
 import com.basemodule.okgo.HttpDNSInterceptor;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.baselibrary.constant.APPConstant;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -16,6 +17,8 @@ import com.lzy.okgo.cookie.store.PersistentCookieStore;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 import com.orhanobut.logger.Logger;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.taobao.sophix.SophixManager;
 import com.taobao.sophix.listener.PatchLoadStatusListener;
 import com.taobao.sophix.util.PatchStatus;
@@ -56,6 +59,8 @@ public class BaseApplication extends IBaseApplication {
 
     private static int DEF_WRITE_TIMEOUT = 20000; // 默认的连接超时
 
+    private RefWatcher refWatcher;
+
     //##########################   custom variables end  ##########################################
 
     //######################  override methods start ##############################################
@@ -63,12 +68,25 @@ public class BaseApplication extends IBaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+//        String processName = APPMethod.getCurProcessName(getApplicationContext());
+//        if (!StringUtils.isEmpty(processName) && processName.equals(APPConstant.PACKAGE_NAME)) {
+        //
+        ToastUtils.init(true);
         //=== init hotfix
         initHotFix();
         //=== okgo
         initOkGo();
         //=== ali httpdns
         initHttpDns(APPConstant.ALI_HTTPDNS_ACCOUND_ID, hostList);
+//        }
+
+        //=== 内存泄露检测框架
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        refWatcher = LeakCanary.install(this);
     }
 
     @Override
@@ -88,6 +106,7 @@ public class BaseApplication extends IBaseApplication {
     //######################  override custom metohds end  ########################################
 
     //######################      custom metohds start     ########################################
+
 
     /**
      * okgo初始化
@@ -333,6 +352,18 @@ public class BaseApplication extends IBaseApplication {
         }
         return proxyHost != null && proxyPort != -1;
     }
+
+    /**
+     * leakcanary
+     *
+     * @param context
+     * @return
+     */
+    public static RefWatcher getRefWatcher(Context context) {
+        BaseApplication application = (BaseApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
 
     public static HttpDnsService getHttpdns() {
         return httpdns;
