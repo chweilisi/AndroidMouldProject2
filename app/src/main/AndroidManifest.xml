@@ -26,21 +26,10 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
             android:screenOrientation="portrait">
-            <!--要想在别的App上能成功调起App，必须添加intent过滤器-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!--协议部分，随便设置-->
-                <data
-                    android:host="${APP_HOST}"
-                    android:path="/.SplashActivity"
-                    android:port="8888"
-                    android:scheme="${APP_SCHEME}" />
-                <!--下面这几行也必须得设置-->
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
 

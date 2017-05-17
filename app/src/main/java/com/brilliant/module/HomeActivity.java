@@ -34,7 +34,6 @@ public class HomeActivity extends BaseActivity {
             mBackPressedTime = curTime;
             ToastUtils.showShortToast(R.string.app_exit_confirm);
         }
-        finish();
     }
 
     /**
@@ -66,8 +65,6 @@ public class HomeActivity extends BaseActivity {
     public void initView() {
         // 下载升级
         // downloadUpdateAPK(download_url);
-
-        UIFactory.startTestActivity(this, RESULT_OK);
     }
 
     @Override

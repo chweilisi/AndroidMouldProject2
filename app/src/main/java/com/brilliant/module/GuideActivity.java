@@ -75,9 +75,9 @@ public class GuideActivity extends BaseActivity {
 
         //添加欢迎页面
         layouts = new int[]{
-                R.layout.welcome_slide1,
-                R.layout.welcome_slide2,
-                R.layout.welcome_slide3
+                R.layout.layout_guide_1,
+                R.layout.layout_guide_2,
+                R.layout.layout_guide_3
         };
         //添加点
         addBottomDots(0);
