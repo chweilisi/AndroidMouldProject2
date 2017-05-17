@@ -210,9 +210,5 @@ dependencies {
     apt rootProject.ext.dependencies["butterknife-compiler"]
 
     //################## 引用第三方工程
-    if (isBuildModule.toBoolean()) {
-        compile project(':baselibrary')
-    } else {
-        compile project(':testlibrary')
-    }
+    compile project(':testlibrary')
 }
