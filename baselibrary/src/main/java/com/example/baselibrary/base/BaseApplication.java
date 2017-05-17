@@ -68,8 +68,6 @@ public class BaseApplication extends IBaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-//        String processName = APPMethod.getCurProcessName(getApplicationContext());
-//        if (!StringUtils.isEmpty(processName) && processName.equals(APPConstant.PACKAGE_NAME)) {
         //
         ToastUtils.init(true);
         //=== init hotfix
@@ -78,7 +76,6 @@ public class BaseApplication extends IBaseApplication {
         initOkGo();
         //=== ali httpdns
         initHttpDns(APPConstant.ALI_HTTPDNS_ACCOUND_ID, hostList);
-//        }
 
         //=== 内存泄露检测框架
         if (LeakCanary.isInAnalyzerProcess(this)) {

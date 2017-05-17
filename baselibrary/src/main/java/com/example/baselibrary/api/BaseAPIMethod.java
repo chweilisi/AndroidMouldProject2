@@ -14,7 +14,7 @@ import rx.Subscriber;
 public class BaseAPIMethod {
 
     //  手写错误抛出
-    public Observable<String> errorObservable(final String errorMsg) {
+    public static Observable<String> errorObservable(final String errorMsg) {
         return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
