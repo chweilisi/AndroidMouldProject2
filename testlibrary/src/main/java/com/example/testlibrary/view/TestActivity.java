@@ -50,6 +50,7 @@ public class TestActivity extends BaseActivity {
 
     @OnClick({R2.id.okgo_request, R2.id.sync, R2.id.upload, R2.id.download, R2.id.requestPermissionSingle,
             R2.id.requestPermissionMultiple})
+    @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.okgo_request) {

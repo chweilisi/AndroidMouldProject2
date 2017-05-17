@@ -140,6 +140,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     //######################  override methods start ##############################################
 
     @OnClick({R2.id.selectImage, R2.id.formUpload, R2.id.fileDownload})
+    @Override
     public void onClick(View v) {
         int i1 = v.getId();
         if (i1 == R.id.selectImage) {// 选择图片

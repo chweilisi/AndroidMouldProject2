@@ -1,13 +1,19 @@
 package com.brilliant;
 
+import android.view.View;
+
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.widget.SimpleButton;
+import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.util.RxCountDown;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.Subscriber;
+import rx.functions.Action0;
 
 
 /**
@@ -21,6 +27,8 @@ public class SplashActivity extends BaseActivity {
     SimpleButton mSbSkip;
 
     private boolean mIsSkip = false;
+
+    private int COUNT_TIME = 3; // 倒计时时间长度
 
     //##########################   custom variables end  ##########################################
 
@@ -37,11 +45,12 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        _doSkip();
+
     }
 
     @Override
     public void initData() {
+        countDown(COUNT_TIME);
     }
 
     //######################  Override custom metohds end  ########################################
@@ -49,9 +58,44 @@ public class SplashActivity extends BaseActivity {
     //######################      custom metohds start     ########################################
 
     /**
+     * 倒计时展示
      *
+     * @param time
      */
-    private void _doSkip() {
+    private void countDown(int time) {
+        RxCountDown.countdown(time)
+                .doOnSubscribe(new Action0() {
+                    @Override
+                    public void call() {
+                        // 开始计时
+                    }
+                })
+                .subscribe(new Subscriber<Integer>() {
+                    @Override
+                    public void onCompleted() {
+                        // 计时完成
+                        doSkip();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        // 出错
+                        LogUtils.i(e.toString());
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                        // 当前计时
+                        mSbSkip.setText("跳过 " + integer);
+                        LogUtils.i("跳过 " + integer);
+                    }
+                });
+    }
+
+    /**
+     * 跳过倒计时
+     */
+    private void doSkip() {
         if (!mIsSkip) {
             mIsSkip = true;
             //跳转到MainActivity，并结束当前的LauncherActivity
@@ -74,8 +118,16 @@ public class SplashActivity extends BaseActivity {
     //######################  override methods start ##############################################
 
     @OnClick(R.id.sb_skip)
-    public void onClick() {
-        _doSkip();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.sb_skip: {
+                doSkip();
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     @Override

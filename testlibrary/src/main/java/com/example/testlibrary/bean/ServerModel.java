@@ -21,7 +21,7 @@ public class ServerModel implements Serializable {
     public String upload;
     public Author author;
 
-    public class Author implements Serializable {
+    public static class Author implements Serializable {
         private static final long serialVersionUID = 2701611773813762723L;
 
         public String name;

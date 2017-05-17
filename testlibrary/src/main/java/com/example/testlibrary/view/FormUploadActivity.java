@@ -81,6 +81,7 @@ public class FormUploadActivity extends BaseActivity {
     }
 
     @OnClick({R2.id.selectImage, R2.id.formUpload})
+    @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.selectImage) {// 选择图片
