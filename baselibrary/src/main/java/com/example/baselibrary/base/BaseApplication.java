@@ -41,7 +41,7 @@ import javax.net.ssl.X509TrustManager;
  */
 public class BaseApplication extends IBaseApplication {
 
-    //#################################################################### 自定义变量 start
+    //##########################  custom variables start ##########################################
 
     //=== httpdns
     private static HttpDnsService httpdns; // ali httpdns
@@ -56,9 +56,9 @@ public class BaseApplication extends IBaseApplication {
 
     private static int DEF_WRITE_TIMEOUT = 20000; // 默认的连接超时
 
-    //#################################################################### 自定义变量 end
+    //##########################   custom variables end  ##########################################
 
-    //#################################################################### 重写系统方法 start
+    //######################  override methods start ##############################################
 
     @Override
     public void onCreate() {
@@ -81,13 +81,13 @@ public class BaseApplication extends IBaseApplication {
         super.attachBaseContext(base);
     }
 
-    //#################################################################### 重写系统方法 end
+    //######################   override methods end  ##############################################
 
-    //#################################################################### 重写自定义方法 start
+    //###################### override custom metohds start ########################################
 
-    //#################################################################### 重写自定义方法 end
+    //######################  override custom metohds end  ########################################
 
-    //#################################################################### 自定义方法 start
+    //######################      custom metohds start     ########################################
 
     /**
      * okgo初始化
@@ -342,5 +342,5 @@ public class BaseApplication extends IBaseApplication {
         BaseApplication.httpdns = httpdns;
     }
 
-    //#################################################################### 自定义方法 end
+    //######################    custom metohds end   ##############################################
 }

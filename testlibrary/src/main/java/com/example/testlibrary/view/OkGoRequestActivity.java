@@ -35,7 +35,7 @@ import butterknife.OnClick;
  */
 public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAModel> implements SplashAContract.View {
 
-    //#################################################################### 自定义变量 start
+    //##########################  custom variables start ##########################################
 
     //===1.
     @BindView(R2.id.title)
@@ -82,9 +82,9 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     @BindView(R2.id.download_pbProgress)
     NumberProgressBar pbdownload_Progress;
 
-    //#################################################################### 自定义变量 end
+    //##########################   custom variables end  ##########################################
 
-    //#################################################################### 重写自定义方法 start
+    //###################### Override custom metohds start ########################################
 
     @Override
     public int getLayoutId() {
@@ -131,13 +131,13 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
         Logger.i(file.getAbsolutePath());
     }
 
-    //#################################################################### 重写自定义方法 end
+    //######################  Override custom metohds end  ########################################
 
-    //#################################################################### 自定义方法 start
+    //######################      custom metohds start     ########################################
 
-    //#################################################################### 自定义方法 end
+    //######################    custom metohds end   ##############################################
 
-    //#################################################################### 重写系统方法 start
+    //######################  override methods start ##############################################
 
     @OnClick({R2.id.selectImage, R2.id.formUpload, R2.id.fileDownload})
     public void onClick(View v) {
@@ -183,5 +183,5 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
         }
     }
 
-    //#################################################################### 重写系统方法 end
+    //######################   override methods end  ##############################################
 }

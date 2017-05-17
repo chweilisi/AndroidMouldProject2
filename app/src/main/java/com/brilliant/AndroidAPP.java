@@ -19,13 +19,13 @@ import com.squareup.leakcanary.RefWatcher;
 @SuppressWarnings("unused")
 public class AndroidAPP extends BaseApplication {
 
-    //#################################################################### 自定义变量 start
+    //##########################  custom variables start ##########################################
 
     private RefWatcher refWatcher;
 
-    //#################################################################### 自定义变量 end
+    //##########################   custom variables end  ##########################################
 
-    //#################################################################### 重写系统方法 start
+    //######################  override methods start ##############################################
 
     @Override
     public void onCreate() {
@@ -44,13 +44,13 @@ public class AndroidAPP extends BaseApplication {
         refWatcher = LeakCanary.install(this);
     }
 
-    //#################################################################### 重写系统方法 end
+    //######################   override methods end  ##############################################
 
-    //#################################################################### 重写自定义方法 start
+    //###################### override custom metohds start ########################################
 
-    //#################################################################### 重写自定义方法 end
+    //######################  override custom metohds end  ########################################
 
-    //#################################################################### 自定义方法 start
+    //######################      custom metohds start     ########################################
 
     public static AndroidAPP getInstance() {
         return (AndroidAPP) getAppInstance();
@@ -78,6 +78,6 @@ public class AndroidAPP extends BaseApplication {
         return application.refWatcher;
     }
 
-    //#################################################################### 自定义方法 end
+    //######################    custom metohds end   ##############################################
 
 }
