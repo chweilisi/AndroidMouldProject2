@@ -28,7 +28,7 @@ public class APPConstant {
     // App根目录
     public static final String APP_PATH_ROOT = APPMethod.getRootPath().getAbsolutePath()
             + File.separator
-            + "xiangfa"
+            + "moduleproject"
             + File.separator;
 
     // 默认存放图片的路径
@@ -41,7 +41,8 @@ public class APPConstant {
             + "download"
             + File.separator;
 
-    public final static String APP_NAME = "xiangfajinrong.apk";
+    // 生成的app的名称
+    public final static String APP_NAME = "moduleproject.apk";
 
     // 默认存放异常日志文件的路径
     public final static String DEFAULT_CRASH_FILE_PATH = APP_PATH_ROOT

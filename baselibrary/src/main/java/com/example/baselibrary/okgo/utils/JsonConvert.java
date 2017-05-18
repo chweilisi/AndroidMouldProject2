@@ -1,6 +1,6 @@
 package com.example.baselibrary.okgo.utils;
 
-import com.basemodule.okgo.utils.Convert;
+import com.basemodule.utils.JsonConvertHelper;
 import com.example.baselibrary.base.IBaseBean;
 import com.example.baselibrary.constant.APPConstant;
 import com.google.gson.stream.JsonReader;
@@ -64,7 +64,7 @@ public class JsonConvert<T extends IBaseBean> implements Converter<T> {
         //以下代码是根据泛型解析数据，返回对象，返回的对象自动以参数的形式传递到 onSuccess 中，可以直接使用
         JsonReader jsonReader = new JsonReader(response.body().charStream());
         //有数据类型，表示有data
-        T data = Convert.fromJson(jsonReader, type);
+        T data = JsonConvertHelper.fromJson(jsonReader, type);
         response.close();
 
         String code = data.getStatus() + "";

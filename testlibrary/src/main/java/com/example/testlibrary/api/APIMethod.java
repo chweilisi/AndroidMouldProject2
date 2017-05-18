@@ -3,9 +3,9 @@ package com.example.testlibrary.api;
 import android.content.Context;
 import android.graphics.Bitmap;
 
-import com.basemodule.okgo.OkGoRequest;
 import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.api.BaseAPIMethod;
+import com.example.baselibrary.okgo.OkGoRequest;
 import com.example.baselibrary.okgo.utils.JsonCallback;
 import com.example.baselibrary.okgo.utils.JsonConvert;
 import com.example.testlibrary.bean.QueryAdvertBean;

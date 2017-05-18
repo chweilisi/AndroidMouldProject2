@@ -1,8 +1,8 @@
 package com.example.baselibrary.okgo.utils;
 
-import com.basemodule.okgo.model.LzyResponse;
-import com.basemodule.okgo.model.SimpleResponse;
-import com.basemodule.okgo.utils.Convert;
+import com.basemodule.utils.JsonConvertHelper;
+import com.example.baselibrary.okgo.model.LzyResponse;
+import com.example.baselibrary.okgo.model.SimpleResponse;
 import com.google.gson.stream.JsonReader;
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -100,14 +100,14 @@ public abstract class JsonCallback<T> extends AbsCallback<T> {
         //以下代码是根据泛型解析数据，返回对象，返回的对象自动以参数的形式传递到 onSuccess 中，可以直接使用
         JsonReader jsonReader = new JsonReader(response.body().charStream());
         if (typeArgument == Void.class) {
-            //无数据类型,表示没有data数据的情况（以  new DialogCallback<LzyResponse<Void>>(this)  以这种形式传递的泛型)
-            SimpleResponse simpleResponse = Convert.fromJson(jsonReader, SimpleResponse.class);
+            //无数据类型,表示没有data数据的情况（以  new DialogCallback<LzyResponse<Void>>this)  以这种形式传递的泛型)
+            SimpleResponse simpleResponse =  JsonConvertHelper.fromJson(jsonReader, SimpleResponse.class);
             response.close();
             //noinspection unchecked
             return (T) simpleResponse.toLzyResponse();
         } else if (rawType == LzyResponse.class) {
             //有数据类型，表示有data
-            LzyResponse lzyResponse = Convert.fromJson(jsonReader, type);
+            LzyResponse lzyResponse = JsonConvertHelper.fromJson(jsonReader, type);
             response.close();
             int code = lzyResponse.code;
             //这里的0是以下意思

@@ -30,74 +30,66 @@ dependencies {
     })
     compile rootProject.ext.dependencies["appcompat-v7"]
     testCompile rootProject.ext.dependencies["junit"]
+
     //################## 引入第三方jar包
 
     //################## git上第三方库
     //=== AndroidBaseModule
     compile rootProject.ext.dependencies["AndroidBaseModule"]
+
     //=== AndroidFilePicker
     compile rootProject.ext.dependencies["AndroidFilePicker"]
+
     //=== okhttp-OkGo
     compile rootProject.ext.dependencies["okgo"]
     compile rootProject.ext.dependencies["okrx"]
     compile rootProject.ext.dependencies["okserver"]
+
     //=== ali hotfix
     compile(rootProject.ext.dependencies["alisdk-hotfix"]) {
         exclude(module: 'utdid4all')
         transitive = false // 防止和 ali httpdns重复导入
     }
+
     //=== ali httpdns
     compile rootProject.ext.dependencies["alicloud-android-httpdns"]
+
     //=== leakcanary
     debugCompile rootProject.ext.dependencies["leakcanary-android"]
     releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
     testCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
+
     //=== rxjava
     compile rootProject.ext.dependencies["rxjava"]
+
     //=== rxandroid
     compile rootProject.ext.dependencies["rxandroid"]
+
     //=== rxbinding
     compile rootProject.ext.dependencies["rxbinding"]
+
     //=== RxLifecycle
     compile rootProject.ext.dependencies["rxlifecycle"]
     compile rootProject.ext.dependencies["rxlifecycle-components"]
+
     //=== RxPermissions(https://github.com/tbruyelle/RxPermissions)
     compile rootProject.ext.dependencies["rxpermissions"]
+
     //=== dagger(https://github.com/google/dagger)
     compile rootProject.ext.dependencies["dagger"]
     apt rootProject.ext.dependencies["dagger-compiler"]
+
     //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
     compile rootProject.ext.dependencies["circleimageview"]
+
     //=== slider(https://github.com/daimajia/AndroidImageSlider)
     compile rootProject.ext.dependencies["slider"]
+
     //=== photoview(https://github.com/chrisbanes/PhotoView)
     compile rootProject.ext.dependencies["photoview"]
+
     //=== greendao  (https://github.com/greenrobot/greenDAO)
     compile rootProject.ext.dependencies["greendao"]
-
-//    //=== picasso, slider 库需要用到下面两个库,这样有点多余，可以选择别的库
-//    compile 'com.squareup.picasso:picasso:2.5.2'
-//    compile 'com.nineoldandroids:library:2.4.0'
-//    //=== recyclerview-animators(https://github.com/wasabeef/recyclerview-animators)
-//    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
-//    //=== html text(https://github.com/zzhoujay/RichText)
-//    compile 'com.zzhoujay.richtext:richtext:2.0.9'
-//    //=== LabelView(https://github.com/H07000223/FlycoLabelView)
-//    compile 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar'
-//    //=== dragsloplayout(https://github.com/Rukey7/DragSlopLayout)
-//    compile 'com.github.Rukey7:DragSlopLayout:1.0.3'
-//    //=== TagLayout(https://github.com/Rukey7/TagLayout)
-//    compile 'com.github.Rukey7:TagLayout:1.0.3'
-//    //=== shine button(https://github.com/ChadCSong/ShineButton)
-//    compile 'com.sackcentury:shinebutton:0.1.6'
-//    //=== tab layout(https://github.com/H07000223/FlycoTabLayout)
-//    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
-//    //=== progressbar(https://github.com/daimajia/NumberProgressBar)
-//    compile 'com.daimajia.numberprogressbar:library:1.2'
-//    //=== Dialog(https://github.com/H07000223/FlycoDialog_Master)
-//    compile 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
-//    //=== jsoup(https://github.com/jhy/jsoup)
-//    compile 'com.github.jhy:jsoup:jsoup-1.10.2'
 
     //################## 引用第三方工程
 }

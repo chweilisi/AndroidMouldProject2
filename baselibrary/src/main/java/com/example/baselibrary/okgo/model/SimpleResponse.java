@@ -1,7 +1,5 @@
 package com.example.baselibrary.okgo.model;
 
-import com.basemodule.okgo.model.LzyResponse;
-
 import java.io.Serializable;
 
 /**

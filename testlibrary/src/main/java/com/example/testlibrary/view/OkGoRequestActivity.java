@@ -98,7 +98,6 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
 
     @Override
     public void initView() {
-        SetTranslanteBar();
         //===
         mPresenter.queryAdvert(); //异步获取广告信息
         mPresenter.getBitmap();   // 获取图片

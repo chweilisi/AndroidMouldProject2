@@ -1,14 +1,16 @@
 package com.brilliant;
 
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.basemodule.local.sharedpref.SharedPrefUtils;
+import com.basemodule.utils.RxCountDown;
 import com.basemodule.widget.SimpleButton;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
-import com.example.baselibrary.util.RxCountDown;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -45,7 +47,6 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
     }
 
     @Override
@@ -102,6 +103,9 @@ public class SplashActivity extends BaseActivity {
             //=== 和本次的软件版本号作对比，用来判断软件是否进行了更新，从而决定是否展示引导页
             if (AndroidAPP.getPackageInfo() != null && !AndroidAPP.getPackageInfo().versionName.equals(
                     SharedPrefUtils.getSharedStringData(APPConstant.PREFS_PREVERSION, "0.0.0"))) {
+                Animation fadeOut = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.fadeout);
+                fadeOut.setFillAfter(true);
+                findViewById(R.id.splash_Image).startAnimation(fadeOut);
                 UIFactory.startGuideActivity(this, RESULT_OK);
             } else {
                 // 正常的页面流程

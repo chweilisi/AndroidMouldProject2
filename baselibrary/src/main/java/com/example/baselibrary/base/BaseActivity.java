@@ -6,7 +6,7 @@ import android.view.View;
 import com.basemodule.base.IBaseActivity;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
-import com.blankj.utilcode.util.ToastUtils;
+import com.example.baselibrary.util.MyToastUtil;
 
 /**
  * add your personal code here
@@ -68,7 +68,7 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
 
     @Override
     public void showErrorTip(String s) {
-        ToastUtils.showShortToast(s);
+        MyToastUtil.showShortToast(s);
     }
 
     @Override

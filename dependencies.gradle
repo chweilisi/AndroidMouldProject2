@@ -1,7 +1,7 @@
 def supportVersion = "25.3.0"
 def butterKnifeVersion = "8.5.1"
 def permissionsdispatcherVersion = "2.3.2"
-def AndroidBaseModuleVersion = "1.1.2.30"
+def AndroidBaseModuleVersion = "1.1.2.32"
 def AndroidFilePickerVersion = "1.0.4"
 def okgoVersion = "2.1.4"
 def okrxVersion = "0.1.2"
@@ -20,7 +20,7 @@ def circleimageviewVersion = "2.1.0"
 def sliderVersion = "1.1.5"
 def photoviewVersion = "1.2.4"
 def greendaoVersion = "3.2.2"
-
+def practicalrecyclerviewVersion = "1.1.5"
 
 project.ext {
     android = [
@@ -111,7 +111,10 @@ project.ext {
             "photoview"                      : "com.github.chrisbanes.photoview:library:${photoviewVersion}",
 
             //=== greendao  (https://github.com/greenrobot/greenDAO)
-            "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}"
+            "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}",
+
+            //=== practicalrecyclerview  (https://github.com/ssseasonnn/PracticalRecyclerView)
+            "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}"
 
     ]
 }

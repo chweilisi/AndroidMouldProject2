@@ -7,9 +7,9 @@ import com.alibaba.sdk.android.httpdns.DegradationFilter;
 import com.alibaba.sdk.android.httpdns.HttpDns;
 import com.alibaba.sdk.android.httpdns.HttpDnsService;
 import com.basemodule.base.IBaseApplication;
-import com.basemodule.okgo.HttpDNSInterceptor;
-import com.blankj.utilcode.util.ToastUtils;
 import com.example.baselibrary.constant.APPConstant;
+import com.example.baselibrary.okgo.HttpDNSInterceptor;
+import com.example.baselibrary.util.MyToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -70,13 +70,15 @@ public class BaseApplication extends IBaseApplication {
     public void onCreate() {
         super.onCreate();
         //
-        ToastUtils.init(true);
+        MyToastUtil.init(true, true);
         //=== init hotfix
         initHotFix();
         //=== okgo
         initOkGo();
         //=== ali httpdns
         initHttpDns(APPConstant.ALI_HTTPDNS_ACCOUND_ID, hostList);
+        //=== 注册App异常崩溃处理器
+       // registerUncaughtExceptionHandler(APPConstant.DEFAULT_CRASH_FILE_PATH);
 
         //=== 内存泄露检测框架
         if (LeakCanary.isInAnalyzerProcess(this)) {

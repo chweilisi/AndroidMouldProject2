@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.basemodule.okgo.model.LzyResponse;
 import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.base.BaseActivity;
+import com.example.baselibrary.okgo.model.LzyResponse;
 import com.example.baselibrary.okgo.utils.JsonCallback;
 import com.example.baselibrary.widget.NumberProgressBar;
 import com.example.testlibrary.R;
