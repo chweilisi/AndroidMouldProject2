@@ -44,7 +44,7 @@ public class CusttomTagsLayoutActivity extends BaseActivity {
     @Override
     public void initData() {
         String[] string = {"从我写代码那天起，我就没有打算写代码", "从我写代码那天起", "我就没有打算写代码", "没打算", "写代码"};
-        initTagsLayoutView(string,ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        initTagsLayoutView(string, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
     //######################  override custom metohds end  ########################################
@@ -52,7 +52,6 @@ public class CusttomTagsLayoutActivity extends BaseActivity {
     //######################      custom metohds start     ########################################
 
     /**
-     *
      * @param tags
      * @param width
      * @param height
@@ -64,9 +63,9 @@ public class CusttomTagsLayoutActivity extends BaseActivity {
             textView.setText(tags[i]);
             textView.setTextColor(Color.WHITE);
             // 设置背景图片
-            // textView.setBackgroundResource(R.drawable.round_square_blue);
+            textView.setBackgroundResource(R.drawable.testlibrary_tags_bg);
             // 设置背景颜色
-            textView.setBackgroundColor(getResources().getColor(R.color.blue));
+            // textView.setBackgroundColor(getResources().getColor(R.color.blue));
             tags_layout.addView(textView, lp);
         }
     }

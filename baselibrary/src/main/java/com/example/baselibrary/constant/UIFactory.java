@@ -190,6 +190,19 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * 自定义空白页面
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startMsgItemActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.MsgItemActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
     //############################  测试页面 end #################################################
 
     /**

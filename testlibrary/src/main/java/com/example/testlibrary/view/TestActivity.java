@@ -50,7 +50,7 @@ public class TestActivity extends BaseActivity {
 
     @OnClick({R2.id.okgo_request, R2.id.sync, R2.id.upload, R2.id.download, R2.id.requestPermissionSingle,
             R2.id.requestPermissionMultiple, R2.id.custtomTitleBar, R2.id.custtomTagsLayout,
-            R2.id.custtomRatingStar, R2.id.custtomEmpty})
+            R2.id.custtomRatingStar, R2.id.custtomEmpty, R2.id.custtomMsgItem})
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -84,6 +84,9 @@ public class TestActivity extends BaseActivity {
         } else if (i == R.id.custtomEmpty) {
             // 自定义自定义空白页面，loading页面，错误页面
             UIFactory.startEmptyActivity(this, RESULT_OK);
+        } else if (i == R.id.custtomMsgItem) {
+            // 自定义item
+            UIFactory.startMsgItemActivity(this, RESULT_OK);
         }
     }
 
