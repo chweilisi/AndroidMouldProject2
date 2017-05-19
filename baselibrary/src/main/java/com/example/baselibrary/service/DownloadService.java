@@ -307,8 +307,6 @@ public class DownloadService extends Service {
                         // 下载
                         startDownload();
                     }
-
-                    ;
                 }.start();
             }
         }

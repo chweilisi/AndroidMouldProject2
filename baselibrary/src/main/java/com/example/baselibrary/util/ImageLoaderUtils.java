@@ -10,7 +10,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.io.File;
 
-
 /**
  * Description : 图片加载工具类 使用glide框架封装
  */
@@ -48,6 +47,12 @@ public class ImageLoaderUtils {
                 .crossFade().into(imageView);
     }
 
+    /**
+     *
+     * @param context
+     * @param imageView
+     * @param url
+     */
     public static void display(Context context, ImageView imageView, File url) {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
@@ -109,6 +114,12 @@ public class ImageLoaderUtils {
                 .into(imageView);
     }
 
+    /**
+     *
+     * @param context
+     * @param imageView
+     * @param url
+     */
     public static void display(Context context, ImageView imageView, int url) {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
@@ -120,7 +131,6 @@ public class ImageLoaderUtils {
                 .error(com.basemodule.R.mipmap.ic_empty_picture)
                 .crossFade().into(imageView);
     }
-
 
     /**
      * @param context
@@ -136,6 +146,4 @@ public class ImageLoaderUtils {
                 .error(com.basemodule.R.mipmap.toux2)
                 .centerCrop().transform(new GlideRoundTransformUtil(context)).into(imageView);
     }
-
-
 }

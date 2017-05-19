@@ -49,7 +49,7 @@ public class TestActivity extends BaseActivity {
     //######################  override methods start ##############################################
 
     @OnClick({R2.id.okgo_request, R2.id.sync, R2.id.upload, R2.id.download, R2.id.requestPermissionSingle,
-            R2.id.requestPermissionMultiple})
+            R2.id.requestPermissionMultiple, R2.id.custtomTitleBar, R2.id.custtomTagsLayout})
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -71,6 +71,12 @@ public class TestActivity extends BaseActivity {
         } else if (i == R.id.requestPermissionMultiple) {
             // 6.0及之后权限申请
             UIFactory.startRequestPermissionMultipleActivity(this, RESULT_OK);
+        } else if (i == R.id.custtomTitleBar) {
+            // 自定义标题栏
+            UIFactory.startCusttomTitleBarActivity(this, RESULT_OK);
+        } else if (i == R.id.custtomTagsLayout) {
+            // 自定义标签云
+            UIFactory.startCusttomTagsLayoutActivity(this, RESULT_OK);
         }
     }
 

@@ -45,6 +45,8 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    //##########################  测试页面 start #################################################
+
     /**
      * 进入测试页面
      *
@@ -135,6 +137,34 @@ public class UIFactory {
                 "/.view.RequestPermissionMultipleActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
+
+    /**
+     * 自定义titlebar页面
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCusttomTitleBarActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CusttomTitleBarActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 自定义标签云页面
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCusttomTagsLayoutActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CusttomTagsLayoutActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    //############################  测试页面 end #################################################
 
     /**
      * 打开升级
