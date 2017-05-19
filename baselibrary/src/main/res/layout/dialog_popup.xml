@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:paddingTop="30dp"
         android:text="提示"
-        android:textColor="@color/item_333333"
+        android:textColor="@color/xf_blue_color"
         android:textSize="21sp"
         android:visibility="gone" />
 
@@ -27,7 +27,7 @@
         android:paddingBottom="15dp"
         android:paddingTop="15dp"
         android:text="检测到新的版本,请下载更新!"
-        android:textColor="@color/item_333333"
+        android:textColor="@color/xf_blue_color"
         android:textSize="17sp" />
 
     <LinearLayout
@@ -45,12 +45,12 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@drawable/shape_dialog_cancel"
+            android:background="@color/white"
             android:gravity="center"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
             android:text="取消"
-            android:textColor="@color/item_999999"
+            android:textColor="@color/xf_blue_color"
             android:textSize="19dp"
             android:visibility="gone" />
 
@@ -61,7 +61,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@drawable/shape_rounded_button"
+            android:background="@color/xf_blue_color"
             android:gravity="center"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"

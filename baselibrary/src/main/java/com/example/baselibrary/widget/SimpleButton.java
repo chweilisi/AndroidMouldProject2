@@ -16,6 +16,8 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.basemodule.utils.MeasureUtils;
+import com.example.baselibrary.R;
+
 
 
 /**
@@ -96,16 +98,29 @@ public class SimpleButton extends View {
     // 是否被按住
     private boolean mIsPressed = false;
 
-
+    /**
+     *
+     * @param context
+     */
     public SimpleButton(Context context) {
         this(context, null);
     }
 
+    /**
+     *
+     * @param context
+     * @param attrs
+     */
     public SimpleButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         _init(context, attrs);
     }
 
+    /**
+     *
+     * @param context
+     * @param attrs
+     */
     private void _init(Context context, AttributeSet attrs) {
         mBorderWidth = MeasureUtils.dp2px(context, 0.5f);
         mRadius = MeasureUtils.dp2px(context, 5f);
@@ -115,33 +130,33 @@ public class SimpleButton extends View {
         mTextSize = MeasureUtils.sp2px(context, 14f);
 
         if (attrs != null) {
-            final TypedArray a = context.obtainStyledAttributes(attrs, com.basemodule.R.styleable.SimpleButton);
+            final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SimpleButton);
             try {
-                mTagShape = a.getInteger(com.basemodule.R.styleable.SimpleButton_sb_shape, com.basemodule.widget.SimpleButton.SHAPE_ROUND_RECT);
-                mTagMode = a.getInteger(com.basemodule.R.styleable.SimpleButton_sb_mode, MODE_NORMAL);
+                mTagShape = a.getInteger(R.styleable.SimpleButton_sb_shape, SimpleButton.SHAPE_ROUND_RECT);
+                mTagMode = a.getInteger(R.styleable.SimpleButton_sb_mode, MODE_NORMAL);
                 if (mTagMode == MODE_CHECK || mTagMode == MODE_ICON_CHECK_INVISIBLE || mTagMode == MODE_ICON_CHECK_CHANGE) {
                     mIsAutoToggleCheck = true;
-                    mIsChecked = a.getBoolean(com.basemodule.R.styleable.SimpleButton_sb_checked, false);
-                    mDecorateIconChange = a.getDrawable(com.basemodule.R.styleable.SimpleButton_sb_icon_change);
+                    mIsChecked = a.getBoolean(R.styleable.SimpleButton_sb_checked, false);
+                    mDecorateIconChange = a.getDrawable(R.styleable.SimpleButton_sb_icon_change);
                 }
-                mIsAutoToggleCheck = a.getBoolean(com.basemodule.R.styleable.SimpleButton_sb_auto_check, mIsAutoToggleCheck);
+                mIsAutoToggleCheck = a.getBoolean(R.styleable.SimpleButton_sb_auto_check, mIsAutoToggleCheck);
 
-                mText = a.getString(com.basemodule.R.styleable.SimpleButton_sb_text);
-                mTextChecked = a.getString(com.basemodule.R.styleable.SimpleButton_sb_text_check);
-                mTextSize = a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_text_size, mTextSize);
-                mBgColor = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_bg_color, Color.WHITE);
-                mBorderColor = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_border_color, Color.parseColor("#ff333333"));
-                mTextColor = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_text_color, Color.parseColor("#ff666666"));
-                mBgColorChecked = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_bg_color_check, mBgColor);
-                mBorderColorChecked = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_border_color_check, mBorderColor);
-                mTextColorChecked = a.getColor(com.basemodule.R.styleable.SimpleButton_sb_text_color_check, mTextColor);
-                mBorderWidth = a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_border_width, mBorderWidth);
-                mRadius = a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_border_radius, mRadius);
-                mHorizontalPadding = (int) a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_horizontal_padding, mHorizontalPadding);
-                mVerticalPadding = (int) a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_vertical_padding, mVerticalPadding);
-                mIconPadding = (int) a.getDimension(com.basemodule.R.styleable.SimpleButton_sb_icon_padding, mIconPadding);
-                mDecorateIcon = a.getDrawable(com.basemodule.R.styleable.SimpleButton_sb_icon);
-                mIconGravity = a.getInteger(com.basemodule.R.styleable.SimpleButton_sb_gravity, Gravity.LEFT);
+                mText = a.getString(R.styleable.SimpleButton_sb_text);
+                mTextChecked = a.getString(R.styleable.SimpleButton_sb_text_check);
+                mTextSize = a.getDimension(R.styleable.SimpleButton_sb_text_size, mTextSize);
+                mBgColor = a.getColor(R.styleable.SimpleButton_sb_bg_color, Color.WHITE);
+                mBorderColor = a.getColor(R.styleable.SimpleButton_sb_border_color, Color.parseColor("#ff333333"));
+                mTextColor = a.getColor(R.styleable.SimpleButton_sb_text_color, Color.parseColor("#ff666666"));
+                mBgColorChecked = a.getColor(R.styleable.SimpleButton_sb_bg_color_check, mBgColor);
+                mBorderColorChecked = a.getColor(R.styleable.SimpleButton_sb_border_color_check, mBorderColor);
+                mTextColorChecked = a.getColor(R.styleable.SimpleButton_sb_text_color_check, mTextColor);
+                mBorderWidth = a.getDimension(R.styleable.SimpleButton_sb_border_width, mBorderWidth);
+                mRadius = a.getDimension(R.styleable.SimpleButton_sb_border_radius, mRadius);
+                mHorizontalPadding = (int) a.getDimension(R.styleable.SimpleButton_sb_horizontal_padding, mHorizontalPadding);
+                mVerticalPadding = (int) a.getDimension(R.styleable.SimpleButton_sb_vertical_padding, mVerticalPadding);
+                mIconPadding = (int) a.getDimension(R.styleable.SimpleButton_sb_icon_padding, mIconPadding);
+                mDecorateIcon = a.getDrawable(R.styleable.SimpleButton_sb_icon);
+                mIconGravity = a.getInteger(R.styleable.SimpleButton_sb_gravity, Gravity.LEFT);
             } finally {
                 a.recycle();
             }

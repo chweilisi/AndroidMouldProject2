@@ -12,9 +12,8 @@ import com.example.baselibrary.util.MyToastUtil;
  * add your personal code here
  * Created by conan on 2017/2/20.
  */
-
 public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseModel> extends IBaseActivity<T, E>
-        implements PresentationLayerFunc,View.OnClickListener {
+        implements PresentationLayerFunc, View.OnClickListener {
 
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 
@@ -22,6 +21,8 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(this);
+        // 设置状态栏颜色
+        initWindows(getResources().getColor(android.R.color.holo_green_dark));
     }
 
     @Override

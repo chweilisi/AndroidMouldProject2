@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.basemodule.utils.JsonUtils;
+import com.basemodule.utils.JsonConvertHelper;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.widget.NumberProgressBar;
 import com.example.testlibrary.R;
@@ -110,7 +110,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     //获取到广告信息
     @Override
     public void returnQueryAdvert(QueryAdvertBean.DataBean bean) {
-        title.setText(JsonUtils.toJson(bean));
+        title.setText(JsonConvertHelper.toJson(bean));
     }
 
     @Override

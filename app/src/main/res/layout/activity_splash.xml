@@ -11,11 +11,11 @@
         android:id="@+id/splash_Image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_check"
+        android:background="@color/blue_light"
         android:scaleType="centerCrop" />
 
     <!-- 跳过按钮 -->
-    <com.basemodule.widget.SimpleButton
+    <com.example.baselibrary.widget.SimpleButton
         android:id="@+id/sb_skip"
         android:layout_width="80dp"
         android:layout_height="wrap_content"

@@ -6,11 +6,11 @@ import android.view.animation.AnimationUtils;
 
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.RxCountDown;
-import com.basemodule.widget.SimpleButton;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.widget.SimpleButton;
 
 import butterknife.BindView;
 import butterknife.OnClick;
