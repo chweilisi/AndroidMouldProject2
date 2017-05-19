@@ -150,6 +150,38 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".view.CusttomRatingStarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.CusttomRatingStarActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.EmptyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.EmptyActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

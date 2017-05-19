@@ -65,6 +65,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="自定义标签云" />
+
+        <Button
+            android:id="@+id/custtomRatingStar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="自定义星级评分" />
+
+        <Button
+            android:id="@+id/custtomEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="自定义空白页面，loading页面，错误页面" />
+
     </LinearLayout>
 
 </ScrollView>

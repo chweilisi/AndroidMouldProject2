@@ -164,6 +164,32 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * 自定义星级评分
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCusttomRatingStarActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CusttomRatingStarActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 自定义空白页面
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startEmptyActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.EmptyActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
     //############################  测试页面 end #################################################
 
     /**

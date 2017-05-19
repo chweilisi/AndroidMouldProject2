@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.example.baselibrary.widget.CustomRatingStar
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        app:clickable="true"
+        app:space="0.2"
+        app:starDst="@mipmap/star_gray"
+        app:starNumber="5"
+        app:starSrc="@mipmap/star_yellow"
+        app:step="0.5" />
+
+    <com.example.baselibrary.widget.CustomRatingStar
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:clickable="true"
+        app:space="1"
+        app:starDst="@mipmap/star_gray"
+        app:starNumber="5"
+        app:starSrc="@mipmap/star_yellow"
+        app:step="0.1" />
+
+    <com.example.baselibrary.widget.CustomRatingStar
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:clickable="true"
+        app:space="1"
+        app:starDst="@mipmap/star_gray"
+        app:starNumber="5"
+        app:starSrc="@mipmap/star_yellow"
+        app:step="1" />
+
+</LinearLayout>
