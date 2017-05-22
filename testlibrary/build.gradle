@@ -49,6 +49,11 @@ android {
             }
         }
     }
+
+    // 数据绑定支持
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

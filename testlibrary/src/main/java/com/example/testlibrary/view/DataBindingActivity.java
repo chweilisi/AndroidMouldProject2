@@ -1,14 +1,19 @@
 package com.example.testlibrary.view;
 
-import com.example.baselibrary.base.BaseActivity;
+import android.app.Activity;
+import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+
+import com.example.testlibrary.DataBindingTest;
 import com.example.testlibrary.R;
+import com.example.testlibrary.bean.Student;
 
 /**
  * description:
  * Date: 2017/2/13 11:10
  * User: Administrator
  */
-public class DataBindingActivity extends BaseActivity {
+public class DataBindingActivity extends Activity {
 
     //##########################  custom variables start ##########################################
 
@@ -18,20 +23,13 @@ public class DataBindingActivity extends BaseActivity {
     //###################### override custom metohds start ########################################
 
     @Override
-    public int getLayoutId() {
-        return R.layout.testlibrary_activity_databinding;
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        DataBindingTest binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
+        binding.setStu(new Student("lee", "Shenzhen"));
+        binding.setStr("just do it");
+        binding.setNum(10);
 
-    @Override
-    public void initPresenter() {
-    }
-
-    @Override
-    public void initView() {
-    }
-
-    @Override
-    public void initData() {
     }
 
     //######################  override custom metohds end  ########################################

@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- 数据绑定 -->
+    <data class=".DataBindingTest">
 
-</LinearLayout>
+        <!--导入类包-->
+        <import type="com.example.testlibrary.bean.Student" />
+
+        <import type="android.graphics.Bitmap" />
+
+        <import type="java.util.ArrayList" />
+
+        <import type="java.util.HashMap" />
+
+        <!-- -->
+        <variable
+            name="stu"
+            type="Student" />
+
+        <variable
+            name="str"
+            type="String" />
+
+        <variable
+            name="error"
+            type="boolean" />
+
+        <variable
+            name="num"
+            type="int" />
+
+    </data>
+
+    <!-- 数据绑定展示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{stu.getName()}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{str}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(num)}" />
+
+    </LinearLayout>
+</layout>
