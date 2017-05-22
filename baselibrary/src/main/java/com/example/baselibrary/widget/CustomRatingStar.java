@@ -98,6 +98,8 @@ public class CustomRatingStar extends FrameLayout {
 
         // 重新计算宽度
         post(new Runnable() {
+
+            @Override
             public void run() {
                 height = getHeight();
                 spacing = (int) ((1 + SPACE) * height);
@@ -114,6 +116,7 @@ public class CustomRatingStar extends FrameLayout {
      * @param event
      * @return
      */
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN :
@@ -151,6 +154,7 @@ public class CustomRatingStar extends FrameLayout {
     /**
      * 星星是否可点击，true为可点击
      */
+    @Override
     public void setClickable(boolean clickable) {
         this.CLICKED = clickable;
     }
@@ -180,6 +184,7 @@ public class CustomRatingStar extends FrameLayout {
             super(context);
         }
 
+        @Override
         protected void onDraw(Canvas canvas) {
 
             canvas.setDrawFilter(
@@ -218,6 +223,7 @@ public class CustomRatingStar extends FrameLayout {
             setLayerType(LAYER_TYPE_SOFTWARE, null);
         }
 
+        @Override
         protected void onDraw(Canvas canvas) {
 
             canvas.clipRect(new Rect(0, 0, (int) (big * spacing + small * height), height));

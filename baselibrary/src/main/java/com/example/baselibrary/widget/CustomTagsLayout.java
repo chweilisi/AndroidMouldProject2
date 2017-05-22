@@ -111,7 +111,7 @@ public class CustomTagsLayout extends ViewGroup {
     /**
      * 记录子控件的坐标
      */
-    public class Location {
+    public static class Location {
 
         /**
          *
