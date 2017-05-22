@@ -4,7 +4,6 @@ import com.brilliant.R;
 import com.example.baselibrary.base.BaseFragment;
 
 /**
- * fragment模板，所有新建的fragment都应该复制该文件然后自定义
  * description:
  * Date: 2017/2/13 11:10
  * User: Administrator

@@ -6,7 +6,7 @@ import com.example.baselibrary.base.BasePresenter;
 import com.example.baselibrary.base.BaseView;
 
 /**
- * MVP中Contract 模板
+ * MVP中Contract
  * Created by Conan on 2017/2/23.
  */
 public interface DemoContract {

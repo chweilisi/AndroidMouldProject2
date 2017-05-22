@@ -80,6 +80,12 @@
             android:layout_marginTop="10dp"
             android:text="自定义空白页面，loading页面，错误页面" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/dataBinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="dataBinding测试" />
 
+    </LinearLayout>
 </ScrollView>

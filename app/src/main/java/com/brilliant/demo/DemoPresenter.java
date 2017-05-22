@@ -1,6 +1,6 @@
 package com.brilliant.demo;
 
-/** MVP中Presenter 模板
+/** MVP中Presenter
  * Created by Conan on 2017/2/23.
  */
 

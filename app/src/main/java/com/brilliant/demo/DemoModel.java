@@ -3,7 +3,7 @@ package com.brilliant.demo;
 import android.content.Context;
 
 /**
- * MVP中Model 模板
+ * MVP中Model
  * Created by Conan on 2017/2/23.
  */
 

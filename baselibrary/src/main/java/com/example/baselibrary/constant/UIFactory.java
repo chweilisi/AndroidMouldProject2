@@ -191,15 +191,15 @@ public class UIFactory {
     }
 
     /**
-     * 自定义空白页面
+     * dataBinding测试
      *
      * @param activity
      * @param requestCode
      */
-    public static void startMsgItemActivity(Activity activity, int requestCode) {
+    public static void startDataBindingActivity(Activity activity, int requestCode) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
                 "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
-                "/.view.MsgItemActivity"));
+                "/.view.DataBindingActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
 

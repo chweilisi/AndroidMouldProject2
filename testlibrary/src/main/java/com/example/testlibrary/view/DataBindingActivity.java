@@ -1,14 +1,14 @@
-package com.brilliant.demo;
+package com.example.testlibrary.view;
 
-import com.brilliant.R;
 import com.example.baselibrary.base.BaseActivity;
+import com.example.testlibrary.R;
 
 /**
  * description:
  * Date: 2017/2/13 11:10
  * User: Administrator
  */
-public class ModelActivity extends BaseActivity {
+public class DataBindingActivity extends BaseActivity {
 
     //##########################  custom variables start ##########################################
 
@@ -19,7 +19,7 @@ public class ModelActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_model;
+        return R.layout.testlibrary_activity_databinding;
     }
 
     @Override
