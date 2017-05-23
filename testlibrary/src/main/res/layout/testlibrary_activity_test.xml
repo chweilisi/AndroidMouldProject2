@@ -87,5 +87,12 @@
             android:layout_marginTop="10dp"
             android:text="dataBinding测试" />
 
+        <Button
+            android:id="@+id/customDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="自定义dialog的两种实现方式" />
+
     </LinearLayout>
 </ScrollView>

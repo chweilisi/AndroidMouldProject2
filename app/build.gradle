@@ -188,11 +188,6 @@ android {
             output.outputFile = new File(outDirectory, newName)
         }
     }
-
-    // 数据绑定支持
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
