@@ -18,15 +18,24 @@ import com.basemodule.base.IBasePresenter;
 public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseModel> extends IBaseFragment<T, E>
         implements PresentationLayerFunc, View.OnClickListener {
 
+    //##########################  custom variables start ##########################################
+
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 
-    @Override
+    //##########################   custom variables end  ##########################################
 
+    //######################  override methods start ##############################################
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(getActivity());
         return super.rootView;
     }
+
+    //######################   override methods end  ##############################################
+
+    //###################### override custom metohds start ########################################
 
     @Override
     public void showProgressDialog() {
@@ -46,4 +55,10 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
     @Override
     public void onClick(View v) {
     }
+
+    //######################  override custom metohds end  ########################################
+
+    //######################      custom metohds start     ########################################
+
+    //######################    custom metohds end   ##############################################
 }

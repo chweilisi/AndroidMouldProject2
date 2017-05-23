@@ -15,7 +15,13 @@ import com.example.baselibrary.util.MyToastUtil;
 public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseModel> extends IBaseActivity<T, E>
         implements PresentationLayerFunc, View.OnClickListener {
 
+    //##########################  custom variables start ##########################################
+
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
+
+    //##########################   custom variables end  ##########################################
+
+    //######################  override methods start ##############################################
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,10 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
         // 设置状态栏颜色
         initWindows(getResources().getColor(android.R.color.holo_green_dark));
     }
+
+    //######################   override methods end  ##############################################
+
+    //###################### override custom metohds start ########################################
 
     @Override
     public void showProgressDialog() {
@@ -76,4 +86,11 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     @Override
     public void onClick(View v) {
     }
+
+    //######################  override custom metohds end  ########################################
+
+    //######################      custom metohds start     ########################################
+
+    //######################    custom metohds end   ##############################################
+
 }

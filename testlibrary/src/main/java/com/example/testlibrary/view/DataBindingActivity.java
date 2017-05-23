@@ -31,10 +31,10 @@ public class DataBindingActivity extends Activity {
         DataBindingTest binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
 
         Student student = new Student();
-        student.name.set("lee");
-        student.addr.set("shenzhen");
-        student.age.set(100);
-        student.isMan.set(true);
+        student.setName("lee");
+        student.setAge(100);
+        student.setMan(true);
+        binding.setStu(student);
 
         binding.setStr("just do it");
         binding.setError(true);
