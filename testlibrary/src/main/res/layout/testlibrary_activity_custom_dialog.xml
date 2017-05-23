@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-
     <Button
         android:id="@+id/dialogType1"
         android:layout_width="match_parent"

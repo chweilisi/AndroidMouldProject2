@@ -9,10 +9,13 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
-        resourcePrefix "testlibrary_"
+        versionCode java.lang.Integer.parseInt(APP_VERCODE)
+        versionName APP_VERSION
+        // gradle.properties中配置项
+        resValue("string", 'app_version', APP_VERSION)
+        resValue("string", 'app_vercode', APP_VERCODE)
 
+        resourcePrefix "testlibrary_"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }

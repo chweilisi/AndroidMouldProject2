@@ -6,10 +6,10 @@ import android.view.animation.AnimationUtils;
 
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.RxCountDown;
-import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.util.MyLogUtil;
 import com.example.baselibrary.widget.SimpleButton;
 
 import butterknife.BindView;
@@ -81,14 +81,14 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onError(Throwable e) {
                         // 出错
-                        LogUtils.i(e.toString());
+                        MyLogUtil.i(e.toString());
                     }
 
                     @Override
                     public void onNext(Integer integer) {
                         // 当前计时
                         mSbSkip.setText("跳过 " + integer);
-                        LogUtils.i("跳过 " + integer);
+                        MyLogUtil.i("跳过 " + integer);
                     }
                 });
     }

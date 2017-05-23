@@ -14,7 +14,7 @@ android {
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     signingConfigs {
-        release {
+        signingConfig {
             keyAlias 'moduleproject'
             keyPassword 'moduleproject'
             storeFile file('../moduleproject.jks')
@@ -26,11 +26,15 @@ android {
         applicationId rootProject.ext.android["applicationId"]
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
+        versionCode java.lang.Integer.parseInt(APP_VERCODE)
         versionName APP_VERSION
+        // gradle.properties中配置项
         resValue("string", 'app_version', APP_VERSION)
+        resValue("string", 'app_vercode', APP_VERCODE)
+        //
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true // Enabling multidex support.
+        signingConfig signingConfigs.signingConfig
     }
 
     buildTypes {
@@ -39,7 +43,7 @@ android {
             minifyEnabled false // 是否混淆
             shrinkResources false // 是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.signingConfig
             // mainfest中参数配置
             manifestPlaceholders = [
                     // 基础配置
@@ -61,7 +65,7 @@ android {
             minifyEnabled false // 是否混淆
             shrinkResources false // 是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.signingConfig
             // mainfest中参数配置
             manifestPlaceholders = [
                     // 基础配置

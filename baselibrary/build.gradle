@@ -8,11 +8,15 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
+        versionCode java.lang.Integer.parseInt(APP_VERCODE)
+        versionName APP_VERSION
+        // gradle.properties中配置项
+        resValue("string", 'app_version', APP_VERSION)
+        resValue("string", 'app_vercode', APP_VERCODE)
+        resValue("string", 'APP_URL_ENVIRONMENT', APP_URL_ENVIRONMENT)
+        resValue("string", 'APP_IS_SHOW_LOG', APP_IS_SHOW_LOG)
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
