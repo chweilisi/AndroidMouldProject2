@@ -1,5 +1,9 @@
 package com.example.testlibrary.bean;
 
+import android.databinding.ObservableBoolean;
+import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
+
 /**
  * description:
  * Date: 2017/5/22 15:36
@@ -7,30 +11,12 @@ package com.example.testlibrary.bean;
  */
 public class Student {
 
-    private String name;
-    private String addr;
+    public ObservableField<String> name;
 
-    public Student() {
-    }
+    public ObservableField<String> addr;
 
-    public Student(String name, String addr) {
-        this.addr = addr;
-        this.name = name;
-    }
+    public ObservableInt age = new ObservableInt();
 
-    public String getName() {
-        return name;
-    }
+    public ObservableBoolean isMan = new ObservableBoolean();
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
 }

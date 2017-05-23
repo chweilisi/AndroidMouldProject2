@@ -8,6 +8,9 @@ import com.example.testlibrary.DataBindingTest;
 import com.example.testlibrary.R;
 import com.example.testlibrary.bean.Student;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * description:
  * Date: 2017/2/13 11:10
@@ -26,10 +29,34 @@ public class DataBindingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DataBindingTest binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
-        binding.setStu(new Student("lee", "Shenzhen"));
+
+        Student student = new Student();
+        student.name.set("lee");
+        student.addr.set("shenzhen");
+        student.age.set(100);
+        student.isMan.set(true);
+
         binding.setStr("just do it");
+        binding.setError(true);
         binding.setNum(10);
 
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("list1");
+        list.add("list2");
+        binding.setList(list);
+        binding.setListKey(0);
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("name", "liu");
+        map.put("sex", "male");
+        binding.setMap(map);
+        binding.setMapKey("sex");
+
+        String[] array = new String[2];
+        array[0] = "array0";
+        array[1] = "array1";
+        binding.setArray(array);
+        binding.setArrayKey(1);
     }
 
     //######################  override custom metohds end  ########################################

@@ -30,6 +30,29 @@
             name="num"
             type="int" />
 
+        <variable
+            name="list"
+            type="ArrayList&lt;String>" />
+
+        <variable
+            name="map"
+            type="HashMap&lt;String, String>" />
+
+        <variable
+            name="array"
+            type="String[]" />
+
+        <variable
+            name="listKey"
+            type="int" />
+
+        <variable
+            name="mapKey"
+            type="String" />
+
+        <variable
+            name="arrayKey"
+            type="int" />
     </data>
 
     <!-- 数据绑定展示 -->
@@ -43,7 +66,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@{stu.getName()}" />
+            android:text="@{stu.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(stu.age)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{stu.isMan ? "man" : "women"}' />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +86,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text='@{str ?? "not null"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{error ? "error" : "ok"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@{String.valueOf(num)}" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[listKey]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{map[mapKey]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{array[arrayKey]}" />
     </LinearLayout>
 </layout>
