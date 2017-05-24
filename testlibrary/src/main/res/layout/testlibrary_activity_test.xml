@@ -101,5 +101,12 @@
             android:layout_marginTop="10dp"
             android:text="自定义banner轮播图实现" />
 
+        <Button
+            android:id="@+id/loggerdisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="logger日志用法展示" />
+
     </LinearLayout>
 </ScrollView>

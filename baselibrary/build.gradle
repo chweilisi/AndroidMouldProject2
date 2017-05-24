@@ -97,5 +97,7 @@ dependencies {
 
     //=== banner
     compile rootProject.ext.dependencies["banner"]
+
+
     //################## 引用第三方工程
 }

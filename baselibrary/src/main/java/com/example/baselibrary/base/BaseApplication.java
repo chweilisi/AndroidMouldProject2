@@ -7,11 +7,11 @@ import com.alibaba.sdk.android.httpdns.DegradationFilter;
 import com.alibaba.sdk.android.httpdns.HttpDns;
 import com.alibaba.sdk.android.httpdns.HttpDnsService;
 import com.basemodule.base.IBaseApplication;
+import com.basemodule.utils.log.MyLogUtil;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.R;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.okgo.HttpDNSInterceptor;
-import com.example.baselibrary.util.MyLogUtil;
 import com.example.baselibrary.util.MyToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -74,7 +74,7 @@ public class BaseApplication extends IBaseApplication {
         // 自定义toast
         MyToastUtil.init(true, true);
         // 自定义log
-        MyLogUtil.init("TRUE".equals(getResources().getString(R.string.APP_IS_SHOW_LOG)) ? true : false);
+        MyLogUtil.init("TRUE".equals(getResources().getString(R.string.APP_IS_SHOW_LOG)) ? true : false, "MODULE_PROJECT", true);
         //=== init hotfix
         initHotFix();
         //=== okgo

@@ -9,7 +9,6 @@ import com.basemodule.utils.RxCountDown;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
-import com.example.baselibrary.util.MyLogUtil;
 import com.example.baselibrary.widget.SimpleButton;
 
 import butterknife.BindView;
