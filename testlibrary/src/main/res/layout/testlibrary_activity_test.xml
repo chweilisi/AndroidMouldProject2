@@ -94,5 +94,12 @@
             android:layout_marginTop="10dp"
             android:text="自定义dialog的两种实现方式" />
 
+        <Button
+            android:id="@+id/customBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="自定义banner轮播图实现" />
+
     </LinearLayout>
 </ScrollView>

@@ -76,24 +76,26 @@ dependencies {
     compile rootProject.ext.dependencies["rxlifecycle"]
     compile rootProject.ext.dependencies["rxlifecycle-components"]
 
-    //=== RxPermissions(https://github.com/tbruyelle/RxPermissions)
+    //=== RxPermissions
     compile rootProject.ext.dependencies["rxpermissions"]
 
-    //=== dagger(https://github.com/google/dagger)
+    //=== dagger
     compile rootProject.ext.dependencies["dagger"]
     apt rootProject.ext.dependencies["dagger-compiler"]
 
-    //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
+    //=== circleimageview
     compile rootProject.ext.dependencies["circleimageview"]
 
-    //=== slider(https://github.com/daimajia/AndroidImageSlider)
+    //=== slider
     compile rootProject.ext.dependencies["slider"]
 
-    //=== photoview(https://github.com/chrisbanes/PhotoView)
+    //=== photoview
     compile rootProject.ext.dependencies["photoview"]
 
-    //=== greendao  (https://github.com/greenrobot/greenDAO)
+    //=== greendao
     compile rootProject.ext.dependencies["greendao"]
 
+    //=== banner
+    compile rootProject.ext.dependencies["banner"]
     //################## 引用第三方工程
 }

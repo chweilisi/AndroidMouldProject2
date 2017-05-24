@@ -216,6 +216,19 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * 自定义轮播图banner
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCustomBannerActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CustomBannerActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
     //############################  测试页面 end #################################################
 
     /**

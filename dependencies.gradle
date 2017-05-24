@@ -21,6 +21,7 @@ def sliderVersion = "1.1.5"
 def photoviewVersion = "1.2.4"
 def greendaoVersion = "3.2.2"
 def practicalrecyclerviewVersion = "1.1.5"
+def bannerVersion = "1.4.9"
 
 project.ext {
     android = [
@@ -112,7 +113,10 @@ project.ext {
             "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}",
 
             //=== practicalrecyclerview  (https://github.com/ssseasonnn/PracticalRecyclerView)
-            "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}"
+            "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}",
+
+            //=== banner  (https://github.com/youth5201314/banner)
+            "banner"          : "com.youth.banner:banner:${bannerVersion}"
 
     ]
 }

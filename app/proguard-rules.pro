@@ -209,6 +209,7 @@
 -keep class com.taobao.hotfix.HotFixManager{
     public *;
 }
+
 #eventBus混淆
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
@@ -246,6 +247,11 @@
   **[] $VALUES;
   public *;
 }
+
+# banner 的混淆代码
+-keep class com.youth.banner.** {
+    *;
+ }
 
 ##---------------Begin: proguard configuration for Gson  ----------
 # Gson uses generic type information stored in a class file when working with fields. Proguard
