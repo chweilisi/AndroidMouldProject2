@@ -95,6 +95,13 @@
             android:text="自定义dialog的两种实现方式" />
 
         <Button
+            android:id="@+id/customPopupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="自定义扩展性强的popupWindow" />
+
+        <Button
             android:id="@+id/customBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

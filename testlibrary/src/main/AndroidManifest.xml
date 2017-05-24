@@ -262,5 +262,21 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".view.CustomPopupWindowActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.CustomPopupWindowActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

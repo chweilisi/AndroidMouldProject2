@@ -3,6 +3,7 @@ package com.example.testlibrary.view;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 /**
  * description:
  * Date: 2017/2/13 11:10
@@ -31,24 +32,6 @@ public class DataBindingActivity extends Activity {
 //        binding.setStr("just do it");
 //        binding.setError(true);
 //        binding.setNum(10);
-//
-//        ArrayList<String> list = new ArrayList<String>();
-//        list.add("list1");
-//        list.add("list2");
-//        binding.setList(list);
-//        binding.setListKey(0);
-//
-//        HashMap<String, String> map = new HashMap<String, String>();
-//        map.put("name", "liu");
-//        map.put("sex", "male");
-//        binding.setMap(map);
-//        binding.setMapKey("sex");
-//
-//        String[] array = new String[2];
-//        array[0] = "array0";
-//        array[1] = "array1";
-//        binding.setArray(array);
-//        binding.setArrayKey(1);
     }
 
     //######################  override custom metohds end  ########################################

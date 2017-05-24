@@ -85,4 +85,18 @@
         <item name="android:backgroundDimEnabled">true</item><!--模糊-->
     </style>
 
+    <!-- 自定义扩展性强的popupWindow -->
+    <style name="PopupAnimaFade" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/basepopup_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/basepopup_fade_out</item>
+    </style>
+
+    <!-- 自定义分割线 -->
+    <style name="divider_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/divider_line_bg</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
 </resources>

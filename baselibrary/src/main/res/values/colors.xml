@@ -6,7 +6,6 @@
 
     <!--配色-->
     <color name="toolbar_text">#ffffff</color>
-    <color name="divider_line">#dddddd</color>
     <color name="window_background">#303030</color>
     <color name="special_text">#e51c23</color>
 
@@ -55,4 +54,7 @@
     <color name="toast_white">#ffffff</color>
     <color name="toast_stroke_gray">#99d4d4d4</color>
 
+    <color name="divider_line_bg">#CDCDCD</color>
+    <color name="popup_bg">#8f000000</color>
+    <color name="click_bg">#c7c7c7</color>
 </resources>

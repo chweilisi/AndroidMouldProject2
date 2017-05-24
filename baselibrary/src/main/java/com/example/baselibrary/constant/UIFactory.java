@@ -217,6 +217,19 @@ public class UIFactory {
     }
 
     /**
+     * 自定义扩展性强的popupWindow
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCustomPopupWindowActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CustomPopupWindowActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
      * 自定义轮播图banner
      *
      * @param activity

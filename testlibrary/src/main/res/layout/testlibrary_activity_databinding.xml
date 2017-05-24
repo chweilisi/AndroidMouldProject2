@@ -33,29 +33,6 @@
             <!--name="num"-->
             <!--type="int" />-->
 
-        <!--<variable-->
-            <!--name="list"-->
-            <!--type="ArrayList&lt;String>" />-->
-
-        <!--<variable-->
-            <!--name="map"-->
-            <!--type="HashMap&lt;String, String>" />-->
-
-        <!--<variable-->
-            <!--name="array"-->
-            <!--type="String[]" />-->
-
-        <!--<variable-->
-            <!--name="listKey"-->
-            <!--type="int" />-->
-
-        <!--<variable-->
-            <!--name="mapKey"-->
-            <!--type="String" />-->
-
-        <!--<variable-->
-            <!--name="arrayKey"-->
-            <!--type="int" />-->
     <!--</data>-->
 
     <!--&lt;!&ndash; 数据绑定展示 &ndash;&gt;-->
@@ -101,19 +78,5 @@
             <!--android:layout_height="wrap_content"-->
             <!--android:text="@{String.valueOf(num)}" />-->
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@{list[listKey]}" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@{map[mapKey]}" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@{array[arrayKey]}" />-->
     <!--</LinearLayout>-->
 </LinearLayout>
