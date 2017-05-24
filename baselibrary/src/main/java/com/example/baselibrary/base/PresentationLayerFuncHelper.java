@@ -25,19 +25,35 @@ public class PresentationLayerFuncHelper implements PresentationLayerFunc {
 
     @Override
     public void showProgressDialog() {
-        if (progressDialog == null) {
-            progressDialog = new CustomProgressDialog(context, R.style.CustomProgressDialog);
-        }
-        progressDialog.show();
+        CustomProgressDialog.with(context, R.style.loading_dialog)
+                .setOrientation(CustomProgressDialog.VERTICAL)
+                .setMessage("")
+                .show();
+    }
+
+    /**
+     * 默认使用VERTICAL
+     *
+     * @param notice
+     */
+    @Override
+    public void showProgressDialog(String notice) {
+        CustomProgressDialog.with(context, R.style.loading_dialog)
+                .setOrientation(CustomProgressDialog.VERTICAL)
+                .setMessage(notice)
+                .show();
     }
 
     @Override
-    public void showProgressDialog(String notice) {
-        if (progressDialog == null) {
-            progressDialog = new CustomProgressDialog(context, R.style.CustomProgressDialog);
-        }
-        progressDialog.showNotice(notice);
-        progressDialog.show();
+    public void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor,
+                                         int messageColor) {
+        CustomProgressDialog.with(context, R.style.loading_dialog)
+                .setOrientation(orientation)
+                .setBackgroundColor(backgroundColor)
+                .setMessageColor(messageColor)
+                .setCanceled(cancelAble)
+                .setMessage(notice)
+                .show();
     }
 
     @Override

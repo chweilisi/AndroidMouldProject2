@@ -13,9 +13,12 @@ import android.widget.TextView;
 import com.example.baselibrary.R;
 
 /**
+ * 自定义空白展示页面
  * Created by Administrator on 2016/5/13 0013.
  */
 public class EmptyLayout extends FrameLayout {
+
+    //##########################  custom variables start ##########################################
 
     private Context mContext;
 
@@ -37,14 +40,33 @@ public class EmptyLayout extends FrameLayout {
 
     private TextView tvLoadingText;
 
+    //##########################   custom variables end  ##########################################
+
+    //######################      custom metohds start     ########################################
+
+    /**
+     *
+     * @param context
+     */
     public EmptyLayout(Context context) {
         this(context, null);
     }
 
+    /**
+     *
+     * @param context
+     * @param attrs
+     */
     public EmptyLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    /**
+     *
+     * @param context
+     * @param attrs
+     * @param defStyleAttr
+     */
     public EmptyLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
@@ -77,10 +99,18 @@ public class EmptyLayout extends FrameLayout {
         setGone();
     }
 
+    /**
+     *
+     * @param resId
+     */
     public void setEmptyView(int resId) {
         setEmptyView(View.inflate(mContext, resId, null));
     }
 
+    /**
+     *
+     * @param v
+     */
     public void setEmptyView(View v) {
         if (indexOfChild(mEmptyView) != -1) {
             removeView(mEmptyView);
@@ -90,10 +120,19 @@ public class EmptyLayout extends FrameLayout {
         setGone();
     }
 
+    /**
+     *
+     * @param view
+     */
     public void bindView(View view) {
         mBindView = view;
     }
 
+    /**
+     * 展示空白页面，带有文字
+     *
+     * @param emptyText
+     */
     public void showEmpty(String emptyText) {
         if (mBindView != null) mBindView.setVisibility(View.GONE);
         setGone();
@@ -101,11 +140,16 @@ public class EmptyLayout extends FrameLayout {
         mEmptyText.setText(emptyText);
     }
 
+    /**
+     * 展示错误页面
+     */
     public void showError() {
         showError(null);
     }
 
     /**
+     * 展示错误页面
+     *
      * @param text
      */
     public void showError(String text) {
@@ -115,6 +159,11 @@ public class EmptyLayout extends FrameLayout {
         mErrorView.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * 展示正在加载页面
+     *
+     * @param text
+     */
     public void showLoading(String text) {
         if (mBindView != null) mBindView.setVisibility(View.GONE);
         if (!TextUtils.isEmpty(text)) tvLoadingText.setText(text);
@@ -122,6 +171,9 @@ public class EmptyLayout extends FrameLayout {
         mLoadingView.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * 展示正在加载页面
+     */
     public void showLoading() {
         showLoading(null);
     }
@@ -140,10 +192,12 @@ public class EmptyLayout extends FrameLayout {
     }
 
     /**
-     *
+     * 加载成功
      */
     public void showSuccess() {
         if (mBindView != null) mBindView.setVisibility(View.VISIBLE);
         setGone();
     }
+
+    //######################    custom metohds end   ##############################################
 }

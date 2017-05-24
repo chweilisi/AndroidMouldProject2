@@ -18,7 +18,13 @@ public interface PresentationLayerFunc {
     /**
      * 网络请求加载框
      */
-    void showProgressDialog(String notice);
+    void showProgressDialog( String notice);
+
+    /**
+     * 自定义网络请求加载框
+     */
+    void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor,
+                                  int messageColor);
 
     /**
      * 隐藏网络请求加载框

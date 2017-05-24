@@ -242,6 +242,19 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * 缓存处理
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startCacheActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
+                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+                "/.view.CacheActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
     //############################  测试页面 end #################################################
 
     /**

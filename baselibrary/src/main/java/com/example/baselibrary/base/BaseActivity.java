@@ -46,6 +46,26 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
         presentationLayerFuncHelper.showProgressDialog(notice);
     }
 
+    /**
+     * 展示个性化的加载框
+     *
+     * @param cancelAble
+     * @param notice
+     * @param orientation
+     * @param backgroundColor
+     * @param messageColor
+     */
+    @Override
+    public void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor, int messageColor) {
+        if (!isFinishing()) {
+            try {
+                presentationLayerFuncHelper.showCustomProgressDialog(cancelAble, notice, orientation, backgroundColor, messageColor);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public void hideProgressDialog() {
         presentationLayerFuncHelper.hideProgressDialog();
@@ -72,6 +92,8 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
             }
         }
     }
+
+
 
     @Override
     public void hideLoading() {

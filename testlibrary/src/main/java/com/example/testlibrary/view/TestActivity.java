@@ -1,9 +1,11 @@
 package com.example.testlibrary.view;
 
+import android.graphics.Color;
 import android.view.View;
 
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.widget.dialog.CustomProgressDialog;
 import com.example.testlibrary.R;
 import com.example.testlibrary.R2;
 
@@ -38,6 +40,8 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        // 展示高度个性化的加载框
+        showCustomProgressDialog(true, "hello notice", CustomProgressDialog.VERTICAL, Color.parseColor("#aa000000"), Color.WHITE);
     }
 
     //######################  Override custom metohds end  ########################################
@@ -51,7 +55,7 @@ public class TestActivity extends BaseActivity {
     @OnClick({R2.id.okgo_request, R2.id.sync, R2.id.upload, R2.id.download, R2.id.requestPermissionSingle,
             R2.id.requestPermissionMultiple, R2.id.custtomTitleBar, R2.id.custtomTagsLayout,
             R2.id.custtomRatingStar, R2.id.custtomEmpty, R2.id.dataBinding, R2.id.customDialog,
-            R2.id.customBanner,R2.id.loggerdisplay})
+            R2.id.customBanner, R2.id.loggerdisplay, R2.id.cache})
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -97,6 +101,9 @@ public class TestActivity extends BaseActivity {
         } else if (i == R.id.loggerdisplay) {
             // logger日志使用展示
             UIFactory.startLogDisplayActivity(this, RESULT_OK);
+        } else if (i == R.id.cache) {
+            // 缓存处理
+            UIFactory.startCacheActivity(this, RESULT_OK);
         }
     }
 
