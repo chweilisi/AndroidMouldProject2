@@ -2,6 +2,7 @@ package com.example.testlibrary.view;
 
 import android.annotation.TargetApi;
 import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 
 import com.example.baselibrary.base.BaseActivity;
@@ -45,7 +46,7 @@ public class CustomDialogActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
     }
 
     //######################  override custom metohds end  ########################################

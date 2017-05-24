@@ -2,6 +2,7 @@ package com.example.testlibrary.view;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -104,7 +105,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
     }
 
     //获取到广告信息

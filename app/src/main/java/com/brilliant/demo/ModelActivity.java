@@ -1,5 +1,7 @@
 package com.brilliant.demo;
 
+import android.os.Bundle;
+
 import com.brilliant.R;
 import com.example.baselibrary.base.BaseActivity;
 
@@ -31,7 +33,7 @@ public class ModelActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
     }
 
     //######################  override custom metohds end  ########################################

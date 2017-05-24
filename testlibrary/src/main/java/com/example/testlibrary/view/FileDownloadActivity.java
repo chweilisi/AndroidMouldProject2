@@ -1,5 +1,6 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.format.Formatter;
 import android.widget.Button;
@@ -59,7 +60,7 @@ public class FileDownloadActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         description.setText("1.支持大文件或小文件下载，无论多大文件都不会发生OOM\n" +
                 "2.支持监听下载进度和下载网速\n" +
                 "3.支持自定义下载目录和下载文件名");

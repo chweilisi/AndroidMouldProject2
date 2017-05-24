@@ -192,6 +192,7 @@ android {
             output.outputFile = new File(outDirectory, newName)
         }
     }
+
 }
 
 dependencies {

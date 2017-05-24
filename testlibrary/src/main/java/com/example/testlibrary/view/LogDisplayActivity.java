@@ -1,5 +1,6 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -62,7 +63,7 @@ public class LogDisplayActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         list.add("list数据 测试一");
         list.add("list数据 测试二");
 

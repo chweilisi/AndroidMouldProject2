@@ -1,6 +1,7 @@
 package com.example.testlibrary.view;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
@@ -72,7 +73,7 @@ public class FormUploadActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         description.setText("1.支持上传单个文件\n" +
                 "2.支持同时上传多个文件\n" +
                 "3.支持多个文件多个参数同时上传\n" +

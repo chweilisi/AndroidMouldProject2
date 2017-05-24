@@ -125,7 +125,7 @@ public class SlideFromTopPopup extends BasePopupWindow {
             return convertView;
         }
 
-        class ViewHolder {
+        static class ViewHolder {
             public TextView mTextView;
         }
     }

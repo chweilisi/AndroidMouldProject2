@@ -39,12 +39,6 @@ public class HomeActivity extends BaseActivity {
     //###################### Override custom metohds start ########################################
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        initData(savedInstanceState);
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public int getLayoutId() {
         return R.layout.activity_home;
     }
@@ -61,7 +55,14 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
+        fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "ImFragment", "InterestFragment", "MemberFragment"));
+        currIndex = 0;
+        if(savedInstanceState != null) {
+            currIndex = savedInstanceState.getInt(CURR_INDEX);
+            hideSavedFragment();
+        }
+
         group = (RadioGroup) findViewById(R.id.group);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -144,19 +145,6 @@ public class HomeActivity extends BaseActivity {
 //            case 2: return new BufferKnifeFragment();
 //            case 3: return new MemberFragment();
             default: return null;
-        }
-    }
-
-    /**
-     *
-     * @param savedInstanceState
-     */
-    private void initData(Bundle savedInstanceState) {
-        fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "ImFragment", "InterestFragment", "MemberFragment"));
-        currIndex = 0;
-        if(savedInstanceState != null) {
-            currIndex = savedInstanceState.getInt(CURR_INDEX);
-            hideSavedFragment();
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.testlibrary.view;
 
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,7 +47,7 @@ public class CacheActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         xCache = XCache.get(this);
         xCache.put("string", "缓存普通字符串");
         News news = new News(News.TYPE_SINGLE_PICTURE, "智能手机行业正处于关键转折点，下一战场会在哪里？", "https://pic.36krcnd.com/avatar/201701/17062818/1ucsedy4pdb4aqyu.jpg!heading", "缪定纯•明星公司", "58分钟前");

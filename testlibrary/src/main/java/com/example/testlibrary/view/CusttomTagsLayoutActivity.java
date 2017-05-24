@@ -1,6 +1,7 @@
 package com.example.testlibrary.view;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -42,7 +43,7 @@ public class CusttomTagsLayoutActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         String[] string = {"从我写代码那天起，我就没有打算写代码", "从我写代码那天起", "我就没有打算写代码", "没打算", "写代码"};
         initTagsLayoutView(string, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }

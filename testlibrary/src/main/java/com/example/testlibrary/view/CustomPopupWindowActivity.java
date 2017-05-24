@@ -1,5 +1,6 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -72,7 +73,7 @@ public class CustomPopupWindowActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
     }
 
     //######################  override custom metohds end  ########################################

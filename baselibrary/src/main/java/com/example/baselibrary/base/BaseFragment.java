@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.basemodule.base.IBaseFragment;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
+import com.example.baselibrary.util.MyToastUtil;
 
 /**
  * add your personal code here
@@ -47,9 +48,55 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
         presentationLayerFuncHelper.showProgressDialog(notice);
     }
 
+    /**
+     * 展示个性化的加载框
+     *
+     * @param cancelAble
+     * @param notice
+     * @param orientation
+     * @param backgroundColor
+     * @param messageColor
+     */
+    @Override
+    public void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor, int messageColor) {
+            try {
+                presentationLayerFuncHelper.showCustomProgressDialog(cancelAble, notice, orientation, backgroundColor, messageColor);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
     @Override
     public void hideProgressDialog() {
         presentationLayerFuncHelper.hideProgressDialog();
+    }
+
+    @Override
+    public void showLoading() {
+            try {
+                showProgressDialog("");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
+    @Override
+    public void showLoading(String notice) {
+            try {
+                showProgressDialog(notice);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
+    @Override
+    public void hideLoading() {
+        hideProgressDialog();
+    }
+
+    @Override
+    public void showErrorTip(String s) {
+        MyToastUtil.showShortToast(s);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
+
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.util.GlideImageLoader;
 import com.example.baselibrary.util.MyToastUtil;
@@ -45,7 +47,7 @@ public class CustomBannerActivity extends BaseActivity implements OnBannerListen
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         String[] urls = getResources().getStringArray(R.array.testlibrary_url);
         List list = Arrays.asList(urls);
         images = new ArrayList(list);

@@ -1,5 +1,6 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
@@ -44,16 +45,14 @@ public class SyncActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
     public void initView() {
-
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         // 同步请求
         //  sync();
 

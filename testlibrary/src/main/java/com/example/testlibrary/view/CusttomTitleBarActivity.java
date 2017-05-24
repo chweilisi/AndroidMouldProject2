@@ -1,5 +1,7 @@
 package com.example.testlibrary.view;
 
+import android.os.Bundle;
+
 import com.example.baselibrary.base.BaseActivity;
 import com.example.testlibrary.R;
 
@@ -32,7 +34,7 @@ public class CusttomTitleBarActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
     }
 
     //######################  override custom metohds end  ########################################

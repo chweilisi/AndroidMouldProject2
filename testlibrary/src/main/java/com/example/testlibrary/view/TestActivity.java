@@ -1,6 +1,7 @@
 package com.example.testlibrary.view;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.View;
 
 import com.example.baselibrary.base.BaseActivity;
@@ -39,7 +40,7 @@ public class TestActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         // 展示高度个性化的加载框
         showCustomProgressDialog(true, "hello notice", CustomProgressDialog.VERTICAL, Color.parseColor("#aa000000"), Color.WHITE);
     }

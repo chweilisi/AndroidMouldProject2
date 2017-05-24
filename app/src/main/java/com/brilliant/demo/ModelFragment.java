@@ -1,5 +1,7 @@
 package com.brilliant.demo;
 
+import android.os.Bundle;
+
 import com.brilliant.R;
 import com.example.baselibrary.base.BaseFragment;
 
@@ -24,17 +26,14 @@ public class ModelFragment extends BaseFragment {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
     protected void initView() {
-
     }
 
     @Override
-    public void initData() {
-
+    public void initData(Bundle savedInstanceState) {
     }
 
     //######################  Override custom metohds end  ########################################

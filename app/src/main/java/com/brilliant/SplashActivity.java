@@ -1,11 +1,13 @@
 package com.brilliant;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.RxCountDown;
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
@@ -49,7 +51,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         countDown(COUNT_TIME);
     }
 
