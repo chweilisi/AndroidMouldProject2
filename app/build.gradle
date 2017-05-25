@@ -22,7 +22,9 @@ android {
         }
     }
 
+    //默认配置,所有 productFlavors 都会继承 defaultConfig 中配置的属性
     defaultConfig {
+        //默认的 applicationId,一般与 AndroidManifest.xml 文件 package属性相同
         applicationId rootProject.ext.android["applicationId"]
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
@@ -46,7 +48,7 @@ android {
             signingConfig signingConfigs.signingConfig
             // mainfest中参数配置
             manifestPlaceholders = [
-                    // 基础配置
+                    // 基础配置 (APP_HOST和APP_SCHEME放在baselibrary中统一管理)
                     APP_HOST    : "@string/module_project_host",
                     APP_SCHEME  : "@string/module_project_scheme",
                     APP_NAME    : "@string/app_name",
@@ -68,7 +70,7 @@ android {
             signingConfig signingConfigs.signingConfig
             // mainfest中参数配置
             manifestPlaceholders = [
-                    // 基础配置
+                    // 基础配置 (APP_HOST和APP_SCHEME放在baselibrary中统一管理)
                     APP_HOST    : "@string/module_project_host",
                     APP_SCHEME  : "@string/module_project_scheme",
                     APP_NAME    : "@string/app_name_debug",
@@ -91,6 +93,7 @@ android {
         //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
         targetGenDir 'src/main/java'
     }
+
     sourceSets {
         main {
             manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -121,6 +124,7 @@ android {
         javaMaxHeapSize "2g"
     }
 
+
     // productFlavors 定义了一个应用的自定义构建版本
     //一个单一的项目可以同时定义多个不同的 flavor 来改变应用的输出。
     // productFlavors 这个概念是为了解决不同的版本之间的差异非常小的情况，通常用于区分同一个应用的不同渠道/客户等，可包含少量业务功能差别。
@@ -134,14 +138,30 @@ android {
         appchina {}
         "360" {}
 
+        //默认版本,不设置 applicationId ,继承 defaultConfig 中的配置
+        flavors_release {}
+
+        //SIT版本, applicationId 替换,APP_NAME和APP_ICON在flavors_sit/res/下配置,直接在这里配置不生效
+        flavors_sit {
+            applicationId rootProject.ext.android["applicationIdSIT"]
+        }
+
+        //UAT版本, applicationId 替换,APP_NAME和APP_ICON在flavors_uat/res/下配置,直接在这里配置不生效
+        flavors_uat {
+            applicationId rootProject.ext.android["applicationIdUAT"]
+        }
+
+        // 设置渠道包名称
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
         }
     }
+
     //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
     lintOptions {
         abortOnError false
     }
+
     useLibrary 'org.apache.http.legacy'
 
     // butterKnife和dagger2 注释冲突
@@ -186,7 +206,7 @@ android {
                     newName = "moduleproduct-v${APP_VERSION}-debug.apk"
                 } else {
                     newName = 'moduleproduct-v' +
-                            APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
+                            APP_VERSION + '-' + variant.productFlavors[0].name + '-' + timeNow + '-' + variant.buildType.name + '.apk'
                 }
             }
             output.outputFile = new File(outDirectory, newName)

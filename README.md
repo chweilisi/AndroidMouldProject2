@@ -74,12 +74,6 @@
             //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
             "circleimageview"                : "de.hdodenhof:circleimageview:${circleimageviewVersion}",
 
-            //=== slider(https://github.com/daimajia/AndroidImageSlider)
-            "slider"                         : "com.daimajia.slider:library:${sliderVersion}",
-
-            //=== photoview(https://github.com/chrisbanes/PhotoView)
-            "photoview"                      : "com.github.chrisbanes.photoview:library:${photoviewVersion}",
-
             //=== greendao  (https://github.com/greenrobot/greenDAO)
             "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}",
 
@@ -87,7 +81,7 @@
             "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}",
 
             //=== banner  (https://github.com/youth5201314/banner)
-            "banner"          : "com.youth.banner:banner:${bannerVersion}"
+            "banner"                         : "com.youth.banner:banner:${bannerVersion}"
 	
 ```
 

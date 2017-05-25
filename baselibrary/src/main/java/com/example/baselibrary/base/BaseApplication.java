@@ -91,6 +91,10 @@ public class BaseApplication extends IBaseApplication {
             return;
         }
         refWatcher = LeakCanary.install(this);
+
+        MyLogUtil.i("packageName = " + getPackageInfo().packageName);
+        // 展示配置的一些参数
+        getMainFestMetaProperty();
     }
 
     @Override
@@ -375,6 +379,22 @@ public class BaseApplication extends IBaseApplication {
 
     public static void setHttpdns(HttpDnsService httpdns) {
         BaseApplication.httpdns = httpdns;
+    }
+
+    /**
+     * 获取manifest中的参数配置
+     */
+    private void getMainFestMetaProperty() {
+//        try {
+//            ApplicationInfo appInfo = getPackageManager().getApplicationInfo(getPackageName(),
+//                    PackageManager.GET_META_DATA);
+//            MyLogUtil.i("UMENG_APPKEY = " + appInfo.metaData.getString("UMENG_APPKEY"));
+//            String UMENG_CHANNEL_VALUE = AnalyticsConfig.getChannel(getApplicationContext());
+//            MyLogUtil.i("UMENG_CHANNEL_VALUE = " + UMENG_CHANNEL_VALUE);
+//            MyLogUtil.i("package name = " + this.getPackageName());
+//        } catch (PackageManager.NameNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
 
     //######################    custom metohds end   ##############################################

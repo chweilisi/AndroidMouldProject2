@@ -17,8 +17,6 @@ def rxlifecycleComponentsVersion = "1.0"
 def rxpermissionsVersion = "0.9.1@aar"
 def daggerVersion = "2.6"
 def circleimageviewVersion = "2.1.0"
-def sliderVersion = "1.1.5"
-def photoviewVersion = "1.2.4"
 def greendaoVersion = "3.2.2"
 def practicalrecyclerviewVersion = "1.1.5"
 def bannerVersion = "1.4.9"
@@ -28,6 +26,8 @@ project.ext {
             compileSdkVersion: 25,
             buildToolsVersion: "25.0.2",
             applicationId    : "com.brilliant",
+            applicationIdSIT : "com.brilliant.sit",
+            applicationIdUAT : "com.brilliant.uat",
             minSdkVersion    : 19,
             targetSdkVersion : 25,
     ]
@@ -103,12 +103,6 @@ project.ext {
             //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
             "circleimageview"                : "de.hdodenhof:circleimageview:${circleimageviewVersion}",
 
-            //=== slider(https://github.com/daimajia/AndroidImageSlider)
-            "slider"                         : "com.daimajia.slider:library:${sliderVersion}",
-
-            //=== photoview(https://github.com/chrisbanes/PhotoView)
-            "photoview"                      : "com.github.chrisbanes.photoview:library:${photoviewVersion}",
-
             //=== greendao  (https://github.com/greenrobot/greenDAO)
             "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}",
 
@@ -116,7 +110,7 @@ project.ext {
             "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}",
 
             //=== banner  (https://github.com/youth5201314/banner)
-            "banner"          : "com.youth.banner:banner:${bannerVersion}"
+            "banner"                         : "com.youth.banner:banner:${bannerVersion}"
 
     ]
 }

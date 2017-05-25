@@ -86,18 +86,11 @@ dependencies {
     //=== circleimageview
     compile rootProject.ext.dependencies["circleimageview"]
 
-    //=== slider
-    compile rootProject.ext.dependencies["slider"]
-
-    //=== photoview
-    compile rootProject.ext.dependencies["photoview"]
-
     //=== greendao
     compile rootProject.ext.dependencies["greendao"]
 
     //=== banner
     compile rootProject.ext.dependencies["banner"]
-
 
     //################## 引用第三方工程
 }
