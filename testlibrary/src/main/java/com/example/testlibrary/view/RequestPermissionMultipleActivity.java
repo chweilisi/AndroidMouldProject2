@@ -14,10 +14,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.util.MyToastUtil;
 import com.example.testlibrary.R;
-import com.orhanobut.logger.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -192,7 +192,7 @@ public class RequestPermissionMultipleActivity extends BaseActivity {
             }
             smsBuilder.append("getSmsInPhone has executed!");
         } catch (SQLiteException ex) {
-            Logger.d(ex.getMessage());
+            MyLogUtil.d(ex.getMessage());
         }
         return smsBuilder.toString();
     }

@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.RxCountDown;
 import com.basemodule.utils.log.MyLogUtil;
-import com.example.baselibrary.base.BaseActivity;
+import com.example.baselibrary.base.BaseFullScreenActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
 import com.example.baselibrary.widget.SimpleButton;
@@ -22,9 +23,12 @@ import rx.functions.Action0;
 /**
  * 启动页面
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseFullScreenActivity  {
 
     //##########################  custom variables start ##########################################
+
+    @BindView(R.id.splash_layout)
+    FrameLayout splash_layout;
 
     @BindView(R.id.sb_skip)
     SimpleButton mSbSkip;
@@ -82,6 +86,7 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onError(Throwable e) {
                         // 出错
+                        doSkip();
                         MyLogUtil.i(e.toString());
                     }
 

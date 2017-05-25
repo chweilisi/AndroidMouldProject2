@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.orhanobut.logger.Logger;
+import com.basemodule.utils.log.MyLogUtil;
 
 public class NetStateReceiver extends BroadcastReceiver {
 
@@ -16,18 +16,16 @@ public class NetStateReceiver extends BroadcastReceiver {
         NetworkInfo activeNetInfo = connectManager.getActiveNetworkInfo();
         if (activeNetInfo != null) {
             if (activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI) {
-                Logger.i("wifi网络！");
+                MyLogUtil.i("wifi网络！");
                 ActivityObserveManager.getInstance().notifyRefresh();
             } else if (activeNetInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
-                Logger.i("手机网络！");
+                MyLogUtil.i("手机网络！");
                 ActivityObserveManager.getInstance().notifyRefresh();
             } else {
-                Logger.i("网络未连接！");
+                MyLogUtil.i("网络未连接！");
             }
         } else {
-            Logger.i("网络断开！");
+            MyLogUtil.i("网络断开！");
         }
     }
-
-
 }

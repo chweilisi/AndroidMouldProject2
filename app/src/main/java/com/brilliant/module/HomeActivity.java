@@ -8,14 +8,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioGroup;
 
 import com.brilliant.R;
-import com.example.baselibrary.base.BaseActivity;
+import com.brilliant.mainlibrary.view.MainPageFragment;
+import com.example.baselibrary.base.BaseFullScreenNormalActivity;
 import com.example.baselibrary.constant.UIFactory;
 import com.example.baselibrary.util.MyToastUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseFullScreenNormalActivity {
 
     //##########################  custom variables start ##########################################
 
@@ -140,10 +141,10 @@ public class HomeActivity extends BaseActivity {
      */
     private Fragment instantFragment(int currIndex) {
         switch (currIndex) {
-//            case 0: return new MainPagerFragment();
-//            case 1: return new BufferKnifeFragment();
-//            case 2: return new BufferKnifeFragment();
-//            case 3: return new MemberFragment();
+            case 0: return new MainPageFragment();
+            case 1: return new MainPageFragment();
+            case 2: return new MainPageFragment();
+            case 3: return new MainPageFragment();
             default: return null;
         }
     }

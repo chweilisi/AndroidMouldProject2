@@ -28,8 +28,6 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(this);
         setContentView(getLayoutId());
         super.onCreate(savedInstanceState);
-        // 设置状态栏颜色
-        initWindows(getResources().getColor(android.R.color.holo_green_dark));
     }
 
     //######################   override methods end  ##############################################
@@ -92,7 +90,6 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
             }
         }
     }
-
 
 
     @Override

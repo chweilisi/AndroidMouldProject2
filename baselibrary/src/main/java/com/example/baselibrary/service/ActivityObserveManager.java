@@ -1,8 +1,8 @@
 package com.example.baselibrary.service;
 
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.ObserveInerface;
-import com.orhanobut.logger.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,9 +30,9 @@ public class ActivityObserveManager {
     }
 
     public void addObserve(ObserveInerface activity) {
-        Logger.e("============addObserve==============" + activity.getClass().getName());
+        MyLogUtil.e("============addObserve==============" + activity.getClass().getName());
         observeMap.put(activity.getClass().getName(), activity);
-        Logger.e("============addObserve==============" + observeMap.size());
+        MyLogUtil.e("============addObserve==============" + observeMap.size());
     }
 
     public void clearObserve() {
@@ -40,7 +40,7 @@ public class ActivityObserveManager {
     }
 
     public void removeObserve(ObserveInerface activity) {
-        Logger.e("============removeObserve==============" + activity.getClass().getName());
+        MyLogUtil.e("============removeObserve==============" + activity.getClass().getName());
         observeMap.remove(activity.getClass().getName());
     }
 
@@ -54,7 +54,7 @@ public class ActivityObserveManager {
     }
 
     public void notifyRefreshSpecialPage(String key) {
-        Logger.e("============" + key + "==============");
+        MyLogUtil.e("============" + key + "==============");
         ObserveInerface listener = observeMap.get(key);
         if (listener != null) {
             listener.refreshData();
@@ -62,7 +62,7 @@ public class ActivityObserveManager {
     }
 
     public void notifyRefresh() {
-        Logger.e("============notifyRefresh==============");
+        MyLogUtil.e("============notifyRefresh==============");
         for (Map.Entry<String, ObserveInerface> entry : observeMap.entrySet()) {
             entry.getValue().refreshData();
         }

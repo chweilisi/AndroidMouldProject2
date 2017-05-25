@@ -6,6 +6,7 @@ import android.text.format.Formatter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.widget.NumberProgressBar;
@@ -15,7 +16,6 @@ import com.example.testlibrary.api.APIMethod;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.request.BaseRequest;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.util.HashMap;
@@ -94,7 +94,7 @@ public class FileDownloadActivity extends BaseActivity {
 
                     @Override
                     public void downloadProgress(long currentSize, long totalSize, float progress, long networkSpeed) {
-                        Logger.i("downloadProgress -- " + totalSize + "  " + currentSize + "  " + progress + "  " + networkSpeed);
+                        MyLogUtil.i("downloadProgress -- " + totalSize + "  " + currentSize + "  " + progress + "  " + networkSpeed);
 
                         String downloadLength = Formatter.formatFileSize(getApplicationContext(), currentSize);
                         String totalLength = Formatter.formatFileSize(getApplicationContext(), totalSize);

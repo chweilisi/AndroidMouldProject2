@@ -1,8 +1,6 @@
 package com.brilliant.module;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -10,8 +8,6 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,7 +15,7 @@ import android.widget.TextView;
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.brilliant.AndroidAPP;
 import com.brilliant.R;
-import com.example.baselibrary.base.BaseActivity;
+import com.example.baselibrary.base.BaseFullScreenActivity;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.constant.UIFactory;
 
@@ -28,7 +24,7 @@ import com.example.baselibrary.constant.UIFactory;
  * Date: 2017/2/13 11:10
  * User: Administrator
  */
-public class GuideActivity extends BaseActivity {
+public class GuideActivity extends BaseFullScreenActivity {
 
     //##########################  custom variables start ##########################################
 
@@ -61,10 +57,6 @@ public class GuideActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        //让状态栏透明
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
     }
 
     @Override
@@ -82,9 +74,6 @@ public class GuideActivity extends BaseActivity {
         };
         //添加点
         addBottomDots(0);
-
-        //让状态栏透明
-        changeStatusBarColor();
 
         myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
@@ -116,6 +105,7 @@ public class GuideActivity extends BaseActivity {
 
     /**
      * 设置底部的小圆点
+     *
      * @param currentPage
      */
     private void addBottomDots(int currentPage) {
@@ -139,23 +129,11 @@ public class GuideActivity extends BaseActivity {
     }
 
     /**
-     *
      * @param i
      * @return
      */
     private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
-    }
-
-    /**
-     * 让状态栏变透明
-     */
-    private void changeStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }
     }
 
     /**

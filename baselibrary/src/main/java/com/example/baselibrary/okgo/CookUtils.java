@@ -1,8 +1,8 @@
 package com.example.baselibrary.okgo;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cookie.store.CookieStore;
-import com.orhanobut.logger.Logger;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class CookUtils {
         CookieStore cookieStore = OkGo.getInstance().getCookieJar().getCookieStore();
         HttpUrl httpUrl = HttpUrl.parse(url);
         List<Cookie> cookies = cookieStore.getCookie(httpUrl);
-        Logger.i(httpUrl.host() + "对应的cookie如下：" + cookies.toString());
+        MyLogUtil.i(httpUrl.host() + "对应的cookie如下：" + cookies.toString());
     }
 
     /**
@@ -36,7 +36,7 @@ public class CookUtils {
         //一般手动取出cookie的目的只是交给 webview 等等，非必要情况不要自己操作
         CookieStore cookieStore = OkGo.getInstance().getCookieJar().getCookieStore();
         List<Cookie> allCookie = cookieStore.getAllCookie();
-        Logger.i("所有cookie如下：" + allCookie.toString());
+        MyLogUtil.i("所有cookie如下：" + allCookie.toString());
     }
 
     /**
@@ -52,7 +52,7 @@ public class CookUtils {
         HttpUrl httpUrl = HttpUrl.parse(url);
         CookieStore cookieStore = OkGo.getInstance().getCookieJar().getCookieStore();
         cookieStore.saveCookie(httpUrl, cookie);
-        Logger.i("详细添加cookie的代码，请看demo的代码");
+        MyLogUtil.i("详细添加cookie的代码，请看demo的代码");
     }
 
     /**
@@ -66,6 +66,6 @@ public class CookUtils {
     public void removeCookie(String url, CookieStore cookieStore) {
         HttpUrl httpUrl = HttpUrl.parse(url);
         cookieStore.removeCookie(httpUrl);
-        Logger.i("详细移除cookie的代码，请看demo的代码");
+        MyLogUtil.i("详细移除cookie的代码，请看demo的代码");
     }
 }

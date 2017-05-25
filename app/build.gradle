@@ -216,7 +216,6 @@ android {
 }
 
 dependencies {
-
     //################## 系统级
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -229,6 +228,7 @@ dependencies {
     compile rootProject.ext.dependencies["cardview-v7"]
     compile rootProject.ext.dependencies["support-v4"]
     compile rootProject.ext.dependencies["design"]
+
     //################## 引入第三方jar包
 
     //################## git上第三方库
@@ -237,5 +237,5 @@ dependencies {
     apt rootProject.ext.dependencies["butterknife-compiler"]
 
     //################## 引用第三方工程
-    compile project(':testlibrary')
+    compile project(':mainlibrary')
 }

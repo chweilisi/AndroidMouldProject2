@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.basemodule.utils.JsonConvertHelper;
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.widget.NumberProgressBar;
 import com.example.testlibrary.R;
@@ -17,7 +18,6 @@ import com.example.testlibrary.bean.QueryAdvertBean;
 import com.example.testlibrary.contact.SplashAContract;
 import com.example.testlibrary.model.SplashAModel;
 import com.example.testlibrary.presenter.SplashAPresenter;
-import com.orhanobut.logger.Logger;
 import com.vincent.filepicker.Constant;
 import com.vincent.filepicker.activity.ImagePickActivity;
 import com.vincent.filepicker.filter.entity.ImageFile;
@@ -122,13 +122,13 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     @Override
     public void returnUploadFile(String string) {
         btnFormUpload.setText("上传完成");
-        Logger.i(string);
+        MyLogUtil.i(string);
     }
 
     @Override
     public void returnDownloadFile(File file) {
         btnFileDownload.setText("下载完成");
-        Logger.i(file.getAbsolutePath());
+        MyLogUtil.i(file.getAbsolutePath());
     }
 
     //######################  Override custom metohds end  ########################################

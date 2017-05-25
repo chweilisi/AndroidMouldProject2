@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.okgo.model.LzyResponse;
@@ -18,7 +19,6 @@ import com.example.testlibrary.api.APIMethod;
 import com.example.testlibrary.bean.ServerModel;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.BaseRequest;
-import com.orhanobut.logger.Logger;
 import com.vincent.filepicker.Constant;
 import com.vincent.filepicker.activity.ImagePickActivity;
 import com.vincent.filepicker.filter.entity.ImageFile;
@@ -153,7 +153,7 @@ public class FormUploadActivity extends BaseActivity {
 
                     @Override
                     public void upProgress(long currentSize, long totalSize, float progress, long networkSpeed) {
-                        Logger.i("upProgress -- " + totalSize + "  " + currentSize + "  " + progress + "  " + networkSpeed);
+                        MyLogUtil.i("upProgress -- " + totalSize + "  " + currentSize + "  " + progress + "  " + networkSpeed);
 
                         String downloadLength = Formatter.formatFileSize(getApplicationContext(), currentSize);
                         String totalLength = Formatter.formatFileSize(getApplicationContext(), totalSize);

@@ -1,6 +1,7 @@
 package com.example.baselibrary.okgo;
 
-import com.orhanobut.logger.Logger;
+
+import com.basemodule.utils.log.MyLogUtil;
 
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ public class HttpDNSInterceptor implements Interceptor {
 
         String url = httpUrl.toString();
         String host = httpUrl.host();
-        Logger.d("originalUrl:" + url);
+        MyLogUtil.d("originalUrl:" + url);
 
         // 通过HTTPDNS获取IP成功，进行URL替换和HOST头设置
         String newUrl = url;
@@ -27,7 +28,7 @@ public class HttpDNSInterceptor implements Interceptor {
             String ip = null;
             if (ip != null) {
                 newUrl = url.replaceFirst(host, ip);
-                Logger.d("Get IP: " + ip + " for host: " + host + " from HTTPDNS successfully!");
+                MyLogUtil.d("Get IP: " + ip + " for host: " + host + " from HTTPDNS successfully!");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,7 +40,7 @@ public class HttpDNSInterceptor implements Interceptor {
         builder.header("Host", host);
 
         Request newRequest = builder.build();
-        Logger.d("newUrl:" + newRequest.url());
+        MyLogUtil.d("newUrl:" + newRequest.url());
         Response newResponse = chain.proceed(newRequest);
         return newResponse;
     }

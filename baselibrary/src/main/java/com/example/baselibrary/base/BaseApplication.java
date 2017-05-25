@@ -115,7 +115,6 @@ public class BaseApplication extends IBaseApplication {
 
     //######################      custom metohds start     ########################################
 
-
     /**
      * okgo初始化
      */
