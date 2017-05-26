@@ -129,5 +129,12 @@
             android:layout_marginTop="5dp"
             android:text="SuperTextView，满足日常的大部分布局" />
 
+        <Button
+            android:id="@+id/LcLableView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="一个简单实用的标签控件,轻松添加最新最热等标签" />
+
     </LinearLayout>
 </ScrollView>

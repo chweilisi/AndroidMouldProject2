@@ -57,7 +57,7 @@ public class TestActivity extends BaseActivity {
             R2.id.requestPermissionMultiple, R2.id.custtomTitleBar, R2.id.custtomTagsLayout,
             R2.id.custtomRatingStar, R2.id.custtomEmpty, R2.id.dataBinding, R2.id.customDialog,
             R2.id.customBanner, R2.id.loggerdisplay, R2.id.cache, R2.id.customPopupWindow,
-            R2.id.SuperTextView})
+            R2.id.SuperTextView,R2.id.LcLableView})
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -112,6 +112,9 @@ public class TestActivity extends BaseActivity {
         } else if (i == R.id.SuperTextView) {
             // SuperTextView
             UIFactory.startSuperTextViewActivity(this, RESULT_OK);
+        } else if (i == R.id.LcLableView) {
+            // 一个简单实用的标签控件,轻松添加最新最热等标签
+            UIFactory.startLcLableViewActivity(this, RESULT_OK);
         }
     }
 
