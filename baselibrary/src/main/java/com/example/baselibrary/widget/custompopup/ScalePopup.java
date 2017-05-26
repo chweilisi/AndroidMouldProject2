@@ -36,7 +36,7 @@ public class ScalePopup extends BasePopupWindow implements View.OnClickListener 
 
     @Override
     public View onCreatePopupView() {
-        popupView = LayoutInflater.from(getContext()).inflate(R.layout.popup_normal, null);
+        popupView = LayoutInflater.from(getContext()).inflate(R.layout.baselib_popup_normal, null);
         return popupView;
     }
 

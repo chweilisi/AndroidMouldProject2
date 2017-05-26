@@ -60,8 +60,8 @@ public class MyDialogUtil {
      * @return
      */
     public static BaseCustomDialog showCustomDialog(Context context) {
-        View view = LayoutInflater.from(context).inflate(R.layout.dialog_custom, null);
-        final BaseCustomDialog baseCustomDialog = new BaseCustomDialog(context, R.style.Dialog, view, true);
+        View view = LayoutInflater.from(context).inflate(R.layout.baselib_dialog_custom, null);
+        final BaseCustomDialog baseCustomDialog = new BaseCustomDialog(context, R.style.baselib_Dialog, view, true);
         //===
         TextView dialog_title = (TextView) view.findViewById(R.id.dialog_title);
         dialog_title.setText("hello title");

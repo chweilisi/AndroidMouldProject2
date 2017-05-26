@@ -43,8 +43,8 @@ public class ImageLoaderUtils {
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .placeholder(R.mipmap.ic_image_loading)
-                .error(R.mipmap.ic_empty_picture)
+                .placeholder(R.mipmap.baselib_ic_image_loading)
+                .error(R.mipmap.baselib_ic_empty_picture)
                 .crossFade().into(imageView);
     }
 
@@ -61,8 +61,8 @@ public class ImageLoaderUtils {
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .placeholder(R.mipmap.ic_image_loading)
-                .error(R.mipmap.ic_empty_picture)
+                .placeholder(R.mipmap.baselib_ic_image_loading)
+                .error(R.mipmap.baselib_ic_empty_picture)
                 .crossFade().into(imageView);
     }
 
@@ -77,8 +77,8 @@ public class ImageLoaderUtils {
         }
         Glide.with(context).load(url).asBitmap()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.mipmap.ic_image_loading)
-                .error(R.mipmap.ic_empty_picture)
+                .placeholder(R.mipmap.baselib_ic_image_loading)
+                .error(R.mipmap.baselib_ic_empty_picture)
                 .thumbnail(0.5f)
                 .into(imageView);
     }
@@ -95,8 +95,8 @@ public class ImageLoaderUtils {
         Glide.with(context).load(url).asBitmap()
                 .format(DecodeFormat.PREFER_ARGB_8888)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.mipmap.ic_image_loading)
-                .error(R.mipmap.ic_empty_picture)
+                .placeholder(R.mipmap.baselib_ic_image_loading)
+                .error(R.mipmap.baselib_ic_empty_picture)
                 .into(imageView);
     }
 
@@ -128,8 +128,8 @@ public class ImageLoaderUtils {
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .placeholder(R.mipmap.ic_image_loading)
-                .error(R.mipmap.ic_empty_picture)
+                .placeholder(R.mipmap.baselib_ic_image_loading)
+                .error(R.mipmap.baselib_ic_empty_picture)
                 .crossFade().into(imageView);
     }
 
@@ -144,7 +144,7 @@ public class ImageLoaderUtils {
         }
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .error(R.mipmap.toux2)
+                .error(R.mipmap.baselib_toux2)
                 .centerCrop().transform(new GlideRoundTransformUtil(context)).into(imageView);
     }
 }

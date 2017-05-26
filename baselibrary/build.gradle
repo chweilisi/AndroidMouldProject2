@@ -16,6 +16,7 @@ android {
         resValue("string", 'APP_URL_ENVIRONMENT', APP_URL_ENVIRONMENT)
         resValue("string", 'APP_IS_SHOW_LOG', APP_IS_SHOW_LOG)
 
+        resourcePrefix "baselib_"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -163,7 +163,7 @@ public class DownloadService extends Service {
         mNotification.flags = Notification.FLAG_ONGOING_EVENT;
 
         RemoteViews contentView = new RemoteViews(getPackageName(),
-                R.layout.download_notification_show);
+                R.layout.baselib_download_notification_show);
         contentView.setTextViewText(R.id.tv_download_state, mTitle);
         // 指定个性化视图
         mNotification.contentView = contentView;

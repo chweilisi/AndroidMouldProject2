@@ -34,7 +34,7 @@ public class SlideFromBottomPopup extends BasePopupWindow implements View.OnClic
 
     @Override
     public View onCreatePopupView() {
-        popupView = LayoutInflater.from(getContext()).inflate(R.layout.popup_slide_from_bottom, null);
+        popupView = LayoutInflater.from(getContext()).inflate(R.layout.baselib_popup_slide_from_bottom, null);
         return popupView;
     }
 

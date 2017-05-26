@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        lee:tagHorizontalSpace="10dp"
-        lee:tagVerticalSpace="10dp" />
+        lee:baselib_tagHorizontalSpace="10dp"
+        lee:baselib_tagVerticalSpace="10dp" />
 
 </LinearLayout>

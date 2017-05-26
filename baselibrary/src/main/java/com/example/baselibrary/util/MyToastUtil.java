@@ -318,7 +318,7 @@ public class MyToastUtil {
         if (message != null) {
             long time = System.currentTimeMillis();
             if (!message.equals(lastToast) || Math.abs(time - lastToastTime) > 2000) {
-                View view = LayoutInflater.from(context).inflate(R.layout.view_toast, null);
+                View view = LayoutInflater.from(context).inflate(R.layout.baselib_view_toast, null);
                 ((TextView) view.findViewById(R.id.title_tv)).setText(message);
                 Toast toast = new Toast(context);
                 toast.setView(view);

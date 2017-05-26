@@ -25,10 +25,10 @@ public class CustomTagsLayout extends ViewGroup {
      */
     public CustomTagsLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray attrArray = context.obtainStyledAttributes(attrs, R.styleable.TagsLayout);
+        TypedArray attrArray = context.obtainStyledAttributes(attrs, R.styleable.baselib_TagsLayout);
         if (attrArray != null) {
-            childHorizontalSpace = attrArray.getDimensionPixelSize(R.styleable.TagsLayout_tagHorizontalSpace, 0);
-            childVerticalSpace = attrArray.getDimensionPixelSize(R.styleable.TagsLayout_tagVerticalSpace, 0);
+            childHorizontalSpace = attrArray.getDimensionPixelSize(R.styleable.baselib_TagsLayout_baselib_tagHorizontalSpace, 0);
+            childVerticalSpace = attrArray.getDimensionPixelSize(R.styleable.baselib_TagsLayout_baselib_tagVerticalSpace, 0);
             attrArray.recycle();
         }
     }

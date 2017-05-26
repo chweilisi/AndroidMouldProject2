@@ -75,21 +75,21 @@ public class EmptyLayout extends FrameLayout {
         //居中
         params.gravity = Gravity.CENTER;
 
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.EmptyLayout, 0, 0);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.baselib_EmptyLayout, 0, 0);
         //数据为空时的布局
-        int emptyLayout = ta.getResourceId(R.styleable.EmptyLayout_elEmptyLayout, R.layout.layout_empty);
+        int emptyLayout = ta.getResourceId(R.styleable.baselib_EmptyLayout_baselib_elEmptyLayout, R.layout.baselib_layout_empty);
         mEmptyView = View.inflate(context, emptyLayout, null);
         mEmptyText = (TextView) mEmptyView.findViewById(R.id.tvEmptyText);
         addView(mEmptyView, params);
 
         //加载中的布局
-        int loadingLayout = ta.getResourceId(R.styleable.EmptyLayout_elLoadingLayout, R.layout.layout_empty_loading);
+        int loadingLayout = ta.getResourceId(R.styleable.baselib_EmptyLayout_baselib_elLoadingLayout, R.layout.baselib_layout_empty_loading);
         mLoadingView = View.inflate(context, loadingLayout, null);
         tvLoadingText = (TextView) mLoadingView.findViewById(R.id.tvLoadingText);
         addView(mLoadingView, params);
 
         //错误时的布局
-        int errorLayout = ta.getResourceId(R.styleable.EmptyLayout_elErrorLayout, R.layout.layout_empty_error);
+        int errorLayout = ta.getResourceId(R.styleable.baselib_EmptyLayout_baselib_elErrorLayout, R.layout.baselib_layout_empty_error);
         mErrorView = View.inflate(context, errorLayout, null);
         mBtnReset = (LinearLayout) mErrorView.findViewById(R.id.error_layout);
         txt_error = (TextView) mErrorView.findViewById(R.id.txt_error);

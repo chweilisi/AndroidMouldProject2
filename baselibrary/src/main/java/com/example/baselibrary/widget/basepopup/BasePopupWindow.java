@@ -227,7 +227,7 @@ public abstract class BasePopupWindow implements BasePopup, PopupWindow.OnDismis
      */
     public void setNeedPopupFade(boolean needPopupFadeAnima) {
         this.needPopupFadeAnima = needPopupFadeAnima;
-        setPopupAnimaStyle(needPopupFadeAnima ? R.style.PopupAnimaFade : 0);
+        setPopupAnimaStyle(needPopupFadeAnima ? R.style.baselib_PopupAnimaFade : 0);
     }
 
     public boolean getNeedPopupFade() {

@@ -9,55 +9,55 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:right_button_drawable="@mipmap/testlibrary_titlebar_add_icon"
-        lee:title_background_color="@color/green"
-        lee:title_text="标题1" />
+        lee:baselib_right_button_drawable="@mipmap/baselib_titlebar_add_icon"
+        lee:baselib_title_background_color="@color/baselib_green"
+        lee:baselib_title_text="标题1" />
 
     <com.example.baselibrary.widget.CustomTitleBar
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:right_button_visible="false"
-        lee:title_background_color="@color/green"
-        lee:title_text="标题2" />
+        lee:baselib_right_button_visible="false"
+        lee:baselib_title_background_color="@color/baselib_green"
+        lee:baselib_title_text="标题2" />
 
     <com.example.baselibrary.widget.CustomTitleBar
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:left_button_text="左边"
-        lee:right_button_text="右边"
-        lee:title_background_color="@color/red"
-        lee:title_text="标题3" />
+        lee:baselib_left_button_text="左边"
+        lee:baselib_right_button_text="右边"
+        lee:baselib_title_background_color="@color/baselib_red"
+        lee:baselib_title_text="标题3" />
 
     <com.example.baselibrary.widget.CustomTitleBar
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:left_button_text="左边"
-        lee:right_button_drawable="@mipmap/testlibrary_titlebar_add_icon"
-        lee:title_background_color="@color/red"
-        lee:title_text="标题4" />
+        lee:baselib_left_button_text="左边"
+        lee:baselib_right_button_drawable="@mipmap/baselib_titlebar_add_icon"
+        lee:baselib_title_background_color="@color/baselib_red"
+        lee:baselib_title_text="标题4" />
 
     <com.example.baselibrary.widget.CustomTitleBar
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:left_button_text="左边"
-        lee:left_button_text_color="@color/red"
-        lee:right_button_drawable="@mipmap/testlibrary_titlebar_add_icon"
-        lee:title_background_color="@color/blue"
-        lee:title_text="标题5" />
+        lee:baselib_left_button_text="左边"
+        lee:baselib_left_button_text_color="@color/baselib_red"
+        lee:baselib_right_button_drawable="@mipmap/baselib_titlebar_add_icon"
+        lee:baselib_title_background_color="@color/baselib_blue"
+        lee:baselib_title_text="标题5" />
 
     <com.example.baselibrary.widget.CustomTitleBar
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        lee:left_button_text="左边"
-        lee:left_button_text_color="@color/red"
-        lee:right_button_drawable="@mipmap/testlibrary_titlebar_add_icon"
-        lee:title_background_color="@color/blue"
-        lee:title_text="标题6"
-        lee:title_text_color="@color/black" />
+        lee:baselib_left_button_text="左边"
+        lee:baselib_left_button_text_color="@color/baselib_red"
+        lee:baselib_right_button_drawable="@mipmap/baselib_titlebar_add_icon"
+        lee:baselib_title_background_color="@color/baselib_blue"
+        lee:baselib_title_text="标题6"
+        lee:baselib_title_text_color="@color/baselib_black" />
 
 </LinearLayout>

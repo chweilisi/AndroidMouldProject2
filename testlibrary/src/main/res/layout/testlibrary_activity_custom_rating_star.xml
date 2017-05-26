@@ -11,33 +11,33 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:layout_marginTop="10dp"
-        app:clickable="true"
-        app:space="0.2"
-        app:starDst="@mipmap/star_gray"
-        app:starNumber="5"
-        app:starSrc="@mipmap/star_yellow"
-        app:step="0.5" />
+        app:baselib_clickable="true"
+        app:baselib_space="0.2"
+        app:baselib_starDst="@mipmap/baselib_star_gray"
+        app:baselib_starNumber="5"
+        app:baselib_starSrc="@mipmap/baselib_star_yellow"
+        app:baselib_step="0.5" />
 
     <com.example.baselibrary.widget.CustomRatingStar
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="10dp"
-        app:clickable="true"
-        app:space="1"
-        app:starDst="@mipmap/star_gray"
-        app:starNumber="5"
-        app:starSrc="@mipmap/star_yellow"
-        app:step="0.1" />
+        app:baselib_clickable="true"
+        app:baselib_space="1"
+        app:baselib_starDst="@mipmap/baselib_star_gray"
+        app:baselib_starNumber="5"
+        app:baselib_starSrc="@mipmap/baselib_star_yellow"
+        app:baselib_step="0.1" />
 
     <com.example.baselibrary.widget.CustomRatingStar
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="10dp"
-        app:clickable="true"
-        app:space="1"
-        app:starDst="@mipmap/star_gray"
-        app:starNumber="5"
-        app:starSrc="@mipmap/star_yellow"
-        app:step="1" />
+        app:baselib_clickable="true"
+        app:baselib_space="1"
+        app:baselib_starDst="@mipmap/baselib_star_gray"
+        app:baselib_starNumber="5"
+        app:baselib_starSrc="@mipmap/baselib_star_yellow"
+        app:baselib_step="1" />
 
 </LinearLayout>

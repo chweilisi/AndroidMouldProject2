@@ -2,96 +2,96 @@
 <resources>
 
     <!-- RippleView -->
-    <declare-styleable name="RippleView">
-        <attr name="rv_alpha" format="integer" />
-        <attr name="rv_framerate" format="integer" />
-        <attr name="rv_rippleDuration" format="integer" />
-        <attr name="rv_zoomDuration" format="integer" />
-        <attr name="rv_color" format="color" />
-        <attr name="rv_centered" format="boolean" />
-        <attr name="rv_type" format="enum">
+    <declare-styleable name="baselib_RippleView">
+        <attr name="baselib_rv_alpha" format="integer" />
+        <attr name="baselib_rv_framerate" format="integer" />
+        <attr name="baselib_rv_rippleDuration" format="integer" />
+        <attr name="baselib_rv_zoomDuration" format="integer" />
+        <attr name="baselib_rv_color" format="color" />
+        <attr name="baselib_rv_centered" format="boolean" />
+        <attr name="baselib_rv_type" format="enum">
             <enum name="simpleRipple" value="0" />
             <enum name="doubleRipple" value="1" />
             <enum name="rectangle" value="2" />
         </attr>
-        <attr name="rv_ripplePadding" format="dimension" />
-        <attr name="rv_zoom" format="boolean" />
-        <attr name="rv_zoomScale" format="float" />
-        <attr name="rv_listMode" format="boolean" />
+        <attr name="baselib_rv_ripplePadding" format="dimension" />
+        <attr name="baselib_rv_zoom" format="boolean" />
+        <attr name="baselib_rv_zoomScale" format="float" />
+        <attr name="baselib_rv_listMode" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="NumberProgressBar">
-        <attr name="progress_current" format="integer" />
-        <attr name="progress_max" format="integer" />
-        <attr name="progress_unreached_color" format="color" />
-        <attr name="progress_reached_color" format="color" />
-        <attr name="progress_reached_bar_height" format="dimension" />
-        <attr name="progress_unreached_bar_height" format="dimension" />
-        <attr name="progress_text_size" format="dimension" />
-        <attr name="progress_text_color" format="color" />
-        <attr name="progress_text_offset" format="dimension" />
-        <attr name="progress_text_visibility" format="enum">
+    <declare-styleable name="baselib_NumberProgressBar">
+        <attr name="baselib_progress_current" format="integer" />
+        <attr name="baselib_progress_max" format="integer" />
+        <attr name="baselib_progress_unreached_color" format="color" />
+        <attr name="baselib_progress_reached_color" format="color" />
+        <attr name="baselib_progress_reached_bar_height" format="dimension" />
+        <attr name="baselib_progress_unreached_bar_height" format="dimension" />
+        <attr name="baselib_progress_text_size" format="dimension" />
+        <attr name="baselib_progress_text_color" format="color" />
+        <attr name="baselib_progress_text_offset" format="dimension" />
+        <attr name="baselib_progress_text_visibility" format="enum">
             <enum name="visible" value="0" />
             <enum name="invisible" value="1" />
         </attr>
     </declare-styleable>
 
     <!-- SimpleButton，简写sb -->
-    <declare-styleable name="SimpleButton">
-        <attr name="sb_mode" format="enum">
+    <declare-styleable name="baselib_SimpleButton">
+        <attr name="baselib_sb_mode" format="enum">
             <enum name="normal" value="201" />
             <enum name="check" value="202" />
             <enum name="icon_check_invisible" value="203" />
             <enum name="icon_check_change" value="204" />
         </attr>
-        <attr name="sb_shape" format="enum">
+        <attr name="baselib_sb_shape" format="enum">
             <enum name="round_rect" value="101" />
             <enum name="arc" value="102" />
             <enum name="rect" value="103" />
         </attr>
         <!-- 3、5 是Gravity里定义的值 -->
-        <attr name="sb_gravity" format="enum">
+        <attr name="baselib_sb_gravity" format="enum">
             <enum name="left" value="3" />
             <enum name="right" value="5" />
         </attr>
-        <attr name="sb_auto_check" format="boolean" />
-        <attr name="sb_checked" format="boolean" />
-        <attr name="sb_bg_color" format="color" />
-        <attr name="sb_border_color" format="color" />
-        <attr name="sb_text_color" format="color" />
-        <attr name="sb_bg_color_check" format="color" />
-        <attr name="sb_border_color_check" format="color" />
-        <attr name="sb_text_color_check" format="color" />
-        <attr name="sb_text" format="string" />
-        <attr name="sb_text_check" format="string" />
-        <attr name="sb_text_size" format="dimension" />
-        <attr name="sb_border_width" format="dimension" />
-        <attr name="sb_border_radius" format="dimension" />
-        <attr name="sb_vertical_padding" format="dimension" />
-        <attr name="sb_horizontal_padding" format="dimension" />
-        <attr name="sb_icon_padding" format="dimension" />
-        <attr name="sb_icon" format="reference" />
-        <attr name="sb_icon_change" format="reference" />
+        <attr name="baselib_sb_auto_check" format="boolean" />
+        <attr name="baselib_sb_checked" format="boolean" />
+        <attr name="baselib_sb_bg_color" format="color" />
+        <attr name="baselib_sb_border_color" format="color" />
+        <attr name="baselib_sb_text_color" format="color" />
+        <attr name="baselib_sb_bg_color_check" format="color" />
+        <attr name="baselib_sb_border_color_check" format="color" />
+        <attr name="baselib_sb_text_color_check" format="color" />
+        <attr name="baselib_sb_text" format="string" />
+        <attr name="baselib_sb_text_check" format="string" />
+        <attr name="baselib_sb_text_size" format="dimension" />
+        <attr name="baselib_sb_border_width" format="dimension" />
+        <attr name="baselib_sb_border_radius" format="dimension" />
+        <attr name="baselib_sb_vertical_padding" format="dimension" />
+        <attr name="baselib_sb_horizontal_padding" format="dimension" />
+        <attr name="baselib_sb_icon_padding" format="dimension" />
+        <attr name="baselib_sb_icon" format="reference" />
+        <attr name="baselib_sb_icon_change" format="reference" />
     </declare-styleable>
 
     <!-- 自定义的ratingBar -->
-    <declare-styleable name="RatingBar">
+    <declare-styleable name="baselib_RatingBar">
         <!-- 选中的图片资源 -->
-        <attr name="starSrc" format="reference" />
+        <attr name="baselib_starSrc" format="reference" />
         <!-- 未选中的图片资源 -->
-        <attr name="starDst" format="reference" />
+        <attr name="baselib_starDst" format="reference" />
         <!-- boolean值 -->
-        <attr name="clickable" format="boolean" />
-        <attr name="step" format="float" />
-        <attr name="space" format="float" />
-        <attr name="starNumber" format="integer" />
+        <attr name="baselib_clickable" format="boolean" />
+        <attr name="baselib_step" format="float" />
+        <attr name="baselib_space" format="float" />
+        <attr name="baselib_starNumber" format="integer" />
     </declare-styleable>
 
     <!-- 自定义空白页面 -->
-    <declare-styleable name="EmptyLayout">
-        <attr name="elEmptyLayout" format="reference" />
-        <attr name="elErrorLayout" format="reference" />
-        <attr name="elLoadingLayout" format="reference" />
+    <declare-styleable name="baselib_EmptyLayout">
+        <attr name="baselib_elEmptyLayout" format="reference" />
+        <attr name="baselib_elErrorLayout" format="reference" />
+        <attr name="baselib_elLoadingLayout" format="reference" />
     </declare-styleable>
 
 </resources>

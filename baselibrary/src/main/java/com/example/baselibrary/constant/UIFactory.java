@@ -26,8 +26,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startGuideActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.module_project_scheme) +
-                "://" + activity.getString(R.string.module_project_host) + ":" + activity.getString(R.string.module_project_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_module_project_scheme) +
+                "://" + activity.getString(R.string.baselib_module_project_host) + ":" + activity.getString(R.string.baselib_module_project_port) +
                 "/.module.GuideActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -39,8 +39,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startHomeActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.module_project_scheme) +
-                "://" + activity.getString(R.string.module_project_host) + ":" + activity.getString(R.string.module_project_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_module_project_scheme) +
+                "://" + activity.getString(R.string.baselib_module_project_host) + ":" + activity.getString(R.string.baselib_module_project_port) +
                 "/.module.HomeActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -54,8 +54,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startTestActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.TestActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -67,8 +67,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startOkGoTestActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.OkGoRequestActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -80,8 +80,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startSyncActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.SyncActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -93,8 +93,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startFormUploadActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.FormUploadActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -106,8 +106,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startFileDownloadActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.FileDownloadActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -119,8 +119,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startRequestPermissionSingleActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.RequestPermissionSingleActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -132,8 +132,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startRequestPermissionMultipleActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.RequestPermissionMultipleActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -145,8 +145,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCusttomTitleBarActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CusttomTitleBarActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -158,8 +158,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCusttomTagsLayoutActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CusttomTagsLayoutActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -171,8 +171,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCusttomRatingStarActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CusttomRatingStarActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -184,8 +184,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startEmptyActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.EmptyActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -197,8 +197,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startDataBindingActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.DataBindingActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -210,8 +210,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCustomDialogActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CustomDialogActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -223,8 +223,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCustomPopupWindowActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CustomPopupWindowActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -236,8 +236,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCustomBannerActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CustomBannerActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -249,8 +249,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startLogDisplayActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.LogDisplayActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
@@ -262,8 +262,8 @@ public class UIFactory {
      * @param requestCode
      */
     public static void startCacheActivity(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.test_library_scheme) +
-                "://" + activity.getString(R.string.test_library_host) + ":" + activity.getString(R.string.test_library_port) +
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
                 "/.view.CacheActivity"));
         activity.startActivityForResult(intent, requestCode);
     }

@@ -134,19 +134,19 @@ public class RippleView extends RelativeLayout {
         if (isInEditMode())
             return;
 
-        final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RippleView);
-        rippleColor = typedArray.getColor(R.styleable.RippleView_rv_color, Color.parseColor("#33626262"));
-        rippleType = typedArray.getInt(R.styleable.RippleView_rv_type, 0);
-        hasToZoom = typedArray.getBoolean(R.styleable.RippleView_rv_zoom, false);
-        isCentered = typedArray.getBoolean(R.styleable.RippleView_rv_centered, false);
-        rippleDuration = typedArray.getInteger(R.styleable.RippleView_rv_rippleDuration, rippleDuration);
-        frameRate = typedArray.getInteger(R.styleable.RippleView_rv_framerate, frameRate);
-        rippleAlpha = typedArray.getInteger(R.styleable.RippleView_rv_alpha, rippleAlpha);
-        ripplePadding = typedArray.getDimensionPixelSize(R.styleable.RippleView_rv_ripplePadding, 0);
+        final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.baselib_RippleView);
+        rippleColor = typedArray.getColor(R.styleable.baselib_RippleView_baselib_rv_color, Color.parseColor("#33626262"));
+        rippleType = typedArray.getInt(R.styleable.baselib_RippleView_baselib_rv_type, 0);
+        hasToZoom = typedArray.getBoolean(R.styleable.baselib_RippleView_baselib_rv_zoom, false);
+        isCentered = typedArray.getBoolean(R.styleable.baselib_RippleView_baselib_rv_centered, false);
+        rippleDuration = typedArray.getInteger(R.styleable.baselib_RippleView_baselib_rv_rippleDuration, rippleDuration);
+        frameRate = typedArray.getInteger(R.styleable.baselib_RippleView_baselib_rv_framerate, frameRate);
+        rippleAlpha = typedArray.getInteger(R.styleable.baselib_RippleView_baselib_rv_alpha, rippleAlpha);
+        ripplePadding = typedArray.getDimensionPixelSize(R.styleable.baselib_RippleView_baselib_rv_ripplePadding, 0);
         canvasHandler = new Handler();
-        zoomScale = typedArray.getFloat(R.styleable.RippleView_rv_zoomScale, 1.03f);
-        zoomDuration = typedArray.getInt(R.styleable.RippleView_rv_zoomDuration, 200);
-        isListMode = typedArray.getBoolean(R.styleable.RippleView_rv_listMode, false);
+        zoomScale = typedArray.getFloat(R.styleable.baselib_RippleView_baselib_rv_zoomScale, 1.03f);
+        zoomDuration = typedArray.getInt(R.styleable.baselib_RippleView_baselib_rv_zoomDuration, 200);
+        isListMode = typedArray.getBoolean(R.styleable.baselib_RippleView_baselib_rv_listMode, false);
         typedArray.recycle();
         paint = new Paint();
         paint.setAntiAlias(true);

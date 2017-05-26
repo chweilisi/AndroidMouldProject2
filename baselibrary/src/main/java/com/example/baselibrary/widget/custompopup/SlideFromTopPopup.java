@@ -74,7 +74,7 @@ public class SlideFromTopPopup extends BasePopupWindow {
 
     @Override
     public View onCreatePopupView() {
-        return createPopupById(R.layout.popup_select_from_top);
+        return createPopupById(R.layout.baselib_popup_select_from_top);
     }
 
     @Override
@@ -115,7 +115,7 @@ public class SlideFromTopPopup extends BasePopupWindow {
             InnerPopupAdapter.ViewHolder vh = null;
             if (convertView == null) {
                 vh = new InnerPopupAdapter.ViewHolder();
-                convertView = mInflater.inflate(R.layout.item_popup_list, parent, false);
+                convertView = mInflater.inflate(R.layout.baselib_item_popup_list, parent, false);
                 vh.mTextView = (TextView) convertView.findViewById(R.id.item_tx);
                 convertView.setTag(vh);
             } else {

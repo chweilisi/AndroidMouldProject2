@@ -13,9 +13,9 @@
             android:id="@+id/emptyLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:elEmptyLayout="@layout/layout_empty"
-            app:elErrorLayout="@layout/layout_empty_error"
-            app:elLoadingLayout="@layout/layout_empty_loading">
+            app:baselib_elEmptyLayout="@layout/baselib_layout_empty"
+            app:baselib_elErrorLayout="@layout/baselib_layout_empty_error"
+            app:baselib_elLoadingLayout="@layout/baselib_layout_empty_loading">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"

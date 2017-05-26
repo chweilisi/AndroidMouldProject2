@@ -65,7 +65,7 @@ public class CustomDialogActivity extends BaseActivity {
         if (i == R.id.dialogType1) {
             // 系统通用的dialog
             if (radioButtonDialog == null) {
-                radioButtonDialog = MyDialogUtil.showCustomDialog(mContext, R.style.Dialog,
+                radioButtonDialog = MyDialogUtil.showCustomDialog(mContext, R.style.baselib_Dialog,
                         true, "my title", "", "negative", "positive", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

@@ -4,7 +4,7 @@
     android:id="@+id/splash_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/baselib_white"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -30,7 +30,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="###### 1. 普通的post请求 ######"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/baselib_red" />
 
                 <TextView
                     android:id="@+id/title"
@@ -53,7 +53,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="###### 2. 请求图片 ######"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/baselib_red" />
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -75,7 +75,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="###### 3. 文件上传 ######"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/baselib_red" />
 
                 <Button
                     android:id="@+id/selectImage"
@@ -130,12 +130,12 @@
                     android:id="@+id/pbProgress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:progress_reached_bar_height="1.5dp"
-                    app:progress_reached_color="#3498DB"
-                    app:progress_text_color="#3498DB"
-                    app:progress_text_size="10sp"
-                    app:progress_unreached_bar_height="0.75dp"
-                    app:progress_unreached_color="#CCCCCC" />
+                    app:baselib_progress_reached_bar_height="1.5dp"
+                    app:baselib_progress_reached_color="#3498DB"
+                    app:baselib_progress_text_color="#3498DB"
+                    app:baselib_progress_text_size="10sp"
+                    app:baselib_progress_unreached_bar_height="0.75dp"
+                    app:baselib_progress_unreached_color="#CCCCCC" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="###### 4. 文件下载 ######"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/baselib_red" />
 
                 <Button
                     android:id="@+id/fileDownload"
@@ -212,12 +212,12 @@
                     android:id="@+id/download_pbProgress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:progress_reached_bar_height="1.5dp"
-                    app:progress_reached_color="#3498DB"
-                    app:progress_text_color="#3498DB"
-                    app:progress_text_size="10sp"
-                    app:progress_unreached_bar_height="0.75dp"
-                    app:progress_unreached_color="#CCCCCC" />
+                    app:baselib_progress_reached_bar_height="1.5dp"
+                    app:baselib_progress_reached_color="#3498DB"
+                    app:baselib_progress_text_color="#3498DB"
+                    app:baselib_progress_text_size="10sp"
+                    app:baselib_progress_unreached_bar_height="0.75dp"
+                    app:baselib_progress_unreached_color="#CCCCCC" />
 
             </LinearLayout>
         </LinearLayout>

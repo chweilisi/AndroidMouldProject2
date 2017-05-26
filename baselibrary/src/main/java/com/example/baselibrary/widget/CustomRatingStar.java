@@ -33,9 +33,9 @@ public class CustomRatingStar extends FrameLayout {
     /**
      * 图片资源,RATING_DST背景，RATING_SRC前景
      */
-    private int STAR_DST = R.mipmap.star_gray;
+    private int STAR_DST = R.mipmap.baselib_star_gray;
 
-    private int STAR_SRC = R.mipmap.star_yellow;
+    private int STAR_SRC = R.mipmap.baselib_star_yellow;
     /**
      * 星星是否可点击，true为可点击
      */
@@ -73,13 +73,13 @@ public class CustomRatingStar extends FrameLayout {
         super(context, attrs);
 
         // 获取xml文件中的自定义属性
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RatingBar);
-        INDEX = a.getInt(R.styleable.RatingBar_starNumber, INDEX);
-        STAR_DST = a.getResourceId(R.styleable.RatingBar_starDst, STAR_DST);
-        STAR_SRC = a.getResourceId(R.styleable.RatingBar_starSrc, STAR_SRC);
-        CLICKED = a.getBoolean(R.styleable.RatingBar_clickable, CLICKED);
-        SPACE = a.getFloat(R.styleable.RatingBar_space, SPACE);
-        STEP = a.getFloat(R.styleable.RatingBar_step, STEP);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.baselib_RatingBar);
+        INDEX = a.getInt(R.styleable.baselib_RatingBar_baselib_starNumber, INDEX);
+        STAR_DST = a.getResourceId(R.styleable.baselib_RatingBar_baselib_starDst, STAR_DST);
+        STAR_SRC = a.getResourceId(R.styleable.baselib_RatingBar_baselib_starSrc, STAR_SRC);
+        CLICKED = a.getBoolean(R.styleable.baselib_RatingBar_baselib_clickable, CLICKED);
+        SPACE = a.getFloat(R.styleable.baselib_RatingBar_baselib_space, SPACE);
+        STEP = a.getFloat(R.styleable.baselib_RatingBar_baselib_step, STEP);
 
         // 新建两个bitmap对象，用于接下来canvas绘制
         InputStream isDst = context.getResources().openRawResource(STAR_DST);

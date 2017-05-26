@@ -89,7 +89,7 @@ public class CustomProgressDialog extends Dialog {
      * @param context
      */
     public void initView(Context context) {
-        View root = LayoutInflater.from(context).inflate(R.layout.layout_loading_dialog, null);
+        View root = LayoutInflater.from(context).inflate(R.layout.baselib_layout_loading_dialog, null);
         xframe_loading_view = (LinearLayout) root.findViewById(R.id.xframe_loading_view);
         loadingNotice = (TextView) root.findViewById(R.id.loading_notice);
         loadingImageView = (ImageView) root.findViewById(R.id.loadingImageView);

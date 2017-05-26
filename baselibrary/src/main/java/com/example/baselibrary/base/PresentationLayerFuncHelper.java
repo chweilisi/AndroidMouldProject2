@@ -25,7 +25,7 @@ public class PresentationLayerFuncHelper implements PresentationLayerFunc {
 
     @Override
     public void showProgressDialog() {
-        CustomProgressDialog.with(context, R.style.loading_dialog)
+        CustomProgressDialog.with(context, R.style.baselib_loading_dialog)
                 .setOrientation(CustomProgressDialog.VERTICAL)
                 .setMessage("")
                 .show();
@@ -38,7 +38,7 @@ public class PresentationLayerFuncHelper implements PresentationLayerFunc {
      */
     @Override
     public void showProgressDialog(String notice) {
-        CustomProgressDialog.with(context, R.style.loading_dialog)
+        CustomProgressDialog.with(context, R.style.baselib_loading_dialog)
                 .setOrientation(CustomProgressDialog.VERTICAL)
                 .setMessage(notice)
                 .show();
@@ -47,7 +47,7 @@ public class PresentationLayerFuncHelper implements PresentationLayerFunc {
     @Override
     public void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor,
                                          int messageColor) {
-        CustomProgressDialog.with(context, R.style.loading_dialog)
+        CustomProgressDialog.with(context, R.style.baselib_loading_dialog)
                 .setOrientation(orientation)
                 .setBackgroundColor(backgroundColor)
                 .setMessageColor(messageColor)

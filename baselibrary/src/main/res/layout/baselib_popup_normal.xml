@@ -7,7 +7,7 @@
         android:id="@+id/click_to_dismiss"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/popup_bg"
+        android:background="@color/baselib_popup_bg"
         android:paddingLeft="25dp"
         android:paddingRight="25dp">
 
@@ -26,7 +26,7 @@
                 android:gravity="center"
                 android:text="test1" />
 
-            <View style="@style/divider_line_style" />
+            <View style="@style/baselib_divider_line_style" />
 
             <TextView
                 android:id="@+id/tx_2"
@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:text="test2" />
 
-            <View style="@style/divider_line_style" />
+            <View style="@style/baselib_divider_line_style" />
 
             <TextView
                 android:id="@+id/tx_3"

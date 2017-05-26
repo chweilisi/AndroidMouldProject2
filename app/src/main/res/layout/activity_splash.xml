@@ -25,11 +25,11 @@
         android:layout_marginTop="30dp"
         android:clipToPadding="true"
         android:fitsSystemWindows="true"
-        app:sb_auto_check="false"
-        app:sb_bg_color="#aaFF4081"
-        app:sb_border_color="#aaFF4081"
-        app:sb_shape="arc"
-        app:sb_text="跳过 3"
-        app:sb_text_color="@android:color/white" />
+        app:baselib_sb_auto_check="false"
+        app:baselib_sb_bg_color="#aaFF4081"
+        app:baselib_sb_border_color="#aaFF4081"
+        app:baselib_sb_shape="arc"
+        app:baselib_sb_text="跳过 3"
+        app:baselib_sb_text_color="@android:color/white" />
 
 </FrameLayout>

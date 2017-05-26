@@ -95,7 +95,7 @@ public class CustomDialog extends Dialog {
      */
     private void init() {
         //以view的方式引入，然后回调activity方法，setContentView，实现自定义布局
-        View view = LayoutInflater.from(context).inflate(R.layout.dialog_custom, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.baselib_dialog_custom, null);
         setContentView(view);
 
         //=== 控件的初始化
