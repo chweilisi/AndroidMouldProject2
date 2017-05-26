@@ -2,6 +2,7 @@ package com.brilliant.mainlibrary.view;
 
 import android.os.Bundle;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.brilliant.mainlibrary.R;
 import com.example.baselibrary.base.BaseFragment;
 
@@ -34,6 +35,23 @@ public class MainPageFragment extends BaseFragment {
 
     @Override
     public void initData(Bundle savedInstanceState) {
+    }
+
+    @Override
+    protected void onFragmentVisibleChange(boolean isVisible) {
+        if (isVisible) {
+            //fragment 可见
+            MyLogUtil.d("fragment 可见");
+        } else {
+            //fragment 不可见
+            MyLogUtil.d("fragment 不可见");
+        }
+    }
+
+    @Override
+    protected void onFragmentFirstVisible() {
+        // fragment首次可见
+        MyLogUtil.d("fragment首次可见");
     }
 
     //######################  Override custom metohds end  ########################################

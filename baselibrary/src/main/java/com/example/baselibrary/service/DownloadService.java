@@ -154,7 +154,7 @@ public class DownloadService extends Service {
      * 创建通知
      */
     private void setUpNotification() {
-        int icon = R.mipmap.ic_launcher;
+        int icon = R.mipmap.baselib_toux2;
         CharSequence tickerText = "下载中...";
         long when = System.currentTimeMillis();
         mNotification = new Notification(icon, tickerText, when);

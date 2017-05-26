@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.brilliant.module.HomeActivity">
 
-    <include layout="@layout/layout_status_bar" />
+    <include layout="@layout/basemod_layout_status_bar" />
 
     <FrameLayout
         android:id="@+id/fragment_container"

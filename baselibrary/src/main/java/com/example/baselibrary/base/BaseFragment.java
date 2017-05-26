@@ -29,9 +29,8 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(getActivity());
-        return super.rootView;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     //######################   override methods end  ##############################################
@@ -59,11 +58,11 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
      */
     @Override
     public void showCustomProgressDialog(boolean cancelAble, String notice, int orientation, int backgroundColor, int messageColor) {
-            try {
-                presentationLayerFuncHelper.showCustomProgressDialog(cancelAble, notice, orientation, backgroundColor, messageColor);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            presentationLayerFuncHelper.showCustomProgressDialog(cancelAble, notice, orientation, backgroundColor, messageColor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -73,20 +72,20 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
 
     @Override
     public void showLoading() {
-            try {
-                showProgressDialog("");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            showProgressDialog("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void showLoading(String notice) {
-            try {
-                showProgressDialog(notice);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            showProgressDialog(notice);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
