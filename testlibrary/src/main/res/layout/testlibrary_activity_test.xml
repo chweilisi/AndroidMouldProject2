@@ -122,5 +122,12 @@
             android:layout_marginTop="5dp"
             android:text="缓存处理" />
 
+        <Button
+            android:id="@+id/SuperTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="SuperTextView，满足日常的大部分布局" />
+
     </LinearLayout>
 </ScrollView>

@@ -94,5 +94,11 @@ dependencies {
     //=== banner
     compile rootProject.ext.dependencies["banner"]
 
+    //=== Luban
+    compile rootProject.ext.dependencies["Luban"]
+
+    //=== SuperTextView
+    compile rootProject.ext.dependencies["SuperTextView"]
+
     //################## 引用第三方工程
 }

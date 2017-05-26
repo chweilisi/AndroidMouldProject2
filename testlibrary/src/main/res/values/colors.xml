@@ -3,4 +3,7 @@
     <color name="testlibrary_new_house_colorPrimary">#3F51B5</color>
     <color name="testlibrary_new_house_colorPrimaryDark">#303F9F</color>
     <color name="testlibrary_new_house_colorAccent">#FF4081</color>
+
+    <color name="testlibrary_gray_btn">#9e9e9e</color>
+    <color name="testlibrary_red_btn">#fd5353</color>
 </resources>

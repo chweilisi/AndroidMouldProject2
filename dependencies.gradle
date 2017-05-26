@@ -20,6 +20,8 @@ def circleimageviewVersion = "2.1.0"
 def greendaoVersion = "3.2.2"
 def practicalrecyclerviewVersion = "1.1.5"
 def bannerVersion = "1.4.9"
+def LubanVersion = "1.0.9"
+def SuperTextViewVersion = "1.1.2"
 
 project.ext {
     android = [
@@ -110,7 +112,12 @@ project.ext {
             "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}",
 
             //=== banner  (https://github.com/youth5201314/banner)
-            "banner"                         : "com.youth.banner:banner:${bannerVersion}"
+            "banner"                         : "com.youth.banner:banner:${bannerVersion}",
 
+            //=== Luban (https://github.com/Curzibn/Luban) 最接近微信朋友圈的图片压缩算法
+            "Luban"                         : "top.zibin:Luban:${LubanVersion}",
+
+            //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式
+            "SuperTextView"                         : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
     ]
 }

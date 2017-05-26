@@ -52,8 +52,8 @@ public class CacheActivity extends BaseActivity {
         xCache.put("string", "缓存普通字符串");
         News news = new News(News.TYPE_SINGLE_PICTURE, "智能手机行业正处于关键转折点，下一战场会在哪里？", "https://pic.36krcnd.com/avatar/201701/17062818/1ucsedy4pdb4aqyu.jpg!heading", "缪定纯•明星公司", "58分钟前");
         xCache.put("news", news);//保存序列化对象
-        xCache.put("bitmap", BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
-        xCache.put("drawable", XOutdatedUtils.getDrawable(mContext, R.mipmap.ic_launcher));
+        xCache.put("bitmap", BitmapFactory.decodeResource(getResources(), R.mipmap.testlibrary_uu));
+        xCache.put("drawable", XOutdatedUtils.getDrawable(mContext, R.mipmap.testlibrary_uu));
         xCache.put("byte", "缓存byte".getBytes(Charset.defaultCharset()));//字节数组，使用场景很多，这里只做测试
         /**
          * 关于实体类保存，建议用json字符串保存，效果更佳，兼容性更好
