@@ -53,7 +53,7 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
     @Override
     public void initView() {
         // app的升级下载和安装封装
-        dealAppUpdate(download_url);
+        //  dealAppUpdate(download_url);
 
         fragmentManager = getSupportFragmentManager();
     }

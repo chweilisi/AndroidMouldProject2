@@ -1,8 +1,9 @@
-package com.brilliant.demo;
+package com.example.baselibrary.demo;
 
 import android.os.Bundle;
+import android.view.View;
 
-import com.brilliant.R;
+import com.example.baselibrary.R;
 import com.example.baselibrary.base.BaseFragment;
 
 /**
@@ -21,7 +22,7 @@ public class ModelFragment extends BaseFragment {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_model;
+        return R.layout.baselib_activity_model;
     }
 
     @Override
@@ -29,7 +30,7 @@ public class ModelFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
     }
 
     @Override

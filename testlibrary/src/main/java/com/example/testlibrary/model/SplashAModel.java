@@ -42,7 +42,7 @@ public class SplashAModel implements SplashAContract.Model {
                     @Override
                     public QueryAdvertBean.DataBean call(QueryAdvertBean queryAdvertBean) {
                         QueryAdvertBean.DataBean bean_new = queryAdvertBean.getData();
-                        QueryAdvertBean.DataBean bean_old = SharedPrefUtils.getSharedObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, null);
+                        QueryAdvertBean.DataBean bean_old = SharedPrefUtils.getInstance().getHawkObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, null);
                         if (bean_old == null || !bean_old.getKey().equals(bean_new.getKey())) {
                             //首次获取广告信息, 初始化可显示次数，并保存
                             bean_new.setLeftShowNum(bean_new.getShowNum() - 1);
@@ -54,7 +54,7 @@ public class SplashAModel implements SplashAContract.Model {
                                 bean_new.setLeftShowNum(bean_old.getLeftShowNum() - 1);
                             }
                         }
-                        SharedPrefUtils.setSharedObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, bean_new);
+                        SharedPrefUtils.getInstance().setHawkObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, bean_new);
                         return bean_new;
                     }
                 }).compose(RxSchedulers.<QueryAdvertBean.DataBean>io_main());

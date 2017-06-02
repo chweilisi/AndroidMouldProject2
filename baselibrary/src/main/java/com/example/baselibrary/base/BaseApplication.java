@@ -83,6 +83,8 @@ public class BaseApplication extends IBaseApplication {
         initHttpDns(APPConstant.ALI_HTTPDNS_ACCOUND_ID, hostList);
         //=== 注册App异常崩溃处理器
         registerUncaughtExceptionHandler(APPConstant.DEFAULT_CRASH_FILE_PATH);
+        //===
+      //  SharedPrefUtils.init(getApplicationContext());
 
         //=== 内存泄露检测框架
         if (LeakCanary.isInAnalyzerProcess(this)) {

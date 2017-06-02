@@ -108,7 +108,7 @@ public class SplashActivity extends BaseFullScreenActivity  {
             //跳转到MainActivity，并结束当前的LauncherActivity
             //=== 和本次的软件版本号作对比，用来判断软件是否进行了更新，从而决定是否展示引导页
             if (AndroidAPP.getPackageInfo() != null && !AndroidAPP.getPackageInfo().versionName.equals(
-                    SharedPrefUtils.getSharedStringData(APPConstant.PREFS_PREVERSION, "0.0.0"))) {
+                    SharedPrefUtils.getInstance().getSharedStringData(APPConstant.PREFS_PREVERSION, "0.0.0"))) {
                 Animation fadeOut = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.baselib_fadeout);
                 fadeOut.setFillAfter(true);
                 findViewById(R.id.splash_Image).startAnimation(fadeOut);

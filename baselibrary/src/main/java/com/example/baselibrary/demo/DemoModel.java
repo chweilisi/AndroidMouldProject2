@@ -1,4 +1,4 @@
-package com.brilliant.demo;
+package com.example.baselibrary.demo;
 
 import android.content.Context;
 

@@ -292,6 +292,18 @@ public class UIFactory {
         activity.startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * @param activity
+     * @param requestCode
+     */
+    public static void startStateModeActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.StateModeActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+
     //############################  测试页面 end #################################################
 
     /**

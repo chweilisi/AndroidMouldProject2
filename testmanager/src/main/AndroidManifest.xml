@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/baselib_CustomeAppTheme">
 
+        <!-- 默认入口 -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 入口2 -->
+        <activity-alias
+            android:name=".ChangeAppIconActivity"
+            android:enabled="false"
+            android:icon="@mipmap/testlibrary_uu"
+            android:label="劳动节"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
 
     </application>
 

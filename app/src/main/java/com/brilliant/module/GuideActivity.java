@@ -206,7 +206,7 @@ public class GuideActivity extends BaseFullScreenActivity {
         if (!mIsSkip) {
             mIsSkip = true;
             //在sp中记录访问过引导页的状态
-            SharedPrefUtils.setSharedStringData(APPConstant.PREFS_PREVERSION, AndroidAPP.getPackageInfo().versionName);
+            SharedPrefUtils.getInstance().setSharedStringData(APPConstant.PREFS_PREVERSION, AndroidAPP.getPackageInfo().versionName);
             UIFactory.startHomeActivity(this, RESULT_OK);
             //===
             finish();

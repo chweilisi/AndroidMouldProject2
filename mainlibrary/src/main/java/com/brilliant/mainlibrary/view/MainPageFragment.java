@@ -1,6 +1,7 @@
 package com.brilliant.mainlibrary.view;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.basemodule.utils.log.MyLogUtil;
 import com.brilliant.mainlibrary.R;
@@ -30,7 +31,7 @@ public class MainPageFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
     }
 
     @Override
