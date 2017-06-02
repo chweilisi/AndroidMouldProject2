@@ -130,6 +130,11 @@ public class DownloadService extends Service {
         return binder;
     }
 
+    /**
+     *
+     * @param downloadUrl
+     * @return
+     */
     private String getSaveFileName(String downloadUrl) {
         if (downloadUrl == null || StringUtils.isEmpty(downloadUrl)) {
             return "";
@@ -145,6 +150,9 @@ public class DownloadService extends Service {
         stopForeground(true);// 这个不确定是否有作用
     }
 
+    /**
+     *
+     */
     private void startDownload() {
         canceled = false;
         downloadApk();
@@ -178,6 +186,9 @@ public class DownloadService extends Service {
         mNotificationManager.notify(NOTIFY_ID, mNotification);
     }
 
+    /**
+     *
+     */
     private void downloadApk() {
         downLoadThread = new Thread(mdownApkRunnable);
         downLoadThread.start();
@@ -194,6 +205,9 @@ public class DownloadService extends Service {
         APPMethod.installAPK(mContext, apkfile);
     }
 
+    /**
+     *
+     */
     private Runnable mdownApkRunnable = new Runnable() {
         @Override
         public void run() {
@@ -211,6 +225,13 @@ public class DownloadService extends Service {
         }
     };
 
+    /**
+     *
+     * @param downloadUrl
+     * @param saveFile
+     * @return
+     * @throws Exception
+     */
     public long downloadUpdateFile(String downloadUrl, File saveFile)
             throws Exception {
         int downloadCount = 0;
@@ -297,6 +318,9 @@ public class DownloadService extends Service {
         return totalSize;
     }
 
+    /**
+     *
+     */
     public class DownloadBinder extends Binder {
         public void start() {
             if (downLoadThread == null || !downLoadThread.isAlive()) {
@@ -338,6 +362,9 @@ public class DownloadService extends Service {
         }
     }
 
+    /**
+     *
+     */
     public static void trustAllHosts() {
         // Create a trust manager that does not validate certificate chains
         // Android use X509 cert
@@ -370,6 +397,9 @@ public class DownloadService extends Service {
         }
     }
 
+    /**
+     *
+     */
     public final static HostnameVerifier DO_NOT_VERIFY = new HostnameVerifier() {
 
         @Override

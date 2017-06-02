@@ -9,6 +9,8 @@ import android.widget.RadioGroup;
 
 import com.brilliant.R;
 import com.brilliant.mainlibrary.view.MainPageFragment;
+import com.example.baselibrary.appupdate.DownLoadUtils;
+import com.example.baselibrary.appupdate.DownloadApk;
 import com.example.baselibrary.base.BaseFullScreenNormalActivity;
 import com.example.baselibrary.constant.UIFactory;
 import com.example.baselibrary.util.MyToastUtil;
@@ -50,8 +52,9 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
 
     @Override
     public void initView() {
-        // 下载升级
-        // downloadUpdateAPK(download_url);
+        // app的升级下载和安装封装
+        dealAppUpdate(download_url);
+
         fragmentManager = getSupportFragmentManager();
     }
 
@@ -59,7 +62,7 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
     public void initData(Bundle savedInstanceState) {
         fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "ImFragment", "InterestFragment", "MemberFragment"));
         currIndex = 0;
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             currIndex = savedInstanceState.getInt(CURR_INDEX);
             hideSavedFragment();
         }
@@ -69,11 +72,20 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.foot_bar_home: currIndex = 0; break;
-                    case R.id.foot_bar_im: currIndex = 1; break;
-                    case R.id.foot_bar_interest: currIndex = 2; break;
-                    case R.id.main_footbar_user: currIndex = 3; break;
-                    default: break;
+                    case R.id.foot_bar_home:
+                        currIndex = 0;
+                        break;
+                    case R.id.foot_bar_im:
+                        currIndex = 1;
+                        break;
+                    case R.id.foot_bar_interest:
+                        currIndex = 2;
+                        break;
+                    case R.id.main_footbar_user:
+                        currIndex = 3;
+                        break;
+                    default:
+                        break;
                 }
                 showFragment();
             }
@@ -111,17 +123,17 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
     private void showFragment() {
         if (currIndex == 3) {
             // 如果需要登录，在这里处理
-           // UIHelper.showLogin(MainActivity.this);
+            // UIHelper.showLogin(MainActivity.this);
         }
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = fragmentManager.findFragmentByTag(fragmentTags.get(currIndex));
-        if(fragment == null) {
+        if (fragment == null) {
             fragment = instantFragment(currIndex);
         }
         for (int i = 0; i < fragmentTags.size(); i++) {
             Fragment f = fragmentManager.findFragmentByTag(fragmentTags.get(i));
-            if(f != null && f.isAdded()) {
+            if (f != null && f.isAdded()) {
                 fragmentTransaction.hide(f);
             }
         }
@@ -135,17 +147,21 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
     }
 
     /**
-     *
      * @param currIndex
      * @return
      */
     private Fragment instantFragment(int currIndex) {
         switch (currIndex) {
-            case 0: return new MainPageFragment();
-            case 1: return new MainPageFragment();
-            case 2: return new MainPageFragment();
-            case 3: return new MainPageFragment();
-            default: return null;
+            case 0:
+                return new MainPageFragment();
+            case 1:
+                return new MainPageFragment();
+            case 2:
+                return new MainPageFragment();
+            case 3:
+                return new MainPageFragment();
+            default:
+                return null;
         }
     }
 
@@ -154,8 +170,28 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
      */
     private void hideSavedFragment() {
         Fragment fragment = fragmentManager.findFragmentByTag(fragmentTags.get(currIndex));
-        if(fragment != null) {
+        if (fragment != null) {
             fragmentManager.beginTransaction().hide(fragment).commit();
+        }
+    }
+
+    /**
+     * app的升级下载和安装封装
+     */
+    private void dealAppUpdate(String download_url) {
+        // 方式1：使用DownloadService下载升级和安装，可以自定义通知栏下载样式
+        downloadUpdateAPK(download_url);
+
+        // 方式2：使用Google推荐的下载工具类DownLoadManager，样式比较规范和统一,一共分为4步，(推荐)
+        //1.注册下载广播接收器
+        DownloadApk.registerBroadcast(this);
+        //2.删除已存在的Apk
+        DownloadApk.removeFile(this);
+        //3.如果手机已经启动下载程序，执行downloadApk。否则跳转到设置界面
+        if (DownLoadUtils.getInstance(getApplicationContext()).canDownload()) {
+            DownloadApk.downloadApk(getApplicationContext(), download_url, "Hobbees更新", "Hobbees");
+        } else {
+            DownLoadUtils.getInstance(getApplicationContext()).skipToDownloadManager();
         }
     }
 
@@ -172,6 +208,13 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(CURR_INDEX, currIndex);
+    }
+
+    @Override
+    protected void onDestroy() {
+        //4.反注册广播接收器
+        DownloadApk.unregisterBroadcast(this);
+        super.onDestroy();
     }
 
     //######################   override methods end  ##############################################

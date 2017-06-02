@@ -1,5 +1,6 @@
 package com.brilliant;
 
+import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.example.baselibrary.base.BaseApplication;
 
 /**
@@ -19,6 +20,7 @@ public class AndroidAPP extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        SharedPrefUtils.init(getApplicationContext());
     }
 
     //######################   override methods end  ##############################################

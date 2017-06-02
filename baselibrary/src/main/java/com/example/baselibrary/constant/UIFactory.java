@@ -282,8 +282,6 @@ public class UIFactory {
     }
 
     /**
-     *
-     *
      * @param activity
      * @param requestCode
      */
@@ -297,7 +295,7 @@ public class UIFactory {
     //############################  测试页面 end #################################################
 
     /**
-     * 打开升级
+     * 启动升级服务，进行升级包的下载和安装
      *
      * @param context
      * @param downurl

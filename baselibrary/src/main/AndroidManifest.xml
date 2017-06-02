@@ -10,6 +10,17 @@
         <service android:name=".service.DownloadService" />
 
         <!-- ################################# service end ################################# -->
+
+        <!-- ################################# receiver start ################################# -->
+
+        <receiver android:name=".appupdate.ApkInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ################################# receiver end ################################# -->
+
     </application>
 
 </manifest>
