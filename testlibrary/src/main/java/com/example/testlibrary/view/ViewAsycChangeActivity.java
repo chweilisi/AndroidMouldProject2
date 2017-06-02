@@ -1,8 +1,8 @@
-package com.example.baselibrary.demo;
+package com.example.testlibrary.view;
 
 import android.os.Bundle;
 
-import com.example.baselibrary.R;
+import com.example.testlibrary.R;
 import com.example.baselibrary.base.BaseActivity;
 
 /**
@@ -10,7 +10,7 @@ import com.example.baselibrary.base.BaseActivity;
  * Date: 2017/2/13 11:10
  * User: Administrator
  */
-public class ModelActivity extends BaseActivity {
+public class ViewAsycChangeActivity extends BaseActivity {
 
     //##########################  custom variables start ##########################################
 
@@ -21,7 +21,7 @@ public class ModelActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.baselib_activity_model;
+        return R.layout.testlibrary_activity_view_asycchange;
     }
 
     @Override

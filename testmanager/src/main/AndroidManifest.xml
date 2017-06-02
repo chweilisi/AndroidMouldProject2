@@ -31,7 +31,7 @@
 
         <!-- 入口2 -->
         <activity-alias
-            android:name=".ChangeAppIconActivity"
+            android:name=".ChangeAppIconAliasActivity"
             android:enabled="false"
             android:icon="@mipmap/testlibrary_uu"
             android:label="劳动节"

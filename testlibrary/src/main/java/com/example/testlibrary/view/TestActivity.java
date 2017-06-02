@@ -57,7 +57,8 @@ public class TestActivity extends BaseActivity {
             R2.id.requestPermissionMultiple, R2.id.custtomTitleBar, R2.id.custtomTagsLayout,
             R2.id.custtomRatingStar, R2.id.custtomEmpty, R2.id.dataBinding, R2.id.customDialog,
             R2.id.customBanner, R2.id.loggerdisplay, R2.id.cache, R2.id.customPopupWindow,
-            R2.id.SuperTextView, R2.id.LcLableView, R2.id.statemode, R2.id.changeappicon})
+            R2.id.SuperTextView, R2.id.LcLableView, R2.id.statemode, R2.id.changeappicon,
+            R2.id.changeappview})
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -120,6 +121,10 @@ public class TestActivity extends BaseActivity {
             UIFactory.startStateModeActivity(this, RESULT_OK);
         } else if (i == R.id.changeappicon) {
             //
+            UIFactory.startChangeAppIconActivity(this, RESULT_OK);
+        } else if (i == R.id.changeappview) {
+            //
+            UIFactory.startViewAsycChangeActivity(this, RESULT_OK);
         }
     }
 

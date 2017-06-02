@@ -150,5 +150,12 @@
             android:layout_marginTop="5dp"
             android:text="静态和动态两种方式更换应用图标" />
 
+        <Button
+            android:id="@+id/changeappview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="实现应用内View动态更新 " />
+
     </LinearLayout>
 </ScrollView>

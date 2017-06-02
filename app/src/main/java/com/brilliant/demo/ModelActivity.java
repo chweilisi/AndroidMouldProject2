@@ -1,28 +1,27 @@
-package com.example.baselibrary.demo;
+package com.brilliant.demo;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.baselibrary.R;
-import com.example.baselibrary.base.BaseFragment;
+import com.example.baselibrary.base.BaseActivity;
 
 /**
  * description:
  * Date: 2017/2/13 11:10
  * User: Administrator
  */
-public class ModelFragment extends BaseFragment {
+public class ModelActivity extends BaseActivity {
 
     //##########################  custom variables start ##########################################
 
 
     //##########################   custom variables end  ##########################################
 
-    //###################### Override custom metohds start ########################################
+    //###################### override custom metohds start ########################################
 
     @Override
-    protected int getLayoutResource() {
-        return R.layout.baselib_activity_model;
+    public int getLayoutId() {
+        return R.layout.activity_model;
     }
 
     @Override
@@ -30,20 +29,34 @@ public class ModelFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView(View view) {
+    public void initView() {
     }
 
     @Override
     public void initData(Bundle savedInstanceState) {
     }
 
-    //######################  Override custom metohds end  ########################################
+    //######################  override custom metohds end  ########################################
 
-    //######################   custom metohds start  ##############################################
+    //######################      custom metohds start     ########################################
 
     //######################    custom metohds end   ##############################################
 
     //######################  override methods start ##############################################
+
+    @Override
+    public void onBackPressed() {
+        backPressConform();
+    }
+
+    /**
+     * @Description
+     * @author BrillantZhao
+     * @date 2015-1-16 下午12:56:28
+     */
+    private void backPressConform() {
+        finish();
+    }
 
     //######################   override methods end  ##############################################
 }
