@@ -1,4 +1,4 @@
-package com.brilliant.demo;
+package com.example.baselibrary.demo;
 
 
 import com.example.baselibrary.base.BaseModel;

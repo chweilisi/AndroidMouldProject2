@@ -144,13 +144,6 @@
             android:text="从 “状态模式” 解析App登录功能实战技巧 " />
 
         <Button
-            android:id="@+id/changeappicon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="静态和动态两种方式更换应用图标" />
-
-        <Button
             android:id="@+id/changeappview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

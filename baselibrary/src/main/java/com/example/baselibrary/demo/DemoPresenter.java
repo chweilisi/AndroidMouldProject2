@@ -1,4 +1,4 @@
-package com.brilliant.demo;
+package com.example.baselibrary.demo;
 
 /** MVP中Presenter
  * Created by Conan on 2017/2/23.
