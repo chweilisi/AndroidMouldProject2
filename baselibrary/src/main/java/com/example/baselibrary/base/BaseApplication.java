@@ -7,6 +7,7 @@ import com.alibaba.sdk.android.httpdns.DegradationFilter;
 import com.alibaba.sdk.android.httpdns.HttpDns;
 import com.alibaba.sdk.android.httpdns.HttpDnsService;
 import com.basemodule.base.IBaseApplication;
+import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.log.MyLogUtil;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.R;
@@ -84,7 +85,7 @@ public class BaseApplication extends IBaseApplication {
         //=== 注册App异常崩溃处理器
         registerUncaughtExceptionHandler(APPConstant.DEFAULT_CRASH_FILE_PATH);
         //===
-      //  SharedPrefUtils.init(getApplicationContext());
+        SharedPrefUtils.init(getApplicationContext());
 
         //=== 内存泄露检测框架
         if (LeakCanary.isInAnalyzerProcess(this)) {
