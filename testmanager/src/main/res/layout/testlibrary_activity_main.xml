@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="静态的改变应用图标" />
+        android:text="静态的改变应用图标(当改变应用入口之后，再次运行项目，会提示找不到入口，恢复原入口之后，再运行则正常)" />
 
     <TextView
         android:layout_width="match_parent"
