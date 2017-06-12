@@ -94,9 +94,9 @@ testlibrary库以及testmanager代码示例
 
 部份例图:
 
-![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/barchart_hhh.png)
-![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/barchart_hhh.png)
-![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/barchart_hhh.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/testmanager_entry.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/baselibrary_list1.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/testmanager/screens/baselibrary_list2.png)
 
 ### 用到的第三方库
 ```
