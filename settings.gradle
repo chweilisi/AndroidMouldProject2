@@ -1,1 +1,1 @@
-include ':app', ':baselibrary', ':testlibrary', ':testmanager', ':mainlibrary', ':mainmanager'
+include ':app', ':baselibrary', ':testlibrary', ':testmanager', ':mainlibrary', ':mainmanager', ':chartlibrary', ':chartmanager'
