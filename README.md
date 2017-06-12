@@ -5,7 +5,7 @@ android快速开发模板工程，组件化的MVP结构，方便快速开发和�
 简洁，使开发者只需要关心自己的逻辑实现，便于维护。
 
 ### 项目结构：
-![Alt text](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/images/app_struct.png)
+![Alt text](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/screens/app_struct.png)
 
 ### 使用方法：
 - 复制代码，修改包名，按照自己的需求更改代码逻辑和依赖关系
@@ -22,7 +22,7 @@ android快速开发模板工程，组件化的MVP结构，方便快速开发和�
 5. testlibrary： 测试模块，对应代码示例testmanager,是对baselibrary中基础代码的使用方法展示
 6. dependencies.gradle: 应用的依赖库集中配置，方便各个library中依赖库的管理
 7. gradle.properties: 配置应用的一些参数，方便管理以及jenkins打包
-8. 各个library已经manager对应的library:
+8. 各个library以及manager对应的library:
 
 ### 模块介绍：
 #### 1. chartlibrary: 图标模块
@@ -86,6 +86,16 @@ http://blog.csdn.net/xcl168/article/details/42318669
 ![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/areachart3.png)
 ![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/funnelchart2.png)
 ![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/barchart_hh.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/barchart_hhh.png)
+
+#### 2. baselibrary: 基础依赖库
+包含常用的网络请求，升级，下载，图片加载以及压缩处理，服务，工具类，自定义控件等都包含在内，具体的使用方法参考
+testlibrary库以及testmanager代码示例
+
+部份例图:
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/barchart_hhh.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/barchart_hhh.png)
 ![](https://github.com/BrillantZhao/AndroidMouldProject2/blob/master/chartmanager/screens/barchart_hhh.png)
 
 ### 用到的第三方库
