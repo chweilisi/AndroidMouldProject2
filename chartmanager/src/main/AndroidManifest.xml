@@ -21,9 +21,6 @@
             android:name=".ChartsActivity"
             android:label="@string/title_activity_charts"></activity>
         <activity
-            android:name=".AboutActivity"
-            android:label="@string/title_activity_about"></activity>
-        <activity
             android:name=".SeekBarActivity"
             android:label="@string/title_activity_seek_bar"></activity>
         <activity
@@ -32,9 +29,6 @@
         <!--<activity-->
         <!--android:name=".MultiTouchActivity"-->
         <!--android:label="@string/title_activity_multi_touch"></activity>-->
-        <activity
-            android:name=".GradientActivity"
-            android:label="@string/title_activity_gradient"></activity>
         <activity
             android:name=".HBARScrollActivity"
             android:hardwareAccelerated="false"

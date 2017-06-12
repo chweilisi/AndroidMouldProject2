@@ -40,15 +40,13 @@ import java.util.List;
 
 
 /**
+ * @author XiongChuanLiang<br/>(xcl_168@aliyun.com)
  * @ClassName RoundBarChart
  * @Description 弧线比较图基类
- * @author XiongChuanLiang<br/>(xcl_168@aliyun.com)
- *
  */
 public class ArcLineChart extends XChart {
 
     private static final String TAG = "ArcLineChart";
-
 
     //初始偏移角度
     private static final int OFFSET_ANGLE = 270;
@@ -75,7 +73,6 @@ public class ArcLineChart extends XChart {
 
     //附加信息类
     private PlotAttrInfoRender plotAttrInfoRender = null;
-
 
     public ArcLineChart() {
         int fillColor = Color.BLACK;
@@ -116,6 +113,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 返回半径
+     *
      * @return 半径
      */
     public float getRadius() {
@@ -125,6 +123,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 设置标签向左偏移位置多长
+     *
      * @param offset 横移多少位
      */
     public void setLabelOffsetX(float offset) {
@@ -134,6 +133,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 开放标签画笔
+     *
      * @return 画笔
      */
     public Paint getLabelPaint() {
@@ -149,6 +149,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 开放画网线的画笔
+     *
      * @return 画笔
      */
     public Paint getLinePaint() {
@@ -165,6 +166,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 环内部填充画笔
+     *
      * @return 画笔
      */
     public Paint getInnerPaint() {
@@ -181,6 +183,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 返回数据轴的数据源
+     *
      * @return 数据源
      */
     public List<ArcLineData> getDataSource() {
@@ -190,6 +193,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 附加信息绘制处理类
+     *
      * @return 信息基类
      */
     public PlotAttrInfo getPlotAttrInfo() {
@@ -199,6 +203,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 设置柱形间空白所占的百分比
+     *
      * @param percentage 百分比
      */
     public boolean setBarInnerMargin(float percentage) {
@@ -218,6 +223,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 得到柱形间空白所占的百分比
+     *
      * @return 百分比
      */
     public float getInnerMargin() {
@@ -226,6 +232,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 设置环内部填充相对于环所占的比例
+     *
      * @param precentage 环所占比例
      */
     public void setInnerRaius(float precentage) {
@@ -234,6 +241,7 @@ public class ArcLineChart extends XChart {
 
     /**
      * 检查角度的合法性
+     *
      * @param Angle 角度
      * @return 是否正常
      */
