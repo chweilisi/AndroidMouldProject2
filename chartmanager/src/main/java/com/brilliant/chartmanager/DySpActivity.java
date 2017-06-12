@@ -26,7 +26,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Menu;
 
 import com.brilliant.chartlibrary.chart.PointD;
 import com.brilliant.chartlibrary.view.DySplineChart;
@@ -38,10 +37,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
+ * @author XiongChuanLiang<br/>(xcl_168@aliyun.com)
  * @ClassName DySpActivity
  * @Description 双线图Activity
- *
- * @author XiongChuanLiang<br/>(xcl_168@aliyun.com)
  */
 
 public class DySpActivity extends Activity {
@@ -57,13 +55,6 @@ public class DySpActivity extends Activity {
 
         mTimer = new Timer();
         setTimerTask();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dy_sp, menu);
-        return true;
     }
 
     @Override
@@ -107,7 +98,6 @@ public class DySpActivity extends Activity {
 
     private void charts() {
         DySplineChart chartView = (DySplineChart) findViewById(R.id.ln_view);
-
 
         int minY = 30;
         int maxY = 100;
