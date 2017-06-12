@@ -7,13 +7,89 @@
 
 ##### 项目结构：
 ![Alt text](https://github.com/yuanzaiyuanfang/AndroidMouldProject/raw/master/images/xiangmujiegou.png)
-##### 应用截图：
 
-这里有截图
 ##### 使用方法：
 - demo中有mvp模板，直接复制改个名字就可以用了
 - module提供使用参考
 - 第三方库的使用详见下方链接
+
+##### 项目构成：
+1. 图标库：chartlibrary,对应代码示例chartmanager
+==========
+ 基于Android原生Canvas来绘制各种图表,使用简便,定制灵活。<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp;目前支持<b>(3D/非3D,背向式)柱形图(Bar Chart)、3D/非3D饼图(Pie Chart)、堆积图(Stacked Bar Chart)、面积图(Area Chart)、
+ 折线图(Line Chart)、曲线图(Spline Chart)、环形图(Dount Chart)、南丁格尔玫瑰图(Rose Chart)、仪表盘(Dial Chart)、刻度盘(Gauge Chart)、雷达图(Radar Chart)、
+ 圆形图(Circle Chart)、弧线比较图、散点图(Scatter Chart)、气泡图(Bubble Chart)、范围条形图(RangeBar Chart)、玫瑰风向图(Wind Rose)、象限图(Quadrant chart)、漏斗图(Funnel Chart)等图表。<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp;其它特性还包括手势缩放、图表滑动、点击交互、多图叠加、图表批注、动画效果、多XY轴显示、轴线任意方位显示、动态图例、图表参考线、柱图刻度对齐风格切换、混合图表及同数据源图表类型切换等。</b><br/> 
+ 
+图表库简要教程
+http://blog.csdn.net/xcl168/article/details/42318669 <br/>	
+<br/>
+ <b>部份例图:</b><br/> 
+ 
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barpiechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/area_ln_pie_chart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/spinnerBarChart2.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart_m.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/stackedchart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart2.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/dydialchart1.gif)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/dydialchart2.gif)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/dydialchart3.gif)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/dydialchart4.gif)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/bar3dchart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/linechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/splinechart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/pie3dchart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/radarchart_circle.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/WindRoseChart.png)
+
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/rosechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/circlechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/spinnerBarChart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/gaugechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/piechart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/arclinechart.png)
+
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/dountchart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/bubblechart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/scatterchart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/radarchart_a.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/areachart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/rangebarchart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/mulaxischart1.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/mulaxischart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/mulbarchart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/QuadrantChart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/lines.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/spinnerPieChart.png)
+
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart8.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart9.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/FunnelChart_desc.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/FunnelChart_asc.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/splinechart05.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/splinechart6.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/linechart6.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart6.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchartcloud.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/circlechart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/roundbarchart.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/roundbarchart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/areachart3.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/funnelchart2.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart_hh.png)
+![](https://github.com/BrillantZhao/AndroidMouldProject2/tree/master/chartmanager/screens/barchart_hhh.png)
 
 ## 用到的第三方库
 

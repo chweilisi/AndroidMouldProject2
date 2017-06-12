@@ -110,7 +110,6 @@ public class DySpActivity extends Activity {
         linePoint1.clear();
         linePoint2.clear();
 
-
         double x = random.nextInt(maxX) % (maxX - minX + 1) + minX;
         double y = random.nextInt(maxY) % (maxY - minY + 1) + minY;
 
