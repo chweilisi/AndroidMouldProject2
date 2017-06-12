@@ -6,7 +6,7 @@
 ## Screenshot
 
 ##### 项目结构：
-![Alt text](https://github.com/yuanzaiyuanfang/AndroidMouldProject/raw/master/images/xiangmujiegou.png)
+![Alt text](https://github.com/yuanzaiyuanfang/AndroidMouldProject/raw/master/images/appstruct.png)
 
 ##### 使用方法：
 - demo中有mvp模板，直接复制改个名字就可以用了
