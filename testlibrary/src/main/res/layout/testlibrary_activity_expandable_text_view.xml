@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ellipsize="end"
-        android:textColor="#666"
+        android:textColor="@color/baselib_black"
         app:baselib_animDuration="200"
         app:baselib_collapseDrawable="@mipmap/baselib_icon_orange_arrow_down"
         app:baselib_collapseExpandGrarity="right"

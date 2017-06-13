@@ -1,4 +1,4 @@
-package com.example.testlibrary.view;
+package com.example.testlibrary;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,8 +7,6 @@ import android.view.View;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.baselibrary.constant.UIFactory;
 import com.example.baselibrary.widget.dialog.CustomProgressDialog;
-import com.example.testlibrary.R;
-import com.example.testlibrary.R2;
 
 import butterknife.OnClick;
 

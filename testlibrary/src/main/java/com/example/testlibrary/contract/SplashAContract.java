@@ -1,4 +1,4 @@
-package com.example.testlibrary.contact;
+package com.example.testlibrary.contract;
 
 import android.graphics.Bitmap;
 

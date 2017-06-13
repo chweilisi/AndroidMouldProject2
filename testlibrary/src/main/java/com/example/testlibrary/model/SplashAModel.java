@@ -8,7 +8,7 @@ import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.example.baselibrary.api.APIConstant;
 import com.example.testlibrary.api.APIMethod;
 import com.example.testlibrary.bean.QueryAdvertBean;
-import com.example.testlibrary.contact.SplashAContract;
+import com.example.testlibrary.contract.SplashAContract;
 
 import java.io.File;
 import java.util.ArrayList;

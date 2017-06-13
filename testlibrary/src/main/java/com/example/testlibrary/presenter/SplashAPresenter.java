@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 
 import com.basemodule.baserx.RxSubscriber;
 import com.example.testlibrary.bean.QueryAdvertBean;
-import com.example.testlibrary.contact.SplashAContract;
+import com.example.testlibrary.contract.SplashAContract;
 
 import java.io.File;
 import java.util.ArrayList;

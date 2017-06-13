@@ -15,7 +15,7 @@ import com.example.baselibrary.widget.NumberProgressBar;
 import com.example.testlibrary.R;
 import com.example.testlibrary.R2;
 import com.example.testlibrary.bean.QueryAdvertBean;
-import com.example.testlibrary.contact.SplashAContract;
+import com.example.testlibrary.contract.SplashAContract;
 import com.example.testlibrary.model.SplashAModel;
 import com.example.testlibrary.presenter.SplashAPresenter;
 import com.vincent.filepicker.Constant;
