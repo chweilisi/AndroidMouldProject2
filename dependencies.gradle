@@ -1,5 +1,5 @@
 def supportVersion = "25.3.0"
-def butterKnifeVersion = "8.5.1"
+def butterKnifeVersion = "8.6.0"
 def permissionsdispatcherVersion = "2.3.2"
 def AndroidBaseModuleVersion = "1.1.2.54"
 def AndroidFilePickerVersion = "1.0.5"
@@ -50,6 +50,7 @@ project.ext {
             "stream"                         : "com.annimon:stream:1.0.8",
 
             //=== butterKnife (https://github.com/JakeWharton/butterknife)
+            // 在两个地方使用，1. dependencies.gradle； 2. build.gradle
             "butterknife"                    : "com.jakewharton:butterknife:${butterKnifeVersion}",
             "butterknife-compiler"           : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
 

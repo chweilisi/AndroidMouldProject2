@@ -16,8 +16,11 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
         classpath 'com.antfortune.freeline:gradle:0.8.4'
+
         // To use Butter Knife in a library
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
+        // 在两个地方使用，1. dependencies.gradle； 2. build.gradle
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.6.0'
+
         // error-prone相关配置
         classpath "net.ltgt.gradle:gradle-errorprone-plugin:0.0.10"
 
