@@ -7,7 +7,7 @@ package com.example.testlibrary.presenter;
 
 import android.graphics.Bitmap;
 
-import com.basemodule.baserx.RxSubscriber;
+import com.example.baselibrary.baserx.RxSubscriber;
 import com.example.testlibrary.bean.QueryAdvertBean;
 import com.example.testlibrary.contract.SplashAContract;
 

@@ -3,9 +3,9 @@ package com.example.testlibrary.model;
 import android.content.Context;
 import android.graphics.Bitmap;
 
-import com.basemodule.baserx.RxSchedulers;
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.example.baselibrary.api.APIConstant;
+import com.example.baselibrary.baserx.RxSchedulers;
 import com.example.testlibrary.api.APIMethod;
 import com.example.testlibrary.bean.QueryAdvertBean;
 import com.example.testlibrary.contract.SplashAContract;

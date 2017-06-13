@@ -6,6 +6,7 @@ import android.view.View;
 import com.basemodule.base.IBaseActivity;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
+import com.example.baselibrary.baserx.RxManager;
 import com.example.baselibrary.util.MyToastUtil;
 
 /**
@@ -19,6 +20,8 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
 
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 
+    public RxManager mRxManager;
+
     //##########################   custom variables end  ##########################################
 
     //######################  override methods start ##############################################
@@ -27,6 +30,7 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     public void onCreate(Bundle savedInstanceState) {
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(this);
         setContentView(getLayoutId());
+        mRxManager = new RxManager();
         super.onCreate(savedInstanceState);
     }
 
@@ -109,6 +113,12 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     //######################  override custom metohds end  ########################################
 
     //######################      custom metohds start     ########################################
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mRxManager.clear();
+    }
 
     //######################    custom metohds end   ##############################################
 

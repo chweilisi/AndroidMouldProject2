@@ -1,6 +1,7 @@
 package com.example.baselibrary.api;
 
-import com.basemodule.baserx.RxSchedulers;
+
+import com.example.baselibrary.baserx.RxSchedulers;
 
 import java.util.HashMap;
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.basemodule.base.IBaseFragment;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
+import com.example.baselibrary.baserx.RxManager;
 import com.example.baselibrary.util.MyToastUtil;
 
 /**
@@ -23,6 +24,8 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
 
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 
+    public RxManager mRxManager;
+
     //##########################   custom variables end  ##########################################
 
     //######################  override methods start ##############################################
@@ -30,6 +33,7 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(getActivity());
+        mRxManager = new RxManager();
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -105,6 +109,12 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
     //######################  override custom metohds end  ########################################
 
     //######################      custom metohds start     ########################################
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mRxManager.clear();
+    }
 
     //######################    custom metohds end   ##############################################
 }
