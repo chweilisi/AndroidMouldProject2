@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 末行对齐方式 -->
+    <declare-styleable name="baselib_AlignTextView">
+        <attr name="baselib_align" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- 标点转换 -->
+    <declare-styleable name="baselib_CBAlignTextView">
+        <attr name="baselib_punctuationConvert" format="boolean"/>
+    </declare-styleable>
+
+</resources>

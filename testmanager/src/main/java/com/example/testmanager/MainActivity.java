@@ -37,7 +37,7 @@ public class MainActivity extends BaseActivity {
     public void initView() {
         mP = getApplicationContext().getPackageManager();
 
-        defAppLauncher = new ComponentName(getBaseContext(), "com.example.testmanager.MainActivity");
+        defAppLauncher = new ComponentName(getBaseContext(), "com.example.testmanager.TestActivity");
         customAppLauncher = new ComponentName(getBaseContext(), "com.example.testmanager.ChangeAppIconAliasActivity");
     }
 

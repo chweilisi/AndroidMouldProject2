@@ -282,6 +282,71 @@ public class UIFactory {
     }
 
     /**
+     * PowerfulEditText
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startPowerfulEditTextDemoActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.PowerfulEditTextDemoActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * ExpandableTextView
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startExpandableTextViewDemoActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.ExpandableTextViewDemoActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * RunningTextView
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startRunningTextViewDemoActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.RunningTextViewActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * RunningTextView
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startEllDefaultBottomDemoActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.EllDefaultBottomDemoActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * RunningTextView
+     *
+     * @param activity
+     * @param requestCode
+     */
+    public static void startEllCustomBottomDemoActivity(Activity activity, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_test_library_scheme) +
+                "://" + activity.getString(R.string.baselib_test_library_host) + ":" + activity.getString(R.string.baselib_test_library_port) +
+                "/.view.EllCustomBottomDemoActivity"));
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
      * @param activity
      * @param requestCode
      */

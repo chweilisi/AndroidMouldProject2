@@ -99,4 +99,100 @@
         <item name="android:layout_margin">2dp</item>
     </style>
 
+    <declare-styleable name="baselib_ExpandableLinearLayout">
+        <!--默认显示的条目数-->
+        <attr name="baselib_defaultItemCount" format="integer" />
+        <!--提示文字的大小-->
+        <attr name="baselib_tipTextSize" format="dimension" />
+        <!--字体颜色-->
+        <attr name="baselib_tipTextColor" format="color" />
+        <!--待展开的文字提示-->
+        <attr name="baselib_expandText" format="string" />
+        <!--待收起时的文字提示-->
+        <attr name="baselib_hideText" format="string" />
+        <!--向下的箭头的图标-->
+        <attr name="baselib_arrowDownImg" format="reference" />
+        <!--是否使用默认的底部-->
+        <attr name="baselib_useDefaultBottom" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="baselib_PowerfulEditText">
+        <!--功能的类型-->
+        <attr name="baselib_funcType">
+            <enum name="normal" value="-1" />
+            <enum name="canClear" value="0" />
+            <enum name="canWatchPwd" value="1" />
+        </attr>
+        <!--关闭查看密码的图标-->
+        <attr name="baselib_eyeClose" format="reference" />
+        <!--开启查看密码的图标-->
+        <attr name="baselib_eyeOpen" format="reference" />
+        <!--左侧Drawable的宽度-->
+        <attr name="baselib_leftDrawableWidth" format="dimension" />
+        <!--左侧Drawable的高度-->
+        <attr name="baselib_leftDrawableHeight" format="dimension" />
+        <!--右侧Drawable的宽度-->
+        <attr name="baselib_rightDrawableWidth" format="dimension" />
+        <!--右侧Drawable的高度-->
+        <attr name="baselib_rightDrawableHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="baselib_PhoneEditText">
+        <attr name="baselib_dividerString" format="string" />
+    </declare-styleable>
+
+    <!--收起展开textview-->
+    <declare-styleable name="baselib_ExpandableTextView">
+        <attr name="baselib_maxCollapsedLines" format="integer" />
+        <attr name="baselib_animDuration" format="integer" />
+        <attr name="baselib_expandDrawable" format="reference" />
+        <attr name="baselib_collapseDrawable" format="reference" />
+        <attr name="baselib_contentTextColor" format="color" />
+        <attr name="baselib_collapseExpandTextColor" format="color" />
+        <attr name="baselib_contentTextSize" format="dimension" />
+        <attr name="baselib_collapseExpandTextSize" format="dimension" />
+        <attr name="baselib_textCollapse" format="string" />
+        <attr name="baselib_textExpand" format="string" />
+        <attr name="baselib_collapseExpandGrarity">
+            <flag name="left" value="3" />
+            <flag name="right" value="5" />
+        </attr>
+        <attr name="baselib_drawableGrarity">
+            <flag name="left" value="3" />
+            <flag name="right" value="5" />
+        </attr>
+    </declare-styleable>
+
+
+    <!--扇形图-->
+    <declare-styleable name="baselib_PieChartView">
+        <attr name="baselib_gravity">
+            <enum name="top" value="0"></enum>
+            <enum name="centre" value="1"></enum>
+            <enum name="fixXY" value="2"></enum>
+        </attr>
+        <!--扇形的中心空白直径 单位:db-->
+        <attr name="baselib_centreRadius" format="dimension"></attr>
+        <!--字体大小-->
+        <attr name="baselib_lableTextSize" format="dimension"></attr>
+        <!--第一个扇形的偏移值(突出效果)-->
+        <attr name="baselib_firstOffset" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="baselib_NumberRunningTextView">
+        <!--帧数-->
+        <attr name="baselib_frameNum" format="integer"></attr>
+        <!--内容的格式-->
+        <attr name="baselib_textType">
+            <enum name="money" value="0"></enum>
+            <enum name="num" value="1"></enum>
+        </attr>
+        <!--是否使用每三位数字一个逗号-->
+        <attr name="baselib_useCommaFormat" format="boolean"></attr>
+        <!--是否当内容改变的时候使用动画，不改变则不使用动画-->
+        <attr name="baselib_runWhenChange" format="boolean"></attr>
+
+    </declare-styleable>
+
 </resources>

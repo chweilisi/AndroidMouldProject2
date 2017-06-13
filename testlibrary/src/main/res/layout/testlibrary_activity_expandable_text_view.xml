@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.baselibrary.widget.expandabletextview.ExpandableTextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:textColor="#666"
+        app:baselib_animDuration="200"
+        app:baselib_collapseDrawable="@mipmap/baselib_icon_orange_arrow_down"
+        app:baselib_collapseExpandGrarity="right"
+        app:baselib_collapseExpandTextColor="@color/baselib_main_color"
+        app:baselib_contentTextSize="12sp"
+        app:baselib_expandDrawable="@mipmap/baselib_icon_orange_arrow_up"
+        app:baselib_maxCollapsedLines="4"
+        app:baselib_textCollapse="@string/baselib_collapse"
+        app:baselib_textExpand="@string/baselib_expand" />
+
+</RelativeLayout>

@@ -342,5 +342,85 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".view.PowerfulEditTextDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.PowerfulEditTextDemoActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.ExpandableTextViewDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.ExpandableTextViewDemoActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.RunningTextViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.RunningTextViewActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.EllCustomBottomDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.EllCustomBottomDemoActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.EllDefaultBottomDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.EllDefaultBottomDemoActivity"
+                    android:port="8888"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
