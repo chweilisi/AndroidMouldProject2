@@ -1,5 +1,6 @@
 def supportVersion = "25.3.1"
 def butterKnifeVersion = "8.6.0"
+def eventbusVersion = "3.0.0"
 def permissionsdispatcherVersion = "2.4.0"
 def AndroidBaseModuleVersion = "1.1.2.58"
 def AndroidFilePickerVersion = "1.0.5"
@@ -53,6 +54,9 @@ project.ext {
             // 在两个地方使用，1. dependencies.gradle； 2. build.gradle
             "butterknife"                    : "com.jakewharton:butterknife:${butterKnifeVersion}",
             "butterknife-compiler"           : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+
+            //=== EventBus (https://github.com/greenrobot/EventBus)
+            "eventbus"                       : "org.greenrobot:eventbus:${eventbusVersion}",
 
             //=== 6.0动态获取权限框架 PermissionDispatcher(https://github.com/hotchemi/PermissionsDispatcher)
             "permissionsdispatcher"          : "com.github.hotchemi:permissionsdispatcher:${permissionsdispatcherVersion}",

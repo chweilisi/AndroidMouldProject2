@@ -211,18 +211,16 @@
 }
 
 #eventBus混淆
+-keepattributes *Annotation*
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
 }
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
 # Only required if you use AsyncExecutor
 -keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
-    <init>(Java.lang.Throwable);
+    <init>(java.lang.Throwable);
 }
-
-#android-gif-drawable
--keep public class pl.droidsonroids.gif.GifIOException{<init>(int);}
--keep class pl.droidsonroids.gif.GifInfoHandle{<init>(long,int,int,int);}
 
 #-------okgo 系列---
 #okhttp
