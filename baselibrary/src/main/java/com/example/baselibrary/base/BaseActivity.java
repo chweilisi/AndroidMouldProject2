@@ -7,7 +7,11 @@ import com.basemodule.base.IBaseActivity;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
 import com.example.baselibrary.baserx.RxManager;
+import com.example.baselibrary.util.EventBusUtils;
 import com.example.baselibrary.util.MyToastUtil;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * add your personal code here
@@ -32,6 +36,23 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
         setContentView(getLayoutId());
         mRxManager = new RxManager();
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // eventBus
+        EventBusUtils.register(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mRxManager != null) {
+            mRxManager.clear();
+        }
+        // eventBus
+        EventBusUtils.unregister(this);
     }
 
     //######################   override methods end  ##############################################
@@ -110,15 +131,17 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     public void onClick(View v) {
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        /* Do something */
+        if (event.getMessage().equals("")) {
+
+        }
+    }
+
     //######################  override custom metohds end  ########################################
 
     //######################      custom metohds start     ########################################
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mRxManager.clear();
-    }
 
     //######################    custom metohds end   ##############################################
 

@@ -84,14 +84,14 @@ public class CustomBannerActivity extends BaseActivity implements OnBannerListen
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         //开始轮播
         banner.startAutoPlay();
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         //结束轮播
         banner.stopAutoPlay();

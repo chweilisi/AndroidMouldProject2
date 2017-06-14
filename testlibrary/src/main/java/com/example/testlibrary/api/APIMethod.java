@@ -53,7 +53,7 @@ public class APIMethod extends BaseAPIMethod {
         HashMap<String, Object> params = new HashMap<>();
 
         //===
-        return OkGoRequest.postJsonRequest(context, APIConstant.QUERYADVERT, getPublicParams(params)).getCall(new JsonConvert<QueryAdvertBean>() {
+        return OkGoRequest.postJsonRequestDef(context, APIConstant.QUERYADVERT, getPublicParams(params)).getCall(new JsonConvert<QueryAdvertBean>() {
         }, RxAdapter.<QueryAdvertBean>create());
     }
 
@@ -68,7 +68,7 @@ public class APIMethod extends BaseAPIMethod {
         HashMap<String, String> params = new HashMap<>();
 
         //===
-        return OkGoRequest.bitmapRequestWithGet(context, APIConstant.URL_IMAGE, params).getCall(BitmapConvert.create(), RxAdapter.<Bitmap>create());
+        return OkGoRequest.postParamRequestDef(context, APIConstant.URL_IMAGE, params).getCall(BitmapConvert.create(), RxAdapter.<Bitmap>create());
     }
 
     /**
@@ -83,7 +83,7 @@ public class APIMethod extends BaseAPIMethod {
         HashMap<String, String> params = new HashMap<>();
 
         //===
-        return OkGoRequest.formUploadRequest(context, APIConstant.URL_FORM_UPLOAD, params, files).getCall(StringConvert.create(), RxAdapter.<String>create());
+        return OkGoRequest.formUploadRequestDef(context, APIConstant.URL_FORM_UPLOAD, params, files).getCall(StringConvert.create(), RxAdapter.<String>create());
     }
 
     /**
@@ -116,7 +116,7 @@ public class APIMethod extends BaseAPIMethod {
         HashMap<String, String> params = new HashMap<>();
 
         //===
-        return OkGoRequest.fileDownloadRequest(context, APIConstant.URL_DOWNLOAD, params).getCall(new FileConvert(), RxAdapter.<File>create());
+        return OkGoRequest.postParamRequestDef(context, APIConstant.URL_DOWNLOAD, params).getCall(new FileConvert(), RxAdapter.<File>create());
     }
 
     /**
@@ -134,6 +134,5 @@ public class APIMethod extends BaseAPIMethod {
                 .params(params)
                 .execute(callback);
     }
-
 
 }

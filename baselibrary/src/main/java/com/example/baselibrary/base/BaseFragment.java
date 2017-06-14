@@ -9,6 +9,7 @@ import com.basemodule.base.IBaseFragment;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
 import com.example.baselibrary.baserx.RxManager;
+import com.example.baselibrary.util.EventBusUtils;
 import com.example.baselibrary.util.MyToastUtil;
 
 /**
@@ -35,6 +36,28 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(getActivity());
         mRxManager = new RxManager();
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // eventBus
+        EventBusUtils.register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // eventBus
+        EventBusUtils.unregister(this);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mRxManager!=null){
+            mRxManager.clear();
+        }
     }
 
     //######################   override methods end  ##############################################
@@ -109,12 +132,6 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
     //######################  override custom metohds end  ########################################
 
     //######################      custom metohds start     ########################################
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        mRxManager.clear();
-    }
 
     //######################    custom metohds end   ##############################################
 }

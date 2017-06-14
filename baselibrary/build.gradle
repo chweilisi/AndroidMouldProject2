@@ -62,6 +62,18 @@ dependencies {
     compile rootProject.ext.dependencies["okrx"]
     compile rootProject.ext.dependencies["okserver"]
 
+    //=== rxjava
+    compile rootProject.ext.dependencies["rxjava"]
+    //=== rxandroid
+    compile rootProject.ext.dependencies["rxandroid"]
+    //=== rxbinding
+    compile rootProject.ext.dependencies["rxbinding"]
+    //=== RxLifecycle
+    compile rootProject.ext.dependencies["rxlifecycle"]
+    compile rootProject.ext.dependencies["rxlifecycle-components"]
+    //=== RxPermissions
+    compile rootProject.ext.dependencies["rxpermissions"]
+
     //=== ali hotfix
     compile(rootProject.ext.dependencies["alisdk-hotfix"]) {
         exclude(module: 'utdid4all')
@@ -75,22 +87,6 @@ dependencies {
     debugCompile rootProject.ext.dependencies["leakcanary-debugCompile"]
     releaseCompile rootProject.ext.dependencies["leakcanary-releaseCompile"]
     testCompile rootProject.ext.dependencies["leakcanary-testCompile"]
-
-    //=== rxjava
-    compile rootProject.ext.dependencies["rxjava"]
-
-    //=== rxandroid
-    compile rootProject.ext.dependencies["rxandroid"]
-
-    //=== rxbinding
-    compile rootProject.ext.dependencies["rxbinding"]
-
-    //=== RxLifecycle
-    compile rootProject.ext.dependencies["rxlifecycle"]
-    compile rootProject.ext.dependencies["rxlifecycle-components"]
-
-    //=== RxPermissions
-    compile rootProject.ext.dependencies["rxpermissions"]
 
     //=== dagger
     compile rootProject.ext.dependencies["dagger"]
@@ -110,6 +106,9 @@ dependencies {
 
     //=== SuperTextView
     compile rootProject.ext.dependencies["SuperTextView"]
+
+    //=== eventbus
+    compile rootProject.ext.dependencies["eventbus"]
 
     //################## 引用第三方工程
 }

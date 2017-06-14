@@ -2,7 +2,7 @@ def supportVersion = "25.3.1"
 def butterKnifeVersion = "8.6.0"
 def eventbusVersion = "3.0.0"
 def permissionsdispatcherVersion = "2.4.0"
-def AndroidBaseModuleVersion = "1.1.2.58"
+def AndroidBaseModuleVersion = "1.1.2.59"
 def AndroidFilePickerVersion = "1.0.5"
 def okgoVersion = "2.1.4"
 def okrxVersion = "0.1.2"
@@ -76,6 +76,18 @@ project.ext {
             //下载管理和上传管理扩展，根据需要添加
             "okserver"                       : "com.lzy.net:okserver:${okserverVersion}",
 
+            //=== rxjava(https://github.com/ReactiveX/RxJava)
+            "rxjava"                         : "io.reactivex:rxjava:${rxjavaVersion}",
+            //=== rxandroid(https://github.com/ReactiveX/RxAndroid)
+            "rxandroid"                      : "io.reactivex:rxandroid:${rxandroidVersion}",
+            //=== rxbinding(https://github.com/JakeWharton/RxBinding)
+            "rxbinding"                      : "com.jakewharton.rxbinding:rxbinding:${rxbindingVersion}",
+            //=== RxLifecycle(https://github.com/trello/RxLifecycle)
+            "rxlifecycle"                    : "com.trello:rxlifecycle:${rxlifecycleVersion}",
+            "rxlifecycle-components"         : "com.trello:rxlifecycle-components:${rxlifecycleComponentsVersion}",
+            //=== RxPermissions(https://github.com/tbruyelle/RxPermissions)
+            "rxpermissions"                  : "com.tbruyelle.rxpermissions:rxpermissions:${rxpermissionsVersion}",
+
             //=== ali hotfix 传递性依赖utdid这个sdk, 所以不需要重复依赖utdid.但是另一方面其它阿里系SDK也可能依赖了utdid这个SDK,
             // 如果编译期间报utdid重复, 所以此时进行如下处理即可, 关闭传递性依赖
             "alisdk-hotfix"                  : "com.taobao.android:alisdk-hotfix:${alisdkHotfixVersion}",
@@ -87,22 +99,6 @@ project.ext {
             "leakcanary-debugCompile"        : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
             "leakcanary-releaseCompile"      : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
             "leakcanary-testCompile"         : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
-
-            //=== rxjava(https://github.com/ReactiveX/RxJava)
-            "rxjava"                         : "io.reactivex:rxjava:${rxjavaVersion}",
-
-            //=== rxandroid(https://github.com/ReactiveX/RxAndroid)
-            "rxandroid"                      : "io.reactivex:rxandroid:${rxandroidVersion}",
-
-            //=== rxbinding(https://github.com/JakeWharton/RxBinding)
-            "rxbinding"                      : "com.jakewharton.rxbinding:rxbinding:${rxbindingVersion}",
-
-            //=== RxLifecycle(https://github.com/trello/RxLifecycle)
-            "rxlifecycle"                    : "com.trello:rxlifecycle:${rxlifecycleVersion}",
-            "rxlifecycle-components"         : "com.trello:rxlifecycle-components:${rxlifecycleComponentsVersion}",
-
-            //=== RxPermissions(https://github.com/tbruyelle/RxPermissions)
-            "rxpermissions"                  : "com.tbruyelle.rxpermissions:rxpermissions:${rxpermissionsVersion}",
 
             //=== dagger(https://github.com/google/dagger)
             "dagger"                         : "com.google.dagger:dagger:${daggerVersion}",
@@ -128,5 +124,6 @@ project.ext {
 
             //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式
             "SuperTextView"                  : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
+
     ]
 }

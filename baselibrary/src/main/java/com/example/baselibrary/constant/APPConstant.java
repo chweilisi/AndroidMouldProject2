@@ -22,9 +22,6 @@ public class APPConstant {
     //=== sharedPreference 存储 key
     public static final String PREFS_PREVERSION = "PREFS_PREVERSION";  // 版本号信息
 
-    //=== other
-    public static final String PACKAGE_NAME = "com.brilliant";  // 应用包名
-
     // App根目录
     public static final String APP_PATH_ROOT = APPMethod.getRootPath().getAbsolutePath()
             + File.separator
