@@ -15,12 +15,12 @@ def rxbindingVersion = "0.4.0"
 def rxlifecycleVersion = "1.0"
 def rxlifecycleComponentsVersion = "1.0"
 def rxpermissionsVersion = "0.9.1@aar"
-def daggerVersion = "2.6"
+def daggerVersion = "2.11"
 def circleimageviewVersion = "2.1.0"
 def greendaoVersion = "3.2.2"
 def practicalrecyclerviewVersion = "1.1.5"
 def bannerVersion = "1.4.9"
-def LubanVersion = "1.0.9"
+def LubanVersion = "1.1.1"
 def SuperTextViewVersion = "1.1.2"
 
 project.ext {
@@ -105,18 +105,21 @@ project.ext {
             "dagger-compiler"                : "com.google.dagger:dagger-compiler:${daggerVersion}",
 
             //=== circleimageview(https://github.com/hdodenhof/CircleImageView)
+            // ImageLoaderUtils.java中也有方法来展示原型图片，但该库能提供更多的个性化定制
             "circleimageview"                : "de.hdodenhof:circleimageview:${circleimageviewVersion}",
 
             //=== greendao  (https://github.com/greenrobot/greenDAO)
             "greendao"                       : "org.greenrobot:greendao:${greendaoVersion}",
 
             //=== practicalrecyclerview  (https://github.com/ssseasonnn/PracticalRecyclerView)
+            // 所有的listview请使用该库
             "practicalrecyclerview"          : "zlc.season:practicalrecyclerview:${practicalrecyclerviewVersion}",
 
             //=== banner  (https://github.com/youth5201314/banner)
             "banner"                         : "com.youth.banner:banner:${bannerVersion}",
 
-            //=== Luban (https://github.com/Curzibn/Luban) 最接近微信朋友圈的图片压缩算法
+            //=== Luban (https://github.com/Curzibn/Luban)
+            // 最接近微信朋友圈的图片压缩算法
             "Luban"                          : "top.zibin:Luban:${LubanVersion}",
 
             //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式

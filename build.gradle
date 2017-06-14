@@ -14,7 +14,11 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+        // greenDao
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
+
+        // freeline
         classpath 'com.antfortune.freeline:gradle:0.8.4'
 
         // To use Butter Knife in a library

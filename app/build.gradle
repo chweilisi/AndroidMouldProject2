@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'org.greenrobot.greendao'  // greenDAO
 apply plugin: 'com.antfortune.freeline'
 
 def getDate() {
@@ -83,15 +82,6 @@ android {
                 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "mips", "mips64", "x86", "x86_64"
             }
         }
-    }
-
-    greendao {
-        //指定数据库schema版本号，迁移等操作会用到
-        schemaVersion 1
-        //通过gradle插件生成的数据库相关文件的包名，默认为你的entity所在的包名
-        //  daoPackage 'cn.sunfit.jifeng.capabilities.db.dao'
-        //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
-        targetGenDir 'src/main/java'
     }
 
     sourceSets {
