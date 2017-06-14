@@ -1,14 +1,14 @@
-def supportVersion = "25.3.0"
+def supportVersion = "25.3.1"
 def butterKnifeVersion = "8.6.0"
-def permissionsdispatcherVersion = "2.3.2"
-def AndroidBaseModuleVersion = "1.1.2.55"
+def permissionsdispatcherVersion = "2.4.0"
+def AndroidBaseModuleVersion = "1.1.2.58"
 def AndroidFilePickerVersion = "1.0.5"
 def okgoVersion = "2.1.4"
 def okrxVersion = "0.1.2"
 def okserverVersion = "1.1.3"
 def alisdkHotfixVersion = "2.0.6"
 def alicloudAndroidHttpdnsVersion = "1.0.10"
-def leakcanaryVersion = "1.5"
+def leakcanaryVersion = "1.5.1"
 def rxjavaVersion = "1.1.9"
 def rxandroidVersion = "1.2.1"
 def rxbindingVersion = "0.4.0"
@@ -80,8 +80,9 @@ project.ext {
             "alicloud-android-httpdns"       : "com.aliyun.ams:alicloud-android-httpdns:${alicloudAndroidHttpdnsVersion}",
 
             //=== leakcanary(https://github.com/square/leakcanary)
-            "leakcanary-android"             : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
-            "leakcanary-android-no-op"       : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
+            "leakcanary-debugCompile"        : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
+            "leakcanary-releaseCompile"      : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
+            "leakcanary-testCompile"         : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
 
             //=== rxjava(https://github.com/ReactiveX/RxJava)
             "rxjava"                         : "io.reactivex:rxjava:${rxjavaVersion}",
@@ -116,9 +117,9 @@ project.ext {
             "banner"                         : "com.youth.banner:banner:${bannerVersion}",
 
             //=== Luban (https://github.com/Curzibn/Luban) 最接近微信朋友圈的图片压缩算法
-            "Luban"                         : "top.zibin:Luban:${LubanVersion}",
+            "Luban"                          : "top.zibin:Luban:${LubanVersion}",
 
             //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式
-            "SuperTextView"                         : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
+            "SuperTextView"                  : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
     ]
 }

@@ -61,9 +61,9 @@ dependencies {
     compile rootProject.ext.dependencies["alicloud-android-httpdns"]
 
     //=== leakcanary
-    debugCompile rootProject.ext.dependencies["leakcanary-android"]
-    releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
-    testCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
+    debugCompile rootProject.ext.dependencies["leakcanary-debugCompile"]
+    releaseCompile rootProject.ext.dependencies["leakcanary-releaseCompile"]
+    testCompile rootProject.ext.dependencies["leakcanary-testCompile"]
 
     //=== rxjava
     compile rootProject.ext.dependencies["rxjava"]

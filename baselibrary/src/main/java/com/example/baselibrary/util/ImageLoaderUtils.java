@@ -3,10 +3,10 @@ package com.example.baselibrary.util;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.basemodule.utils.GlideRoundTransformUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.baselibrary.R;
 
 import java.io.File;
@@ -27,8 +27,14 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url).placeholder(placeholder)
-                .error(error).crossFade().into(imageView);
+        RequestOptions options = new RequestOptions()
+                .placeholder(placeholder)
+                .error(error);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options).
+                into(imageView);
     }
 
     /**
@@ -40,16 +46,19 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .placeholder(R.mipmap.baselib_ic_image_loading)
-                .error(R.mipmap.baselib_ic_empty_picture)
-                .crossFade().into(imageView);
+                .error(R.mipmap.baselib_ic_empty_picture);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options).
+                into(imageView);
     }
 
     /**
-     *
      * @param context
      * @param imageView
      * @param url
@@ -58,12 +67,16 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .placeholder(R.mipmap.baselib_ic_image_loading)
-                .error(R.mipmap.baselib_ic_empty_picture)
-                .crossFade().into(imageView);
+                .error(R.mipmap.baselib_ic_empty_picture);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .into(imageView);
     }
 
     /**
@@ -75,10 +88,16 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url).asBitmap()
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
                 .placeholder(R.mipmap.baselib_ic_image_loading)
-                .error(R.mipmap.baselib_ic_empty_picture)
+                .error(R.mipmap.baselib_ic_empty_picture);
+
+        Glide.with(context)
+                .asBitmap()
+                .load(url)
+                .apply(options)
                 .thumbnail(0.5f)
                 .into(imageView);
     }
@@ -92,11 +111,15 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url).asBitmap()
-                .format(DecodeFormat.PREFER_ARGB_8888)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .format(DecodeFormat.PREFER_ARGB_8888)
                 .placeholder(R.mipmap.baselib_ic_image_loading)
-                .error(R.mipmap.baselib_ic_empty_picture)
+                .error(R.mipmap.baselib_ic_empty_picture);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
                 .into(imageView);
     }
 
@@ -109,14 +132,18 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url).asBitmap()
-                .format(DecodeFormat.PREFER_ARGB_8888)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .format(DecodeFormat.PREFER_ARGB_8888);
+
+        Glide.with(context)
+                .asBitmap()
+                .load(url)
+                .apply(options)
                 .into(imageView);
     }
 
     /**
-     *
      * @param context
      * @param imageView
      * @param url
@@ -125,12 +152,16 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .placeholder(R.mipmap.baselib_ic_image_loading)
-                .error(R.mipmap.baselib_ic_empty_picture)
-                .crossFade().into(imageView);
+                .error(R.mipmap.baselib_ic_empty_picture);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .into(imageView);
     }
 
     /**
@@ -142,9 +173,15 @@ public class ImageLoaderUtils {
         if (imageView == null) {
             throw new IllegalArgumentException("argument error");
         }
-        Glide.with(context).load(url)
+        RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .error(R.mipmap.baselib_toux2)
-                .centerCrop().transform(new GlideRoundTransformUtil(context)).into(imageView);
+                .transform(new GlideRoundTransformUtil(context))
+                .centerCrop();
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .into(imageView);
     }
 }

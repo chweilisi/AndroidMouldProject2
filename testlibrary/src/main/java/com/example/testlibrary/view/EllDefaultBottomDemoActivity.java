@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.baselibrary.base.BaseActivity;
+import com.example.baselibrary.util.ImageLoaderUtils;
 import com.example.baselibrary.widget.ExpandableLinearLayout;
 import com.example.testlibrary.R;
 import com.example.testlibrary.R2;
@@ -93,10 +93,9 @@ public class EllDefaultBottomDemoActivity extends BaseActivity {
         }
 
         private void refreshUI() {
-            Glide.with(EllDefaultBottomDemoActivity.this)
-                    .load(productBean.getImg())
-                    .placeholder(R.mipmap.testlibrary_ic_default)
-                    .into(ivImg);
+            ImageLoaderUtils.display(EllDefaultBottomDemoActivity.this, ivImg, productBean.getImg(),
+                    R.mipmap.testlibrary_ic_default, R.mipmap.testlibrary_ic_default);
+
             tvName.setText(productBean.getName());
             tvIntro.setText(productBean.getIntro());
             tvPrice.setText("￥" + productBean.getPrice());

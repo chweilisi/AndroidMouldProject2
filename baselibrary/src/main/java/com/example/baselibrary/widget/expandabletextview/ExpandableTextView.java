@@ -117,12 +117,14 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         }
         super.setOrientation(orientation);
     }
+
     /**
      * 初始化属性
+     *
      * @param attrs
      */
     private void init(AttributeSet attrs) {
-        mCollapsedStatus=new SparseBooleanArray();
+        mCollapsedStatus = new SparseBooleanArray();
 
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.baselib_ExpandableTextView);
         mMaxCollapsedLines = typedArray.getInt(R.styleable.baselib_ExpandableTextView_baselib_maxCollapsedLines, MAX_COLLAPSED_LINES);
@@ -134,7 +136,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         textExpand = typedArray.getString(R.styleable.baselib_ExpandableTextView_baselib_textExpand);
 
         if (mExpandDrawable == null) {
-            mExpandDrawable = ContextCompat.getDrawable(getContext(),R.mipmap.baselib_icon_orange_arrow_up);
+            mExpandDrawable = ContextCompat.getDrawable(getContext(), R.mipmap.baselib_icon_orange_arrow_up);
         }
         if (mCollapseDrawable == null) {
             mCollapseDrawable = ContextCompat.getDrawable(getContext(), R.mipmap.baselib_icon_orange_arrow_down);
@@ -147,13 +149,13 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
             textExpand = getContext().getString(R.string.baselib_expand);
         }
         contentTextColor = typedArray.getColor(R.styleable.baselib_ExpandableTextView_baselib_contentTextColor, ContextCompat.getColor(getContext(), R.color.baselib_gray));
-        contentTextSize = typedArray.getDimension(R.styleable.baselib_ExpandableTextView_baselib_contentTextSize, DimensUtils.sp2px(getContext(),14));
+        contentTextSize = typedArray.getDimension(R.styleable.baselib_ExpandableTextView_baselib_contentTextSize, DimensUtils.sp2px(getContext(), 14));
 
         collapseExpandTextColor = typedArray.getColor(R.styleable.baselib_ExpandableTextView_baselib_collapseExpandTextColor, ContextCompat.getColor(getContext(), R.color.baselib_main_color));
-        collapseExpandTextSize = typedArray.getDimension(R.styleable.baselib_ExpandableTextView_baselib_collapseExpandTextSize, DimensUtils.sp2px(getContext(),14));
+        collapseExpandTextSize = typedArray.getDimension(R.styleable.baselib_ExpandableTextView_baselib_collapseExpandTextSize, DimensUtils.sp2px(getContext(), 14));
 
         grarity = typedArray.getInt(R.styleable.baselib_ExpandableTextView_baselib_collapseExpandGrarity, Gravity.LEFT);
-        drawableGrarity=typedArray.getInt(R.styleable.baselib_ExpandableTextView_baselib_drawableGrarity, Gravity.RIGHT);
+        drawableGrarity = typedArray.getInt(R.styleable.baselib_ExpandableTextView_baselib_drawableGrarity, Gravity.RIGHT);
 
         typedArray.recycle();
         // enforces vertical orientation
@@ -195,8 +197,10 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         lp.gravity = grarity;
         mTvExpandCollapse.setLayoutParams(lp);
     }
+
     /**
      * 点击事件
+     *
      * @param view
      */
     @Override
@@ -222,7 +226,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
             valueAnimator = new ValueAnimator().ofInt(getHeight(), getHeight() +
                     mTextHeightWithMaxLines - mTvContent.getHeight());
         }
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(){
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int animatedValue = (int) valueAnimator.getAnimatedValue();
@@ -236,6 +240,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
             public void onAnimationStart(Animator animator) {
 
             }
+
             @Override
             public void onAnimationEnd(Animator animator) {
                 // 动画结束后发送结束的信号
@@ -246,10 +251,12 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
                     mListener.onExpandStateChanged(mTvContent, !mCollapsed);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animator) {
 
             }
+
             @Override
             public void onAnimationRepeat(Animator animator) {
 
@@ -264,8 +271,10 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         // 当动画还在执行状态时，拦截事件，不让child处理
         return mAnimating;
     }
+
     /**
      * 重新测量
+     *
      * @param widthMeasureSpec
      * @param heightMeasureSpec
      */
@@ -314,12 +323,14 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
             mCollapsedHeight = getMeasuredHeight();
         }
     }
+
     /**
      * 获取内容tv真实高度（含padding）
+     *
      * @param textView
      * @return
      */
-    private static int getRealTextViewHeight( TextView textView) {
+    private static int getRealTextViewHeight(TextView textView) {
         int textHeight = textView.getLayout().getLineTop(textView.getLineCount());
         int padding = textView.getCompoundPaddingTop() + textView.getCompoundPaddingBottom();
         return textHeight + padding;
@@ -328,11 +339,11 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     /**
      * 设置收起展开图标位置和文字
      */
-    private void setDrawbleAndText(){
-        if(Gravity.LEFT==drawableGrarity){
-            mTvExpandCollapse.setCompoundDrawablesWithIntrinsicBounds(mCollapsed ? mCollapseDrawable : mExpandDrawable,null,null,null);
-        }else{
-            mTvExpandCollapse.setCompoundDrawablesWithIntrinsicBounds(null,null,mCollapsed ? mCollapseDrawable : mExpandDrawable,null);
+    private void setDrawbleAndText() {
+        if (Gravity.LEFT == drawableGrarity) {
+            mTvExpandCollapse.setCompoundDrawablesWithIntrinsicBounds(mCollapsed ? mCollapseDrawable : mExpandDrawable, null, null, null);
+        } else {
+            mTvExpandCollapse.setCompoundDrawablesWithIntrinsicBounds(null, null, mCollapsed ? mCollapseDrawable : mExpandDrawable, null);
         }
         mTvExpandCollapse.setText(mCollapsed ? getResources().getString(R.string.baselib_expand) : getResources().getString(R.string.baselib_collapse));
     }
@@ -342,17 +353,19 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     /**
      * 设置收起/展开监听
+     *
      * @param listener
      */
-    public void setOnExpandStateChangeListener( OnExpandStateChangeListener listener) {
+    public void setOnExpandStateChangeListener(OnExpandStateChangeListener listener) {
         mListener = listener;
     }
 
     /**
      * 设置内容
+     *
      * @param text
      */
-    public void setText( CharSequence text) {
+    public void setText(CharSequence text) {
         mRelayout = true;
         mTvContent.setText(text);
         setVisibility(TextUtils.isEmpty(text) ? View.GONE : View.VISIBLE);
@@ -360,6 +373,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     /**
      * 设置内容，列表情况下，带有保存位置收起/展开状态
+     *
      * @param text
      * @param position
      */
@@ -379,6 +393,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     /**
      * 获取内容
+     *
      * @return
      */
     public CharSequence getText() {

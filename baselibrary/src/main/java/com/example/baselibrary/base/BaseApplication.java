@@ -9,6 +9,7 @@ import com.alibaba.sdk.android.httpdns.HttpDnsService;
 import com.basemodule.base.IBaseApplication;
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.log.MyLogUtil;
+import com.blankj.utilcode.util.CrashUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.R;
 import com.example.baselibrary.constant.APPConstant;
@@ -86,7 +87,8 @@ public class BaseApplication extends IBaseApplication {
         registerUncaughtExceptionHandler(APPConstant.DEFAULT_CRASH_FILE_PATH);
         //===
         SharedPrefUtils.init(getApplicationContext());
-
+        //=== 异常捕捉
+        CrashUtils.init(APPConstant.DEFAULT_CRASH_FILE_PATH);
         //=== 内存泄露检测框架
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
