@@ -9,7 +9,11 @@ import com.basemodule.base.IBaseFragment;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
 import com.example.baselibrary.baserx.RxManager;
+import com.example.baselibrary.util.EventBusUtils;
 import com.example.baselibrary.util.MyToastUtil;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * add your personal code here
@@ -37,19 +41,19 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // eventBus
-//        EventBusUtils.register(this);
-//    }
-//
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        // eventBus
-//        EventBusUtils.unregister(this);
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // eventBus
+        EventBusUtils.register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // eventBus
+        EventBusUtils.unregister(this);
+    }
 
     @Override
     public void onDestroyView() {
@@ -126,6 +130,11 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
 
     @Override
     public void onClick(View v) {
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        /* Do something */
     }
 
     //######################  override custom metohds end  ########################################

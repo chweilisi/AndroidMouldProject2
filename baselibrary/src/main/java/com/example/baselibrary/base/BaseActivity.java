@@ -134,9 +134,6 @@ public abstract class BaseActivity<T extends IBasePresenter, E extends IBaseMode
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(MessageEvent event) {
         /* Do something */
-        if (event.getMessage().equals("")) {
-
-        }
     }
 
     //######################  override custom metohds end  ########################################
