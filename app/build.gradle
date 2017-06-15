@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.antfortune.freeline'
 
 def getDate() {
@@ -217,7 +216,7 @@ dependencies {
     //################## git上第三方库
     //=== Butter Knife
     compile rootProject.ext.dependencies["butterknife"]
-    apt rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 
     //################## 引用第三方工程
     compile project(':mainlibrary')

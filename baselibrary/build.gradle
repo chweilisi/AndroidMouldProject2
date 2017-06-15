@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
@@ -19,6 +18,13 @@ android {
 
         resourcePrefix "baselib_"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // eventBux，下面的包名为自己的工程包名
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [eventBusIndex: 'com.example.testlibrary.MyEventBusIndex']
+            }
+        }
     }
     buildTypes {
         release {
@@ -72,7 +78,7 @@ dependencies {
     // 传递性依赖utdid这个sdk, 所以不需要重复依赖utdid.但是另一方面其它阿里系SDK也可能依赖了utdid这个SDK,
     // 如果编译期间报utdid重复, 所以此时进行如下处理即可, 关闭传递性依赖:utdid实际上是为设备生成唯一deviceid的一个基础类库
     compile(rootProject.ext.dependencies["alicloud-android-hotfix"]) {
-        exclude(module:'alicloud-android-utdid')
+        exclude(module: 'alicloud-android-utdid')
         transitive = false // 防止和 ali httpdns重复导入
     }
 
@@ -86,7 +92,7 @@ dependencies {
 
     //=== dagger
     compile rootProject.ext.dependencies["dagger"]
-    apt rootProject.ext.dependencies["dagger-compiler"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
 
     //=== circleimageview
     compile rootProject.ext.dependencies["circleimageview"]
@@ -105,6 +111,7 @@ dependencies {
 
     //=== eventbus
     compile rootProject.ext.dependencies["eventbus"]
+    annotationProcessor rootProject.ext.dependencies["eventbus-annotation-processor"]
 
     //################## 引用第三方工程
 }

@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -74,11 +73,11 @@ dependencies {
     //################## git上第三方库
     //=== Butter Knife
     compile rootProject.ext.dependencies["butterknife"]
-    apt rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 
     //=== 6.0动态获取权限框架
     compile rootProject.ext.dependencies["permissionsdispatcher"]
-    apt rootProject.ext.dependencies["permissionsdispatcher-processor"]
+    annotationProcessor rootProject.ext.dependencies["permissionsdispatcher-processor"]
 
     //################## 引用第三方工程
     compile project(':baselibrary')
