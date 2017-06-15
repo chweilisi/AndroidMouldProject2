@@ -31,6 +31,11 @@ android {
         //解决 Conflict with dependency 'com.google.code.findbugs:jsr305'
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
     }
+
+    // 添加dataBinding支持
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

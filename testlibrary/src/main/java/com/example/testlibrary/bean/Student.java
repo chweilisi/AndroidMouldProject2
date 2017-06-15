@@ -9,24 +9,14 @@ public class Student {
 
     private String name;
 
-    private int age;
-
-    private boolean  isMan;
+    private String addr;
 
     public Student() {
     }
 
-    public Student(int age, String name) {
-        this.age = age;
+    public Student(String name, String addr) {
+        this.addr = addr;
         this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getName() {
@@ -37,11 +27,11 @@ public class Student {
         this.name = name;
     }
 
-    public boolean isMan() {
-        return isMan;
+    public String getAddr() {
+        return addr;
     }
 
-    public void setMan(boolean man) {
-        isMan = man;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 }

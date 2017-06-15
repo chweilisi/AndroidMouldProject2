@@ -41,6 +41,11 @@ android {
         //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
         targetGenDir 'src/main/java'
     }
+
+    // 添加dataBinding支持
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

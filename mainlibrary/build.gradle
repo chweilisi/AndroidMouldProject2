@@ -52,6 +52,11 @@ android {
         }
     }
 
+    // 添加dataBinding支持
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {

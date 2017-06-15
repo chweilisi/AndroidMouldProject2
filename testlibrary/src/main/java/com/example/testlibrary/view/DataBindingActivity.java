@@ -1,7 +1,12 @@
 package com.example.testlibrary.view;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+
+import com.example.testlibrary.R;
+import com.example.testlibrary.bean.Student;
+import com.example.testlibrary.databinding.TestlibraryActivityDatabindingBinding;
 
 
 /**
@@ -21,17 +26,8 @@ public class DataBindingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        DataBindingTest binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
-//
-//        Student student = new Student();
-//        student.setName("lee");
-//        student.setAge(100);
-//        student.setMan(true);
-//        binding.setStu(student);
-//
-//        binding.setStr("just do it");
-//        binding.setError(true);
-//        binding.setNum(10);
+        TestlibraryActivityDatabindingBinding binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
+        binding.setStu(new Student("leesd", "Shenzhesdfdn"));
     }
 
     //######################  override custom metohds end  ########################################
