@@ -10,7 +10,6 @@ import com.basemodule.base.IBaseApplication;
 import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.log.MyLogUtil;
 import com.blankj.utilcode.util.CrashUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.example.baselibrary.R;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.okgo.HttpDNSInterceptor;
@@ -239,18 +238,18 @@ public class BaseApplication extends IBaseApplication {
                         // 补丁加载回调通知
                         if (code == PatchStatus.CODE_LOAD_SUCCESS) {
                             // 表明补丁加载成功
-                            LogUtils.i("HotFixManager--补丁加载成功");
+                            MyLogUtil.i("HotFixManager--补丁加载成功");
                         } else if (code == PatchStatus.CODE_LOAD_RELAUNCH) {
                             // 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
                             // 建议: 用户可以监听进入后台事件, 然后应用自杀
-                            LogUtils.i("HotFixManager--新补丁生效需要重启. 业务方可自行实现逻辑, 提示用户或者强制重启, 可以监听应用进入后台事件, 然后应用自杀");
+                            MyLogUtil.i("HotFixManager--新补丁生效需要重启. 业务方可自行实现逻辑, 提示用户或者强制重启, 可以监听应用进入后台事件, 然后应用自杀");
                         } else if (code == PatchStatus.CODE_LOAD_FAIL) {
                             // 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
                             // SophixManager.getInstance().cleanPatches();
-                            LogUtils.i("HotFixManager--内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载");
+                            MyLogUtil.i("HotFixManager--内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载");
                         } else {
                             // 其它错误信息, 查看PatchStatus类说明
-                            LogUtils.i("HotFixManager--其它错误信息, 查看PatchStatus类说明");
+                            MyLogUtil.i("HotFixManager--其它错误信息, 查看PatchStatus类说明");
                         }
                     }
                 }).initialize();
@@ -296,7 +295,7 @@ public class BaseApplication extends IBaseApplication {
 
                         if (ip != null) {
                             // 通过HTTPDNS获取IP成功，进行URL替换和HOST头设置
-                            LogUtils.d("Get IP: " + ip + " for host: " + url.getHost() + " from HTTPDNS successfully!");
+                            MyLogUtil.d("Get IP: " + ip + " for host: " + url.getHost() + " from HTTPDNS successfully!");
                             String newUrl = originalUrl.replaceFirst(url.getHost(), ip);
                             conn = (HttpURLConnection) new URL(newUrl).openConnection();
                             // 设置HTTP请求头Host域
@@ -309,7 +308,7 @@ public class BaseApplication extends IBaseApplication {
                         while ((len = dis.read(buff)) != -1) {
                             response.append(new String(buff, 0, len, Charset.defaultCharset()));
                         }
-                        LogUtils.d("Response: " + response.toString());
+                        MyLogUtil.d("Response: " + response.toString());
 
                         // 允许返回过期的IP
                         httpdns.setExpiredIPEnabled(true);
@@ -317,7 +316,7 @@ public class BaseApplication extends IBaseApplication {
                         ip = httpdns.getIpByHostAsync(url.getHost());
                         if (ip != null) {
                             // 通过HTTPDNS获取IP成功，进行URL替换和HOST头设置
-                            LogUtils.d("Get IP: " + ip + " for host: " + url.getHost() + " from HTTPDNS successfully!");
+                            MyLogUtil.d("Get IP: " + ip + " for host: " + url.getHost() + " from HTTPDNS successfully!");
                             String newUrl = originalUrl.replaceFirst(url.getHost(), ip);
                             conn = (HttpURLConnection) new URL(newUrl).openConnection();
                             // 设置HTTP请求头Host域
@@ -329,12 +328,12 @@ public class BaseApplication extends IBaseApplication {
                         while ((len = dis.read(buff)) != -1) {
                             response.append(new String(buff, 0, len, Charset.defaultCharset()));
                         }
-                        LogUtils.d("Response: " + response.toString());
+                        MyLogUtil.d("Response: " + response.toString());
 
                         // 测试黑名单中的域名
                         ip = httpdns.getIpByHostAsync("www.taobao.com");
                         if (ip == null) {
-                            LogUtils.d("由于在降级策略中过滤了www.taobao.com，无法从HTTPDNS服务中获取对应域名的IP信息");
+                            MyLogUtil.d("由于在降级策略中过滤了www.taobao.com，无法从HTTPDNS服务中获取对应域名的IP信息");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

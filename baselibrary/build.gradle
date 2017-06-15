@@ -68,11 +68,6 @@ dependencies {
     compile rootProject.ext.dependencies["rxandroid"]
     //=== rxbinding
     compile rootProject.ext.dependencies["rxbinding"]
-    //=== RxLifecycle
-    compile rootProject.ext.dependencies["rxlifecycle"]
-    compile rootProject.ext.dependencies["rxlifecycle-components"]
-    //=== RxPermissions
-    compile rootProject.ext.dependencies["rxpermissions"]
 
     //=== ali hotfix
     compile(rootProject.ext.dependencies["alisdk-hotfix"]) {

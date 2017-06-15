@@ -9,7 +9,6 @@ import com.basemodule.base.IBaseFragment;
 import com.basemodule.base.IBaseModel;
 import com.basemodule.base.IBasePresenter;
 import com.example.baselibrary.baserx.RxManager;
-import com.example.baselibrary.util.EventBusUtils;
 import com.example.baselibrary.util.MyToastUtil;
 
 /**
@@ -38,19 +37,19 @@ public abstract class BaseFragment<T extends IBasePresenter, E extends IBaseMode
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // eventBus
-        EventBusUtils.register(this);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        // eventBus
-        EventBusUtils.unregister(this);
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // eventBus
+//        EventBusUtils.register(this);
+//    }
+//
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        // eventBus
+//        EventBusUtils.unregister(this);
+//    }
 
     @Override
     public void onDestroyView() {

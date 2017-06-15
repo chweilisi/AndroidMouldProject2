@@ -36,7 +36,6 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
 
     private FragmentManager fragmentManager;
 
-
     //##########################   custom variables end  ##########################################
 
     //###################### Override custom metohds start ########################################
