@@ -22,9 +22,9 @@ import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.taobao.sophix.PatchStatus;
 import com.taobao.sophix.SophixManager;
 import com.taobao.sophix.listener.PatchLoadStatusListener;
-import com.taobao.sophix.util.PatchStatus;
 
 import java.io.DataInputStream;
 import java.net.HttpURLConnection;
@@ -72,12 +72,14 @@ public class BaseApplication extends IBaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        //=== init hotfix
+        // initialize的调用应该尽可能的早，必须在Application.onCreate()的最开始进行SDk初始化操作，
+        // 否则极有可能导致崩溃。而查询服务器是否有可用补丁的操作可以在后面的任意地方
+        initHotFix();
         // 自定义toast
         MyToastUtil.init(true, true);
         // 自定义log
         MyLogUtil.init("TRUE".equals(getResources().getString(R.string.APP_IS_SHOW_LOG)) ? true : false, "MODULE_PROJECT", true);
-        //=== init hotfix
-        initHotFix();
         //=== okgo
         initOkGo();
         //=== ali httpdns
@@ -234,7 +236,12 @@ public class BaseApplication extends IBaseApplication {
                 .setEnableDebug(true)
                 .setPatchLoadStatusStub(new PatchLoadStatusListener() {
                     @Override
-                    public void onload(final int mode, final int code, final String info, final int handlePatchVersion) {
+                    public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
+                        String msg = new StringBuilder("").append("Mode:").append(mode)
+                                .append(" Code:").append(code)
+                                .append(" Info:").append(info)
+                                .append(" HandlePatchVersion:").append(handlePatchVersion).toString();
+                        MyLogUtil.i("HotFixManager--" + msg);
                         // 补丁加载回调通知
                         if (code == PatchStatus.CODE_LOAD_SUCCESS) {
                             // 表明补丁加载成功
@@ -253,6 +260,8 @@ public class BaseApplication extends IBaseApplication {
                         }
                     }
                 }).initialize();
+
+        // 该方法主要用于查询服务器是否有新的可用补丁. SDK内部限制连续两次queryAndLoadNewPatch()方法调用不能短于3s, 否则的话就会报code:19的错误码
         SophixManager.getInstance().queryAndLoadNewPatch();
     }
 

@@ -27,14 +27,14 @@
 
 
 #-----------------不需要混淆第三方类库------------------------------------------------------------------
-# support-v4
+#=== support-v4
 -dontwarn android.support.v4.**                                             #去掉警告
 -keep class android.support.v4.** { *; }                                    #过滤android.support.v4
 -keep interface android.support.v4.app.** { *; }
 -keep public class * extends android.support.v4.**
 -keep public class * extends android.app.Fragment
 
-# baidu
+#=== baidu
 -dontwarn com.baidu.**                                                      #去掉警告
 -dontwarn com.baidu.mapapi.**
 -keep class com.baidu.** {*;}                                               #过滤BaiduLBS_Android.jar
@@ -43,18 +43,18 @@
 -keep class com.baidu.location.**{*;}
 -keep class com.baidu.vi.**{*;}
 
-# pinyin4j
+#=== pinyin4j
 -dontwarn net.soureceforge.pinyin4j.**
 -dontwarn demo.**
 -keep class net.sourceforge.pinyin4j.** { *;}
 -keep class demo.** { *;}
 
-# util
+#=== util
 -keep class com.blankj.utilcode.** { *; }
 -keepclassmembers class com.blankj.utilcode.** { *; }
 -dontwarn com.blankj.utilcode.**
 
-## sharesdk
+#=== sharesdk
 -keep class cn.sharesdk.**{*;}
 -keep class com.sina.**{*;}
 -keep class **.R$* {*;}
@@ -68,20 +68,12 @@
 -keep class com.mob.tools.utils
 -keep class cn.sharesdk.onekeyshare.theme.classic.EditPage
 
-#ali httpdns 混淆
--printmapping mapping.txt
--keepclasseswithmembernames class * {
-    native <methods>;
-}
--keep class com.taobao.android.**{*;}
--keep class com.ta.utdid2.device.**{*;}
-
-# 个推的混淆
+#=== 个推的混淆
 -dontwarn com.igexin.**
 -keep class com.igexin.** { *; }
 -keep class org.json.** { *; }
 
-#umeng混淆
+#=== umeng混淆
 -keepclassmembers class * {
    public <init>(org.json.JSONObject);
 }
@@ -92,7 +84,7 @@
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
-#umeng 分享
+#=== umeng 分享
 -dontusemixedcaseclassnames
     -dontshrink
     -dontoptimize
@@ -175,7 +167,7 @@
     -keep class com.linkedin.** { *; }
     -keepattributes Signature
 
-# WebView
+#=== WebView
 -keepclassmembers  class com.rjs.ddjr.utils.WebAppInterface{
    public *;
 }
@@ -185,7 +177,7 @@
 
 -keepattributes *Annotation*
 
-#JSON
+#=== JSON
 -keep class rjs.**{*;}
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;
@@ -196,33 +188,35 @@
     java.lang.Object readResolve();
 }
 
-#阿里百川
--keep class * extends java.lang.annotation.Annotation
--keepclasseswithmembernames class * {
-    native <methods>;
-}
--keep class com.alipay.euler.andfix.**{
-    *;
-}
--keep class com.taobao.hotfix.aidl.**{*;}
--keep class com.ta.utdid2.device.**{*;}
--keep class com.taobao.hotfix.HotFixManager{
-    public *;
-}
+#=== ali httpdns 混淆
+-keep class com.alibaba.sdk.android.**{*;}
+-keep class com.ut.**{*;}
+-keep class com.ta.**{*;}
 
-#eventBus混淆
+#=== ali hotfix
+#基线包使用，生成mapping.txt
+-printmapping mapping.txt
+#生成的mapping.txt在app/buidl/outputs/mapping/release路径下，移动到/app路径下
+#修复后的项目使用，保证混淆结果一致
+#-applymapping mapping.txt
+#hotfix
+-keep class com.taobao.sophix.**{*;}
+-keep class com.ta.utdid2.device.**{*;}
+#防止inline
+-dontoptimize
+
+#=== eventBus混淆
 -keepattributes *Annotation*
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
 }
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
-
 # Only required if you use AsyncExecutor
 -keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
     <init>(java.lang.Throwable);
 }
 
-#-------okgo 系列---
+#=== -------okgo 系列---
 #okhttp
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
@@ -239,14 +233,14 @@
 -dontwarn com.lzy.okserver.**
 -keep class com.lzy.okserver.**{*;}
 
-#--------glide 系列--------
+#=== --------glide 系列--------
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
     **[] $VALUES;
     public *;
 }
 
-# banner 的混淆代码
+#=== banner 的混淆代码
 -keep class com.youth.banner.** {
     *;
  }

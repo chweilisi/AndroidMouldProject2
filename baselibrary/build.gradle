@@ -35,7 +35,6 @@ android {
         //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
         targetGenDir 'src/main/java'
     }
-
 }
 
 dependencies {
@@ -70,8 +69,10 @@ dependencies {
     compile rootProject.ext.dependencies["rxbinding"]
 
     //=== ali hotfix
-    compile(rootProject.ext.dependencies["alisdk-hotfix"]) {
-        exclude(module: 'utdid4all')
+    // 传递性依赖utdid这个sdk, 所以不需要重复依赖utdid.但是另一方面其它阿里系SDK也可能依赖了utdid这个SDK,
+    // 如果编译期间报utdid重复, 所以此时进行如下处理即可, 关闭传递性依赖:utdid实际上是为设备生成唯一deviceid的一个基础类库
+    compile(rootProject.ext.dependencies["alicloud-android-hotfix"]) {
+        exclude(module:'alicloud-android-utdid')
         transitive = false // 防止和 ali httpdns重复导入
     }
 
