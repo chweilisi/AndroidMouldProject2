@@ -54,10 +54,10 @@ public class SyncActivity extends BaseActivity {
     @Override
     public void initData(Bundle savedInstanceState) {
         // 同步请求
-        //  sync();
+          sync();
 
         // https请求测试
-        httpsSyncTest();
+       // httpsSyncTest();
     }
 
     @Override
