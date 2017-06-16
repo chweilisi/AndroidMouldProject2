@@ -27,6 +27,7 @@ public class DataBindingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TestlibraryActivityDatabindingBinding binding = DataBindingUtil.setContentView(this, R.layout.testlibrary_activity_databinding);
+
         binding.setStu(new Student("leesd", "Shenzhesdfdn"));
     }
 
