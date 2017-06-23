@@ -6,6 +6,8 @@ import android.content.Context;
 import com.basemodule.base.IBaseApplication;
 import com.basemodule.utils.NetWorkUtils;
 import com.basemodule.utils.log.MyLogUtil;
+import com.example.baselibrary.R;
+import com.example.baselibrary.widget.dialog.CustomProgressDialog;
 
 import rx.Subscriber;
 
@@ -32,11 +34,11 @@ public void _onError(String msg) {
         });*/
 public abstract class RxSubscriber<T> extends Subscriber<T> {
 
-    private static final String TAG = "RxSubscriber_ONERROR";
+    private static final String TAG = "RxSubscriber";
 
     private Context mContext;
 
-    private boolean showDialog = true;
+    private boolean isShowDialog = true;
 
     private Dialog dialog;
 
@@ -44,38 +46,48 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
      * 是否显示浮动dialog
      */
     public void showDialog() {
-        this.showDialog = true;
+        this.isShowDialog = true;
     }
 
     public void hideDialog() {
-        this.showDialog = true;
+        this.isShowDialog = true;
     }
 
-    public RxSubscriber(Context context, boolean showDialog) {
+    /**
+     * @param context
+     * @param isShowDialog
+     */
+    public RxSubscriber(Context context, boolean isShowDialog) {
         this.mContext = context;
-        this.showDialog = showDialog;
+        this.isShowDialog = isShowDialog;
     }
 
     @Override
     public void onCompleted() {
-        if (showDialog) stopProgressDialog();
+        if (isShowDialog) stopProgressDialog();
         _onAfter();
+        _onCompleted();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        if (showDialog) startProgressDialog();
+        if (isShowDialog) startProgressDialog();
         _onStart();
     }
 
     /**
+     *
      */
     private void startProgressDialog() {
         if (dialog == null) {
-            dialog = IBaseApplication.getProgressDialog();
+            dialog = CustomProgressDialog.with(mContext, R.style.baselib_loading_dialog)
+                    .setOrientation(CustomProgressDialog.VERTICAL)
+                    .setMessage("");
         }
-        dialog.show();
+        if (dialog != null && !dialog.isShowing()) {
+            dialog.show();
+        }
     }
 
     /**
@@ -98,11 +110,11 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
 
         MyLogUtil.d(TAG, "onError: " + e.getMessage());
 
-        if (showDialog)
+        if (isShowDialog)
             stopProgressDialog();
         e.printStackTrace();
         //网络
-        if (!NetWorkUtils.isNetConnected(IBaseApplication.getAppInstance())) {
+        if (!NetWorkUtils.isNetConnected(mContext)) {
             _onError(IBaseApplication.getAppInstance().getString(com.basemodule.R.string.basemod_no_net));
         }
         //服务器
@@ -115,7 +127,7 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
         }
 //        //其它
 //        else {
-//            _onError(IBaseApplication.getAppContext().getString(R.string.net_error));
+//            _onError(mContext.getString(R.string.net_error));
 //        }
     }
 
@@ -125,6 +137,9 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
     protected abstract void _onNext(T t);
 
     protected abstract void _onError(String message);
+
+    protected void _onCompleted() {
+    }
 
     protected void _onAfter() {
     }

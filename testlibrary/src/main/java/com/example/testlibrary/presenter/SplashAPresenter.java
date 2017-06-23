@@ -22,7 +22,13 @@ public class SplashAPresenter extends SplashAContract.Presenter {
 
     @Override
     public void queryAdvert() {
-        mRxManage.add(mModel.queryAdvert().subscribe(new RxSubscriber<QueryAdvertBean.DataBean>(mContext, false) {
+        mRxManage.add(mModel.queryAdvert().subscribe(new RxSubscriber<QueryAdvertBean.DataBean>(mContext, true) {
+
+            @Override
+            protected void _onCompleted() {
+                super._onCompleted();
+            }
+
             @Override
             protected void _onNext(QueryAdvertBean.DataBean bean) {
                 mView.returnQueryAdvert(bean);
@@ -36,7 +42,13 @@ public class SplashAPresenter extends SplashAContract.Presenter {
 
     @Override
     public void getBitmap() {
-        mRxManage.add(mModel.getBitmap().subscribe(new RxSubscriber<Bitmap>(mContext, false) {
+        mRxManage.add(mModel.getBitmap().subscribe(new RxSubscriber<Bitmap>(mContext, true) {
+
+            @Override
+            protected void _onCompleted() {
+                super._onCompleted();
+            }
+
             @Override
             protected void _onNext(Bitmap bean) {
                 mView.returnBitmap(bean);
@@ -50,7 +62,13 @@ public class SplashAPresenter extends SplashAContract.Presenter {
 
     @Override
     public void uploadFile(ArrayList<File> files) {
-        mRxManage.add(mModel.uploadFile(files).subscribe(new RxSubscriber<String>(mContext, false) {
+        mRxManage.add(mModel.uploadFile(files).subscribe(new RxSubscriber<String>(mContext, true) {
+
+            @Override
+            protected void _onCompleted() {
+                super._onCompleted();
+            }
+
             @Override
             protected void _onNext(String string) {
                 mView.returnUploadFile(string);
@@ -64,7 +82,13 @@ public class SplashAPresenter extends SplashAContract.Presenter {
 
     @Override
     public void downloadFile() {
-        mRxManage.add(mModel.downloadFile().subscribe(new RxSubscriber<File>(mContext, false) {
+        mRxManage.add(mModel.downloadFile().subscribe(new RxSubscriber<File>(mContext, true) {
+
+            @Override
+            protected void _onCompleted() {
+                super._onCompleted();
+            }
+
             @Override
             protected void _onNext(File file) {
                 mView.returnDownloadFile(file);
