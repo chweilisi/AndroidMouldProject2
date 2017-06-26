@@ -74,13 +74,16 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["constraint-layout"]
     testCompile rootProject.ext.dependencies["junit"]
+
     //################## git上第三方库
     //=== Butter Knife
     compile rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
     //=== 6.0动态获取权限框架
     compile rootProject.ext.dependencies["permissionsdispatcher"]
     annotationProcessor rootProject.ext.dependencies["permissionsdispatcher-processor"]
+
     //################## 引用第三方工程
     compile project(':baselibrary')
 }

@@ -21,6 +21,8 @@ def practicalrecyclerviewVersion = "1.1.5"
 def bannerVersion = "1.4.9"
 def LubanVersion = "1.1.1"
 def SuperTextViewVersion = "1.1.2"
+def agentwebVersion = "1.2.2"
+def markdownviewVersion = "1.1.0"
 
 project.ext {
     android = [
@@ -119,5 +121,10 @@ project.ext {
             //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式
             "SuperTextView"                  : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
 
+            //=== agentweb (https://github.com/Justson/AgentWeb)
+            "agentweb"                  : "com.just.agentweb:agentweb:${agentwebVersion}",
+
+            //=== markdownview (https://github.com/falnatsheh/MarkdownView)
+            "markdownview"                  : "us.feras.mdv:markdownview:${markdownviewVersion}",
     ]
 }

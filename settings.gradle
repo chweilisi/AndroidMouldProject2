@@ -1,1 +1,1 @@
-include ':app', ':baselibrary', ':basemanager', ':mainlibrary', ':mainmanager', ':chartlibrary', ':chartmanager'
+include ':app', ':baselibrary', ':basemanager', ':mainlibrary', ':mainmanager', ':chartlibrary', ':chartmanager', ':agentwebmanager', ':agentweblibrary'
