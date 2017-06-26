@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -19,8 +20,35 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            zipAlignEnabled false // Zipalign优化
+            minifyEnabled false // 是否混淆
+            shrinkResources false // 是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // mainfest中参数配置
+            manifestPlaceholders = [
+                    // 基础配置
+                    APP_HOST  : "@string/baselib_test_library_host",
+                    APP_SCHEME: "@string/baselib_test_library_scheme"
+            ]
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "mips", "mips64", "x86", "x86_64"
+            }
+        }
+
+        debug {
+            zipAlignEnabled false // Zipalign优化
+            minifyEnabled false // 是否混淆
+            shrinkResources false // 是否去除无效的资源文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // mainfest中参数配置
+            manifestPlaceholders = [
+                    // 基础配置
+                    APP_HOST  : "@string/baselib_test_library_host",
+                    APP_SCHEME: "@string/baselib_test_library_scheme"
+            ]
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "mips", "mips64", "x86", "x86_64"
+            }
         }
     }
 
@@ -46,12 +74,13 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["constraint-layout"]
     testCompile rootProject.ext.dependencies["junit"]
-
     //################## git上第三方库
     //=== Butter Knife
     compile rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
-
+    //=== 6.0动态获取权限框架
+    compile rootProject.ext.dependencies["permissionsdispatcher"]
+    annotationProcessor rootProject.ext.dependencies["permissionsdispatcher-processor"]
     //################## 引用第三方工程
-    compile project(':testlibrary')
+    compile project(':baselibrary')
 }

@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/chartmanager/chartmanager.iml" filepath="$PROJECT_DIR$/chartmanager/chartmanager.iml" />
       <module fileurl="file://$PROJECT_DIR$/mainlibrary/mainlibrary.iml" filepath="$PROJECT_DIR$/mainlibrary/mainlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/mainmanager/mainmanager.iml" filepath="$PROJECT_DIR$/mainmanager/mainmanager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testlibrary/testlibrary.iml" filepath="$PROJECT_DIR$/testlibrary/testlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/testmanager/testmanager.iml" filepath="$PROJECT_DIR$/testmanager/testmanager.iml" />
     </modules>
   </component>
