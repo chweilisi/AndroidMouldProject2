@@ -17,7 +17,7 @@ import com.brilliant.AndroidAPP;
 import com.brilliant.R;
 import com.example.baselibrary.base.BaseFullScreenActivity;
 import com.example.baselibrary.constant.APPConstant;
-import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.constant.UIBaseFactory;
 
 /**
  * description:
@@ -207,7 +207,7 @@ public class GuideActivity extends BaseFullScreenActivity {
             mIsSkip = true;
             //在sp中记录访问过引导页的状态
             SharedPrefUtils.getInstance().setSharedStringData(APPConstant.PREFS_PREVERSION, AndroidAPP.getPackageInfo().versionName);
-            UIFactory.startHomeActivity(this, RESULT_OK);
+            UIBaseFactory.startHomeActivity(this, RESULT_OK);
             //===
             finish();
             overridePendingTransition(R.anim.hold, R.anim.zoom_in_exit);

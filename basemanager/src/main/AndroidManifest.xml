@@ -43,14 +43,14 @@
         </activity-alias>
 
         <activity
-            android:name=".view.TestActivity"
+            android:name=".TestActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
             android:screenOrientation="portrait">
             <intent-filter>
                 <data
                     android:host="${APP_HOST}"
-                    android:path="/.view.TestActivity"
-                    android:port="8888"
+                    android:path="/.TestActivity"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -66,7 +66,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.OkGoRequestActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -82,7 +82,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.SyncActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -98,7 +98,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.FileDownloadActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -114,7 +114,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.FormUploadActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -130,7 +130,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.RequestPermissionSingleActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -146,7 +146,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.RequestPermissionMultipleActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -162,7 +162,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CusttomTitleBarActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -178,7 +178,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CusttomTagsLayoutActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -194,7 +194,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CusttomRatingStarActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -210,7 +210,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.EmptyActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -226,7 +226,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.DataBindingActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -242,7 +242,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CustomDialogActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -258,7 +258,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CustomBannerActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -274,7 +274,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.LogDisplayActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -290,7 +290,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CacheActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -306,7 +306,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.CustomPopupWindowActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -322,7 +322,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.SuperTextViewActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -338,7 +338,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.LcLableViewActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -354,7 +354,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.StateModeActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -370,7 +370,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.ViewAsycChangeActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -386,7 +386,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.PowerfulEditTextDemoActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -402,7 +402,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.ExpandableTextViewDemoActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -418,7 +418,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.RunningTextViewActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -434,7 +434,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.EllCustomBottomDemoActivity"
-                    android:port="8888"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -450,7 +450,39 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.view.EllDefaultBottomDemoActivity"
-                    android:port="8888"
+                    android:port="2222"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.CustomButtonActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.CustomButtonActivity"
+                    android:port="2222"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.StateModeChangeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.StateModeChangeActivity"
+                    android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />

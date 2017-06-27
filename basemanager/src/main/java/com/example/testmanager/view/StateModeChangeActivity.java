@@ -1,15 +1,16 @@
-package com.example.testmanager;
+package com.example.testmanager.view;
 
 import android.os.Bundle;
 
-import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.BaseActivity;
-import com.example.baselibrary.constant.UIBaseFactory;
+import com.example.testmanager.R;
 
 /**
- *
+ * description:
+ * Date: 2017/2/13 11:10
+ * User: Administrator
  */
-public class ChangeAppIconAliasActivity extends BaseActivity {
+public class StateModeChangeActivity extends BaseActivity {
 
     //##########################  custom variables start ##########################################
 
@@ -20,7 +21,7 @@ public class ChangeAppIconAliasActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.testlibrary_activity_statemode_change;
     }
 
     @Override
@@ -29,8 +30,6 @@ public class ChangeAppIconAliasActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        MyLogUtil.i("ChangeAppIconAliasActivity--");
-        UIBaseFactory.startTestActivity(this, RESULT_OK);
     }
 
     @Override

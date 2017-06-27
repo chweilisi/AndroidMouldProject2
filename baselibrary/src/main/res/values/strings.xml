@@ -1,17 +1,21 @@
 <resources>
     <string name="baselib_app_name">BaseLibrary</string>
     <!-- module project app base -->
-    <string name="baselib_module_project_host">moduleproject</string>
-    <string name="baselib_module_project_scheme">x1</string>
-    <string name="baselib_module_project_port">8888</string>
-    <!-- test library app base -->
-    <string name="baselib_test_library_host">testlibrary</string>
-    <string name="baselib_test_library_scheme">x2</string>
-    <string name="baselib_test_library_port">8888</string>
+    <string name="baselib_app_host">moduleproject</string>
+    <string name="baselib_app_scheme">x1</string>
+    <string name="baselib_app_port">1111</string>
+    <!-- basemanager app base -->
+    <string name="baselib_basemanager_host">basemanager</string>
+    <string name="baselib_basemanager_scheme">x2</string>
+    <string name="baselib_basemanager_port">2222</string>
     <!-- main library app base -->
     <string name="baselib_main_library_host">mainlibrary</string>
     <string name="baselib_main_library_scheme">x3</string>
-    <string name="baselib_main_library_port">8888</string>
+    <string name="baselib_main_library_port">3333</string>
+    <!-- agentweb library app base -->
+    <string name="baselib_agentweb_manager_host">agentwebmanager</string>
+    <string name="baselib_agentweb_manager_scheme">x4</string>
+    <string name="baselib_agentweb_manager_port">4444</string>
 
     <string name="baselib_progress_loading">加载中，请稍候</string>
     <string name="baselib_progress_load_error">加载失败，点击屏幕刷新</string>

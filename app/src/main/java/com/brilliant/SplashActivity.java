@@ -10,7 +10,7 @@ import com.basemodule.local.sharedpref.SharedPrefUtils;
 import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.base.BaseFullScreenActivity;
 import com.example.baselibrary.constant.APPConstant;
-import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.constant.UIBaseFactory;
 import com.example.baselibrary.util.RxCountDown;
 import com.example.baselibrary.widget.SimpleButton;
 
@@ -112,10 +112,10 @@ public class SplashActivity extends BaseFullScreenActivity  {
                 Animation fadeOut = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.baselib_fadeout);
                 fadeOut.setFillAfter(true);
                 findViewById(R.id.splash_Image).startAnimation(fadeOut);
-                UIFactory.startGuideActivity(this, RESULT_OK);
+                UIBaseFactory.startGuideActivity(this, RESULT_OK);
             } else {
                 // 正常的页面流程
-                UIFactory.startHomeActivity(this, RESULT_OK);
+                UIBaseFactory.startHomeActivity(this, RESULT_OK);
             }
             //===
             finish();

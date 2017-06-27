@@ -199,7 +199,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="从 “状态模式” 解析App登录功能实战技巧 "
+            android:text="从 “状态模式” 解析App登录功能实战技巧"
             android:textAllCaps="false" />
 
         <Button
@@ -207,7 +207,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="实现应用内View动态更新 "
+            android:text="实现应用内View动态更新"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/customButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="自定义button样式"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/startModeChange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="夜间模式切换"
             android:textAllCaps="false" />
 
     </LinearLayout>

@@ -47,8 +47,8 @@ android {
             // mainfest中参数配置
             manifestPlaceholders = [
                     // 基础配置 (APP_HOST和APP_SCHEME放在baselibrary中统一管理)
-                    APP_HOST    : "@string/baselib_module_project_host",
-                    APP_SCHEME  : "@string/baselib_module_project_scheme",
+                    APP_HOST    : "@string/baselib_app_host",
+                    APP_SCHEME  : "@string/baselib_app_scheme",
                     APP_NAME    : "@string/app_name",
                     APP_ICON    : "@mipmap/ic_launcher",
                     // UMENT配置
@@ -69,8 +69,8 @@ android {
             // mainfest中参数配置
             manifestPlaceholders = [
                     // 基础配置 (APP_HOST和APP_SCHEME放在baselibrary中统一管理)
-                    APP_HOST    : "@string/baselib_module_project_host",
-                    APP_SCHEME  : "@string/baselib_module_project_scheme",
+                    APP_HOST    : "@string/baselib_app_host",
+                    APP_SCHEME  : "@string/baselib_app_scheme",
                     APP_NAME    : "@string/app_name_debug",
                     APP_ICON    : "@mipmap/ic_launcher",
                     // UMENT配置

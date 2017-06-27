@@ -1,14 +1,12 @@
-package com.example.testmanager.view;
+package com.example.testmanager;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.baselibrary.base.BaseActivity;
-import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.constant.UIBaseFactory;
 import com.example.baselibrary.widget.dialog.CustomProgressDialog;
-import com.example.testmanager.R;
-import com.example.testmanager.R2;
 
 import butterknife.OnClick;
 
@@ -59,85 +57,91 @@ public class TestActivity extends BaseActivity {
             R2.id.customBanner, R2.id.loggerdisplay, R2.id.cache, R2.id.customPopupWindow,
             R2.id.SuperTextView, R2.id.LcLableView, R2.id.statemode, R2.id.changeappview,
             R2.id.PowerfulEditText, R2.id.ExpandableTextView, R2.id.RunningTextView, R2.id.listviewDefBottom,
-            R2.id.listviewCustomBottom})
+            R2.id.listviewCustomBottom, R2.id.customButton, R2.id.startModeChange})
     @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.okgo_request) {
             //  okgo 网络请求测试
-            UIFactory.startOkGoTestActivity(this, RESULT_OK);
+            UIBaseFactory.startOkGoTestActivity(this, RESULT_OK);
         } else if (i == R.id.sync) {
             // 同步请求
-            UIFactory.startSyncActivity(this, RESULT_OK);
+            UIBaseFactory.startSyncActivity(this, RESULT_OK);
         } else if (i == R.id.upload) {
             // 文件上传
-            UIFactory.startFormUploadActivity(this, RESULT_OK);
+            UIBaseFactory.startFormUploadActivity(this, RESULT_OK);
         } else if (i == R.id.download) {
             // 文件下载
-            UIFactory.startFileDownloadActivity(this, RESULT_OK);
+            UIBaseFactory.startFileDownloadActivity(this, RESULT_OK);
         } else if (i == R.id.requestPermissionSingle) {
             // 6.0及之后权限申请
-            UIFactory.startRequestPermissionSingleActivity(this, RESULT_OK);
+            UIBaseFactory.startRequestPermissionSingleActivity(this, RESULT_OK);
         } else if (i == R.id.requestPermissionMultiple) {
             // 6.0及之后权限申请
-            UIFactory.startRequestPermissionMultipleActivity(this, RESULT_OK);
+            UIBaseFactory.startRequestPermissionMultipleActivity(this, RESULT_OK);
         } else if (i == R.id.custtomTitleBar) {
             // 自定义标题栏
-            UIFactory.startCusttomTitleBarActivity(this, RESULT_OK);
+            UIBaseFactory.startCusttomTitleBarActivity(this, RESULT_OK);
         } else if (i == R.id.custtomTagsLayout) {
             // 自定义标签云
-            UIFactory.startCusttomTagsLayoutActivity(this, RESULT_OK);
+            UIBaseFactory.startCusttomTagsLayoutActivity(this, RESULT_OK);
         } else if (i == R.id.custtomRatingStar) {
             // 自定义星级评分
-            UIFactory.startCusttomRatingStarActivity(this, RESULT_OK);
+            UIBaseFactory.startCusttomRatingStarActivity(this, RESULT_OK);
         } else if (i == R.id.custtomEmpty) {
             // 自定义自定义空白页面，loading页面，错误页面
-            UIFactory.startEmptyActivity(this, RESULT_OK);
+            UIBaseFactory.startEmptyActivity(this, RESULT_OK);
         } else if (i == R.id.dataBinding) {
             // dataBinding测试
-            UIFactory.startDataBindingActivity(this, RESULT_OK);
+            UIBaseFactory.startDataBindingActivity(this, RESULT_OK);
         } else if (i == R.id.customDialog) {
             // 自定义dialog的两种实现方式
-            UIFactory.startCustomDialogActivity(this, RESULT_OK);
+            UIBaseFactory.startCustomDialogActivity(this, RESULT_OK);
         } else if (i == R.id.customPopupWindow) {
             // 自定义扩展性强的popupWindow
-            UIFactory.startCustomPopupWindowActivity(this, RESULT_OK);
+            UIBaseFactory.startCustomPopupWindowActivity(this, RESULT_OK);
         } else if (i == R.id.customBanner) {
             // 自定义banner轮播图实现
-            UIFactory.startCustomBannerActivity(this, RESULT_OK);
+            UIBaseFactory.startCustomBannerActivity(this, RESULT_OK);
         } else if (i == R.id.loggerdisplay) {
             // logger日志使用展示
-            UIFactory.startLogDisplayActivity(this, RESULT_OK);
+            UIBaseFactory.startLogDisplayActivity(this, RESULT_OK);
         } else if (i == R.id.cache) {
             // 缓存处理
-            UIFactory.startCacheActivity(this, RESULT_OK);
+            UIBaseFactory.startCacheActivity(this, RESULT_OK);
         } else if (i == R.id.SuperTextView) {
             // SuperTextView
-            UIFactory.startSuperTextViewActivity(this, RESULT_OK);
+            UIBaseFactory.startSuperTextViewActivity(this, RESULT_OK);
         } else if (i == R.id.PowerfulEditText) {
             // PowerfulEditText
-            UIFactory.startPowerfulEditTextDemoActivity(this, RESULT_OK);
+            UIBaseFactory.startPowerfulEditTextDemoActivity(this, RESULT_OK);
         } else if (i == R.id.ExpandableTextView) {
             // ExpandableTextView
-            UIFactory.startExpandableTextViewDemoActivity(this, RESULT_OK);
+            UIBaseFactory.startExpandableTextViewDemoActivity(this, RESULT_OK);
         } else if (i == R.id.RunningTextView) {
             // RunningTextView
-            UIFactory.startRunningTextViewDemoActivity(this, RESULT_OK);
+            UIBaseFactory.startRunningTextViewDemoActivity(this, RESULT_OK);
         } else if (i == R.id.listviewDefBottom) {
             // listviewDefBottom
-            UIFactory.startEllDefaultBottomDemoActivity(this, RESULT_OK);
+            UIBaseFactory.startEllDefaultBottomDemoActivity(this, RESULT_OK);
         } else if (i == R.id.listviewCustomBottom) {
             // listviewCustomBottom
-            UIFactory.startEllCustomBottomDemoActivity(this, RESULT_OK);
+            UIBaseFactory.startEllCustomBottomDemoActivity(this, RESULT_OK);
         } else if (i == R.id.LcLableView) {
             // 一个简单实用的标签控件,轻松添加最新最热等标签
-            UIFactory.startLcLableViewActivity(this, RESULT_OK);
+            UIBaseFactory.startLcLableViewActivity(this, RESULT_OK);
         } else if (i == R.id.statemode) {
-            //
-            UIFactory.startStateModeActivity(this, RESULT_OK);
+            // 从 “状态模式” 解析App登录功能实战技巧
+            UIBaseFactory.startStateModeActivity(this, RESULT_OK);
         } else if (i == R.id.changeappview) {
-            //
-            UIFactory.startViewAsycChangeActivity(this, RESULT_OK);
+            // 实现应用内View动态更新
+            UIBaseFactory.startViewAsycChangeActivity(this, RESULT_OK);
+        } else if (i == R.id.customButton) {
+            // 自定义button样式
+            UIBaseFactory.startCustomButtonActivity(this, RESULT_OK);
+        } else if (i == R.id.startModeChange) {
+            // 夜间模式切换
+            UIBaseFactory.startStateModeChangeActivity(this, RESULT_OK);
         }
     }
 

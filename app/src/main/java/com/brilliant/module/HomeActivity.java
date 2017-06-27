@@ -12,7 +12,7 @@ import com.brilliant.mainlibrary.view.MainPageFragment;
 import com.example.baselibrary.appupdate.DownLoadUtils;
 import com.example.baselibrary.appupdate.DownloadApk;
 import com.example.baselibrary.base.BaseFullScreenNormalActivity;
-import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.constant.UIBaseFactory;
 import com.example.baselibrary.util.MyToastUtil;
 
 import java.util.ArrayList;
@@ -113,7 +113,7 @@ public class HomeActivity extends BaseFullScreenNormalActivity {
      * 开启升级
      */
     private void downloadUpdateAPK(String download_url) {
-        UIFactory.openDownLoadService(mContext, download_url, "中...");
+        UIBaseFactory.openDownLoadService(mContext, download_url, "中...");
     }
 
     /**

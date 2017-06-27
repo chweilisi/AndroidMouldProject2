@@ -14,7 +14,6 @@ import com.example.baselibrary.R;
 import com.example.baselibrary.constant.APPConstant;
 import com.example.baselibrary.okgo.HttpDNSInterceptor;
 import com.example.baselibrary.util.MyToastUtil;
-import com.example.testlibrary.MyEventBusIndex;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -26,8 +25,6 @@ import com.squareup.leakcanary.RefWatcher;
 import com.taobao.sophix.PatchStatus;
 import com.taobao.sophix.SophixManager;
 import com.taobao.sophix.listener.PatchLoadStatusListener;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.io.DataInputStream;
 import java.net.HttpURLConnection;
@@ -105,7 +102,7 @@ public class BaseApplication extends IBaseApplication {
         //=== 展示配置的一些参数
         getMainFestMetaProperty();
         //=== 启用EventBus3.0加速功能
-        EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();
+//        EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();
     }
 
     @Override

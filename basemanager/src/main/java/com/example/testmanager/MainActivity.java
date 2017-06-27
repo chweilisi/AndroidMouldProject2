@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.baselibrary.base.BaseActivity;
-import com.example.baselibrary.constant.UIFactory;
+import com.example.baselibrary.constant.UIBaseFactory;
 
 import butterknife.OnClick;
 
@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity {
         int i = v.getId();
         if (i == R.id.button_go_test) {
             //
-            UIFactory.startTestActivity(this, RESULT_OK);
+            UIBaseFactory.startTestActivity(this, RESULT_OK);
         } else if (i == R.id.button_change_appicon) {
             //
             setAppDefLauncher();

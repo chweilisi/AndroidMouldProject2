@@ -22,7 +22,7 @@ android {
         // eventBux，下面的包名为自己的工程包名
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [eventBusIndex: 'com.example.testlibrary.MyEventBusIndex']
+                arguments = [eventBusIndex: 'com.example.baselibrary.MyEventBusIndex']
             }
         }
     }

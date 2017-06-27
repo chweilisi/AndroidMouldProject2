@@ -44,7 +44,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.module.GuideActivity"
-                    android:port="8888"
+                    android:port="1111"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
@@ -61,7 +61,7 @@
                 <data
                     android:host="${APP_HOST}"
                     android:path="/.module.HomeActivity"
-                    android:port="8888"
+                    android:port="1111"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.VIEW" />
