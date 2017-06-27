@@ -18,24 +18,23 @@ import com.example.agentwebmanager.R;
  */
 
 public class CustomIndicatorFragment extends AgentWebFragment {
-    public static CustomIndicatorFragment getInstance(Bundle bundle){
-        CustomIndicatorFragment mCustomIndicatorFragment=new CustomIndicatorFragment();
-        if(bundle!=null)
+    public static CustomIndicatorFragment getInstance(Bundle bundle) {
+        CustomIndicatorFragment mCustomIndicatorFragment = new CustomIndicatorFragment();
+        if (bundle != null)
             mCustomIndicatorFragment.setArguments(bundle);
         return mCustomIndicatorFragment;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-
-        CommonIndicator mCommonIndicator=new CommonIndicator(this.getActivity());
-        FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(-2,-2);
-        lp.gravity= Gravity.CENTER;
-        ProgressBar mProgressBar=new ProgressBar(this.getActivity());
+        CommonIndicator mCommonIndicator = new CommonIndicator(this.getActivity());
+        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(-2, -2);
+        lp.gravity = Gravity.CENTER;
+        ProgressBar mProgressBar = new ProgressBar(this.getActivity());
         mProgressBar.setBackground(this.getResources().getDrawable(R.drawable.indicator_shape));
-        mCommonIndicator.addView(mProgressBar,lp);
+        mCommonIndicator.addView(mProgressBar, lp);
 
-        this.mAgentWeb = AgentWeb.with( this)//
+        this.mAgentWeb = AgentWeb.with(this)//
                 .setAgentWebParent((ViewGroup) view, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))//
                 .setCustomIndicator(mCommonIndicator)
                 .setWebSettings(WebDefaultSettingsManager.getInstance())//
@@ -45,8 +44,6 @@ public class CustomIndicatorFragment extends AgentWebFragment {
                 .createAgentWeb()//
                 .ready()//
                 .go(getUrl());
-
-
         initView(view);
     }
 }

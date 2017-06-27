@@ -15,7 +15,6 @@
         app:theme="@style/toolBar"
         app:titleTextColor="@android:color/white">
 
-
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"

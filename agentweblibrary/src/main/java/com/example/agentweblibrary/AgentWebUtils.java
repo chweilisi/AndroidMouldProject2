@@ -82,7 +82,6 @@ public class AgentWebUtils {
 
 
     public static final void clearWebView(WebView m) {
-
         if (m == null)
             return;
         if (Looper.myLooper() != Looper.getMainLooper())
@@ -101,8 +100,6 @@ public class AgentWebUtils {
         m.clearHistory();
         m.destroy();
         m = null;
-
-
     }
 
     public static boolean checkWifi(Context context) {

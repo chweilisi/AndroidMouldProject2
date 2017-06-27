@@ -36,15 +36,20 @@ import com.example.agentwebmanager.R;
  */
 
 public class AgentWebFragment extends Fragment implements FragmentKeyDown {
+
     private ImageView mBackImageView;
+
     private View mLineView;
+
     private ImageView mFinishImageView;
+
     private TextView mTitleTextView;
+
     protected AgentWeb mAgentWeb;
+
     public static final String URL_KEY = "url_key";
 
     public static AgentWebFragment getInstance(Bundle bundle) {
-
         AgentWebFragment mAgentWebFragment = new AgentWebFragment();
         if (bundle != null)
             mAgentWebFragment.setArguments(bundle);
@@ -122,8 +127,8 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
             super.onProgressChanged(view, newProgress);
         }
     };
-    protected WebViewClient mWebViewClient = new WebViewClient() {
 
+    protected WebViewClient mWebViewClient = new WebViewClient() {
         @Override
         public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
             super.onReceivedError(view, request, error);
@@ -144,28 +149,23 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
                 return true;
             else if (isAlipay(view, url))
                 return true;
-
             return false;
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-
             Log.i("Info", "url:" + url + " onPageStarted  target:" + getUrl());
             if (url.equals(getUrl())) {
                 pageNavigator(View.GONE);
             } else {
                 pageNavigator(View.VISIBLE);
             }
-
         }
     };
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
 //        Log.i("Info","onActivityResult result");
         mAgentWeb.uploadFileResult(requestCode, resultCode, data);
     }
@@ -184,7 +184,6 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
     }
 
     private boolean isAlipay(final WebView view, String url) {
-
         final PayTask task = new PayTask(getActivity());
         final String ex = task.fetchOrderInfoFromH5PayUrl(url);
         LogUtils.i("Info", "alipay:" + ex);
@@ -207,14 +206,12 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
                     }
                 }
             }).start();
-
             return true;
         }
         return false;
     }
 
     private void pageNavigator(int tag) {
-
         // Log.i("Info", "TAG:" + tag);
         mBackImageView.setVisibility(tag);
         mLineView.setVisibility(tag);
@@ -223,15 +220,10 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
     View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-
             switch (v.getId()) {
-
                 case R.id.iv_back:
-
                     if (!mAgentWeb.back())
                         AgentWebFragment.this.getActivity().finish();
-
                     break;
                 case R.id.iv_finish:
                     AgentWebFragment.this.getActivity().finish();

@@ -15,7 +15,6 @@ import com.example.agentwebmanager.R;
 /**
  * Created by cenxiaozhong on 2017/5/23.
  */
-
 public class CommonActivity extends AppCompatActivity {
 
     private FrameLayout mFrameLayout;
@@ -27,28 +26,21 @@ public class CommonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_common);
 
         mFrameLayout = (FrameLayout) this.findViewById(R.id.container_framelayout);
-
 
         int key = getIntent().getIntExtra(TYPE_KEY, -1);
         mFragmentManager = this.getSupportFragmentManager();
         openFragment(key);
     }
 
-
     private AgentWebFragment mAgentWebFragment;
 
     private void openFragment(int key) {
-
         FragmentTransaction ft = mFragmentManager.beginTransaction();
         Bundle mBundle = null;
-
-
         switch (key) {
-
             /*Fragment 使用AgenWebt*/
             case 0:
                 ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
@@ -70,7 +62,6 @@ public class CommonActivity extends AppCompatActivity {
                 ft.add(R.id.container_framelayout, mAgentWebFragment = JsAgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "file:///android_asset/js_interaction/hello.html");
                 break;
-
             case 5:
                 ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "http://m.youku.com/video/id_XODEzMjU1MTI4.html");
@@ -83,7 +74,6 @@ public class CommonActivity extends AppCompatActivity {
                 ft.add(R.id.container_framelayout, mAgentWebFragment = CustomSettingsFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "http://www.wandoujia.com/apps");
                 break;
-
             case 8:
                 ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "file:///android_asset/sms/sms.html");
@@ -93,23 +83,19 @@ public class CommonActivity extends AppCompatActivity {
                 ft.add(R.id.container_framelayout, mAgentWebFragment = CustomWebViewFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "");
                 break;
-
         }
         ft.commit();
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         mAgentWebFragment.onActivityResult(requestCode, resultCode, data);
         Log.i("Info", "activity result");
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         AgentWebFragment mAgentWebFragment = this.mAgentWebFragment;
         if (mAgentWebFragment != null) {
             FragmentKeyDown mFragmentKeyDown = mAgentWebFragment;
@@ -118,13 +104,11 @@ public class CommonActivity extends AppCompatActivity {
             else
                 return super.onKeyDown(keyCode, event);
         }
-
         return super.onKeyDown(keyCode, event);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
     }
 }

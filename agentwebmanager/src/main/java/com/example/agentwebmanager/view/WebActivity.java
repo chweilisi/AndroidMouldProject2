@@ -26,7 +26,6 @@ public class WebActivity extends BaseWebActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         try {
             String targetUrl = "";
             Log.i("Info", "cookies:" + AgentWebConfig.getCookiesByUrl(targetUrl = "http://www.jd.com"));
@@ -47,7 +46,5 @@ public class WebActivity extends BaseWebActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }

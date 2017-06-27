@@ -11,11 +11,9 @@ import com.example.agentweblibrary.WebSettings;
 public class CustomSettingsFragment extends AgentWebFragment {
 
     public static AgentWebFragment getInstance(Bundle bundle) {
-
         CustomSettingsFragment mCustomSettingsFragment = new CustomSettingsFragment();
         if (bundle != null)
             mCustomSettingsFragment.setArguments(bundle);
-
         return mCustomSettingsFragment;
     }
 

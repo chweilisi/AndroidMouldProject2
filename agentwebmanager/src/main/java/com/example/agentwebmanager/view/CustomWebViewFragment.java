@@ -20,15 +20,15 @@ import us.feras.mdv.MarkdownView;
  * Created by cenxiaozhong on 2017/6/17.
  */
 
-public class CustomWebViewFragment extends  AgentWebFragment {
+public class CustomWebViewFragment extends AgentWebFragment {
 
     private MarkdownView mMarkdownWebView;
+
     private EditText markdownEditText;
 
-    public static final CustomWebViewFragment getInstance(Bundle bundle){
-
-        CustomWebViewFragment mCustomWebViewFragment=new CustomWebViewFragment();
-        if(bundle!=null)
+    public static final CustomWebViewFragment getInstance(Bundle bundle) {
+        CustomWebViewFragment mCustomWebViewFragment = new CustomWebViewFragment();
+        if (bundle != null)
             mCustomWebViewFragment.setArguments(bundle);
         return mCustomWebViewFragment;
     }
@@ -38,6 +38,7 @@ public class CustomWebViewFragment extends  AgentWebFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.markdown_view, container, false);
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED);
@@ -45,8 +46,8 @@ public class CustomWebViewFragment extends  AgentWebFragment {
         mMarkdownWebView = new MarkdownView(getActivity());
         markdownEditText = (EditText) view.findViewById(R.id.markdownText);
 
-        LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0);
-        lp.weight=1f;
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        lp.weight = 1f;
         mAgentWeb = AgentWeb.with(this)//
                 .setAgentWebParent((ViewGroup) view, lp)//
                 .closeDefaultIndicator()//
@@ -58,11 +59,9 @@ public class CustomWebViewFragment extends  AgentWebFragment {
                 .ready()//
                 .go(null);
 
-
         mMarkdownWebView.getSettings().setTextZoom(300);
 
-
-        String text="## AgentWeb 功能\n" +
+        String text = "## AgentWeb 功能\n" +
                 "***\n\n" +
                 "1. 支持进度条以及自定义进度条\n" +
                 "2. 支持文件下载\n" +
@@ -84,16 +83,13 @@ public class CustomWebViewFragment extends  AgentWebFragment {
         updateMarkdownView();
 
         markdownEditText.addTextChangedListener(new TextWatcher() {
-
-
-
             @Override
             public void afterTextChanged(Editable s) {
-
             }
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -101,11 +97,8 @@ public class CustomWebViewFragment extends  AgentWebFragment {
             }
         });
 
-
         initView(view);
-
     }
-
 
     private void updateMarkdownView() {
         mMarkdownWebView.loadMarkdown(markdownEditText.getText().toString());

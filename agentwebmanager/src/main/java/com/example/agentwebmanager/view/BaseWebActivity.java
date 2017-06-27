@@ -30,41 +30,41 @@ import com.example.agentwebmanager.R;
 public class BaseWebActivity extends AppCompatActivity {
 
     protected AgentWeb mAgentWeb;
-    private LinearLayout mLinearLayout;
-    private Toolbar mToolbar;
-    private TextView mTitleTextView;
-    private AlertDialog mAlertDialog;
 
+    private LinearLayout mLinearLayout;
+
+    private Toolbar mToolbar;
+
+    private TextView mTitleTextView;
+
+    private AlertDialog mAlertDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_web);
-
 
         mLinearLayout = (LinearLayout) this.findViewById(R.id.container);
         mToolbar = (Toolbar) this.findViewById(R.id.toolbar);
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setTitle("");
         mTitleTextView = (TextView) this.findViewById(R.id.toolbar_title);
-       // this.setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null)
+        // this.setSupportActionBar(mToolbar);
+        if (getSupportActionBar() != null) {
             // Enable the Up button
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 showDialog();
             }
         });
 
-
         long p = System.currentTimeMillis();
 
         mAgentWeb = AgentWeb.with(this)//
-                .setAgentWebParent(mLinearLayout,new LinearLayout.LayoutParams(-1,-1) )//
+                .setAgentWebParent(mLinearLayout, new LinearLayout.LayoutParams(-1, -1))//
                 .useDefaultIndicator()//
                 .defaultProgressBarColor()
                 .setReceivedTitleCallback(mCallback)
@@ -79,30 +79,24 @@ public class BaseWebActivity extends AppCompatActivity {
 
         long n = System.currentTimeMillis();
         Log.i("Info", "init used time:" + (n - p));
-
-
-
-
-
-
     }
 
-    private WebViewClient mWebViewClient=new WebViewClient(){
+    private WebViewClient mWebViewClient = new WebViewClient() {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-           //do you  work
-            Log.i("Info","BaseWebActivity onPageStarted");
+            //do you  work
+            Log.i("Info", "BaseWebActivity onPageStarted");
         }
     };
-    private WebChromeClient mWebChromeClient=new WebChromeClient(){
+    private WebChromeClient mWebChromeClient = new WebChromeClient() {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             //do you work
 //            Log.i("Info","progress:"+newProgress);
         }
     };
-    public String getUrl(){
 
+    public String getUrl() {
         return "https://m.jd.com/";
     }
 
@@ -114,9 +108,7 @@ public class BaseWebActivity extends AppCompatActivity {
         }
     };
 
-
     private void showDialog() {
-
         if (mAlertDialog == null)
             mAlertDialog = new AlertDialog.Builder(this)
                     .setMessage("您确定要关闭该页面吗?")
@@ -138,12 +130,10 @@ public class BaseWebActivity extends AppCompatActivity {
                         }
                     }).create();
         mAlertDialog.show();
-
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (mAgentWeb.handleKeyEvent(keyCode, event)) {
             return true;
         }
@@ -154,7 +144,6 @@ public class BaseWebActivity extends AppCompatActivity {
     protected void onPause() {
         mAgentWeb.getWebLifeCycle().onPause();
         super.onPause();
-
     }
 
     @Override
@@ -165,7 +154,6 @@ public class BaseWebActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         LogUtils.i("Info", "result:" + requestCode + " result:" + resultCode);
         mAgentWeb.uploadFileResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);

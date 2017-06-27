@@ -6,10 +6,10 @@ package com.example.agentweblibrary;
 
 public interface WebLifeCycle {
 
-
     void onResume();
-    void onPause();
-    void onDestroy();
 
+    void onPause();
+
+    void onDestroy();
 
 }
