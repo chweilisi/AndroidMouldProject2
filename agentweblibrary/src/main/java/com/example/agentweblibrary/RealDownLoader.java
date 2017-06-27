@@ -197,9 +197,9 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
                 mNotity.cancel(mDownLoadTask.getId());
 
             Intent intent = AgentWebUtils.getIntentCompat(mDownLoadTask.getContext(), mDownLoadTask.getFile());
-           // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             PendingIntent rightPendIntent = PendingIntent.getActivity(mDownLoadTask.getContext(),
-                    mDownLoadTask.getId()<<4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    mDownLoadTask.getId() << 4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             mNotity.setProgressFinish("点击打开", rightPendIntent);
 
         }
@@ -209,7 +209,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
     private void doCallback(Integer code) {
         DownLoadResultListener mDownLoadResultListener = null;
         LogUtils.i("Info", " doCallback  mDownLoadTask.getDownLoadResultListeners():" + mDownLoadTask.getDownLoadResultListener());
-        if ((mDownLoadResultListener = mDownLoadTask.getDownLoadResultListener())==null) {
+        if ((mDownLoadResultListener = mDownLoadTask.getDownLoadResultListener()) == null) {
             return;
         }
         if (code > 200) {
@@ -254,7 +254,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
     private int doDownLoad(InputStream in, RandomAccessFile out) throws IOException {
 
         byte[] buffer = new byte[102400];
-        BufferedInputStream bis = new BufferedInputStream(in, 1024*10);
+        BufferedInputStream bis = new BufferedInputStream(in, 1024 * 10);
         try {
 
             out.seek(out.length());
@@ -264,7 +264,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
 
 
             while (!atomic.get()) {
-                int n = bis.read(buffer, 0, 1024*10);
+                int n = bis.read(buffer, 0, 1024 * 10);
                 if (n == -1) {
                     break;
                 }
@@ -286,7 +286,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
                 }
             }
 
-            LogUtils.i("Info", "atomic:" + atomic.get() );
+            LogUtils.i("Info", "atomic:" + atomic.get());
             if (atomic.get()) {
                 return DownLoadErrorMsg.USER_CANCEL.CODE;
             }
@@ -336,18 +336,15 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
 
         NETWORK_ERROR_CONNECTION(400), NETWORK_ERROR_STATUS_CODE(401), STORAGE_ERROR(402), TIME_OUT(403), USER_CANCEL(404), SUCCESSFULL(200);
 
-        int CODE;
+        final int CODE;
 
         DownLoadErrorMsg(int e) {
             this.CODE = e;
         }
 
-
         public static String getCodeToMsg(int code) {
             LogUtils.i("Info", "  CODE:" + code);
             switch (code) {
-
-
                 case 400:
                     return "网络连接出错";
                 case 401:
@@ -362,21 +359,12 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
                     return "下载成功";
                 default:
                     return "未知异常";
-
             }
         }
-
-        ;
-
-
     }
 
-
     public static class NotificationBroadcastReceiver extends BroadcastReceiver {
-
-
         public NotificationBroadcastReceiver() {
-
         }
 
         @Override

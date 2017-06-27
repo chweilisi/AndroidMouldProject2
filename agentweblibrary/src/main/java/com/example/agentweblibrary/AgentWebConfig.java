@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
@@ -46,16 +47,18 @@ public class AgentWebConfig {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void removeAllCookies() {
         removeAllCookies(null);
-
     }
 
     // 解决兼容 Android 4.4 java.lang.NoSuchMethodError: android.webkit.CookieManager.removeSessionCookies
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void removeSessionCookies() {
         removeSessionCookies(null);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void removeSessionCookies(ValueCallback<Boolean> callback) {
 
         if (callback == null)
@@ -76,6 +79,7 @@ public class AgentWebConfig {
     }
 
     //Android  4.4  NoSuchMethodError: android.webkit.CookieManager.removeAllCookies
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void removeAllCookies(@Nullable ValueCallback<Boolean> callback) {
 
         if (callback == null)
@@ -144,25 +148,21 @@ public class AgentWebConfig {
     }
 
     private static void createCookiesSyncInstance(Context context) {
-
-
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             CookieSyncManager.createInstance(context);
         }
     }
 
     private static void toSyncCookies() {
-
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             CookieSyncManager.getInstance().sync();
             return;
         }
         AsyncTask.THREAD_POOL_EXECUTOR.execute(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void run() {
-
                 CookieManager.getInstance().flush();
-
             }
         });
     }

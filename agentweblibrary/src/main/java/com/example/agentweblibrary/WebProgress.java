@@ -42,7 +42,6 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
         super(context, attrs, defStyleAttr);
 
         init(context, attrs, defStyleAttr);
-
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -55,9 +54,8 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
         mPaint.setDither(true);
         mPaint.setStrokeCap(Paint.Cap.SQUARE);
 
-       // context.getResources().getDisplayMetrics().
+        // context.getResources().getDisplayMetrics().
         screenWidth = context.getResources().getDisplayMetrics().widthPixels;
-
     }
 
     public void setColor(int color) {
@@ -103,9 +101,10 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
         canvas.drawRect(0, 0, currentProgress / 100 * Float.valueOf(this.getWidth()), this.getHeight(), mPaint);
     }
 
+    @Override
     public void show() {
         this.setVisibility(View.VISIBLE);
-        currentProgress=0f;
+        currentProgress = 0f;
         startAnim(-1, true);
     }
 
@@ -116,6 +115,7 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
         startAnim(progress, false);
     }
 
+    @Override
     public void hide() {
         TAG = FINISH;
     }
@@ -156,7 +156,7 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
         if (target == value)
             return;
 
-        if(value<currentProgress)
+        if (value < currentProgress)
             return;
 
         float v = (isAuto) ? 80f : value;
@@ -212,7 +212,7 @@ public class WebProgress extends BaseIndicatorView implements BaseProgressSpec {
     @Override
     public void reset() {
         currentProgress = 0;
-        if(mValueAnimator!=null&&mValueAnimator.isStarted())
+        if (mValueAnimator != null && mValueAnimator.isStarted())
             mValueAnimator.cancel();
     }
 

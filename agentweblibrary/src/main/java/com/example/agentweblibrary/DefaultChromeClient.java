@@ -301,6 +301,7 @@ public class DefaultChromeClient extends WebChromeClientProgressWrapper implemen
     }
 
     // Android  >= 4.1
+    @Override
     public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType, String capture) {
         /*believe me , i never want to do this */
         LogUtils.i("Info", "openFileChooser>=4.1");
@@ -312,6 +313,7 @@ public class DefaultChromeClient extends WebChromeClientProgressWrapper implemen
     }
 
     //  Android < 3.0
+    @Override
     public void openFileChooser(ValueCallback<Uri> valueCallback) {
         if (AgentWebUtils.isOverriedMethod(mWebChromeClient, "openFileChooser", ChromePath + ".openFileChooser", ValueCallback.class)) {
             super.openFileChooser(valueCallback);
@@ -322,6 +324,7 @@ public class DefaultChromeClient extends WebChromeClientProgressWrapper implemen
     }
 
     //  Android  >= 3.0
+    @Override
     public void openFileChooser(ValueCallback valueCallback, String acceptType) {
         Log.i("Info", "openFileChooser>3.0");
 
@@ -331,7 +334,6 @@ public class DefaultChromeClient extends WebChromeClientProgressWrapper implemen
         }
         createAndOpenCommonFileLoader(valueCallback);
     }
-
 
     private void createAndOpenCommonFileLoader(ValueCallback valueCallback) {
         Activity mActivity = this.mActivityWeakReference.get();
