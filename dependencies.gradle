@@ -21,6 +21,8 @@ def practicalrecyclerviewVersion = "1.1.5"
 def bannerVersion = "1.4.9"
 def LubanVersion = "1.1.1"
 def SuperTextViewVersion = "1.1.2"
+def MPAndroidChartVersion = "v3.0.2"
+def glideimageviewVersion = "1.0.0"
 def agentwebVersion = "1.2.2"
 def markdownviewVersion = "1.1.0"
 
@@ -121,10 +123,17 @@ project.ext {
             //=== SuperTextView (https://github.com/lygttpod/SuperTextView) 满足日常大部分布局样式
             "SuperTextView"                  : "com.github.lygttpod:SuperTextView:${SuperTextViewVersion}",
 
-            //=== agentweb (https://github.com/Justson/AgentWeb)
-            "agentweb"                  : "com.just.agentweb:agentweb:${agentwebVersion}",
+            //=== MPAndroidChart (https://github.com/PhilJay/MPAndroidChart)
+            "MPAndroidChart"                 : "com.github.PhilJay:MPAndroidChart:${MPAndroidChartVersion}",
+
+            //=== glideimageview (https://github.com/sfsheng0322/GlideImageView)
+            // 基于Glide V4.0封装的图片加载库，可以监听加载图片时的进度
+            "glideimageview"                 : "com.sunfusheng:glideimageview:${glideimageviewVersion}",
+
+            //=== agentweb (https://github.com/Justson/AgentWeb) 自定义实现的浏览器
+            "agentweb"                       : "com.just.agentweb:agentweb:${agentwebVersion}",
 
             //=== markdownview (https://github.com/falnatsheh/MarkdownView)
-            "markdownview"                  : "us.feras.mdv:markdownview:${markdownviewVersion}",
+            "markdownview"                   : "us.feras.mdv:markdownview:${markdownviewVersion}",
     ]
 }
