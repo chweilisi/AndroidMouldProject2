@@ -14,7 +14,7 @@ android {
         resValue("string", 'app_version', APP_VERSION)
         resValue("string", 'app_vercode', APP_VERCODE)
 
-        resourcePrefix "mainlibrary_"
+        resourcePrefix "mainlib_"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }

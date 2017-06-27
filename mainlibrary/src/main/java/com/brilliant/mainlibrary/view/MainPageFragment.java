@@ -23,7 +23,7 @@ public class MainPageFragment extends BaseFragment {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.mainlibrary_fragment_mainpage;
+        return R.layout.mainlib_fragment_mainpage;
     }
 
     @Override

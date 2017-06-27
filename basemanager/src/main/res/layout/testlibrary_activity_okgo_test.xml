@@ -37,7 +37,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="hello" />
+                    android:text="hello"
+                    android:textSize="10sp" />
             </LinearLayout>
 
             <!-- 请求图片 -->

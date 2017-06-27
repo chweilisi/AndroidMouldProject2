@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
 
+import com.basemodule.utils.log.MyLogUtil;
 import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.base.BaseActivity;
 import com.example.testmanager.R;
@@ -31,7 +32,8 @@ public class SyncActivity extends BaseActivity {
                 //对response需要自己做解析
                 String data = response.body().string();
                 //对response需要自己做解析
-                sync_content.setText(data);
+                MyLogUtil.json(data);
+                sync_content.setText(MyLogUtil.getFormatLog());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -53,11 +55,11 @@ public class SyncActivity extends BaseActivity {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        // 同步请求
-          sync();
+        // 普通的同步请求
+        httpSyncTest();
 
         // https请求测试
-       // httpsSyncTest();
+        // httpsSyncTest();
     }
 
     @Override
@@ -68,8 +70,9 @@ public class SyncActivity extends BaseActivity {
     }
 
     /**
+     *
      */
-    public void sync() {
+    public void httpSyncTest() {
         new Thread(new Runnable() {
             @Override
             public void run() {

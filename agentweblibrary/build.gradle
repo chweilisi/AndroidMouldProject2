@@ -13,6 +13,7 @@ android {
         resValue("string", 'app_version', APP_VERSION)
         resValue("string", 'app_vercode', APP_VERCODE)
 
+        resourcePrefix "agweblib_"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }

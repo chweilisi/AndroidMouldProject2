@@ -141,7 +141,7 @@ public class TestActivity extends BaseActivity {
             UIBaseFactory.startCustomButtonActivity(this, RESULT_OK);
         } else if (i == R.id.startModeChange) {
             // 夜间模式切换
-            UIBaseFactory.startStateModeChangeActivity(this, RESULT_OK);
+            UIBaseFactory.startDayNightActivity(this, RESULT_OK);
         }
     }
 

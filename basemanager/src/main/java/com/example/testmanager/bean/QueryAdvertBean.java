@@ -38,7 +38,6 @@ public class QueryAdvertBean extends BaseBean {
         private String key;
         private int showTime;
         private int showNum;
-
         private int leftShowNum;//剩余可展示次数
 
         public int getLeftShowNum() {

@@ -50,6 +50,8 @@ public class BaseApplication extends IBaseApplication {
 
     //##########################  custom variables start ##########################################
 
+    private static BaseApplication appInstance;  //app实例
+
     //=== httpdns
     private static HttpDnsService httpdns; // ali httpdns
 
@@ -65,6 +67,10 @@ public class BaseApplication extends IBaseApplication {
 
     private RefWatcher refWatcher;
 
+    public synchronized static BaseApplication getInstance() {
+        return appInstance;
+    }
+
     //##########################   custom variables end  ##########################################
 
     //######################  override methods start ##############################################
@@ -72,6 +78,7 @@ public class BaseApplication extends IBaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        appInstance = this;
         //=== init hotfix
         // initialize的调用应该尽可能的早，必须在Application.onCreate()的最开始进行SDk初始化操作，
         // 否则极有可能导致崩溃。而查询服务器是否有可用补丁的操作可以在后面的任意地方

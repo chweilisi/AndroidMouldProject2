@@ -16,6 +16,9 @@ public class APPConstant {
 
     public static final String RESP_LOGIN_OTHER_DEVICE = "-2"; //用户在其他设备登录的返回码
 
+    //=== 域名
+    public static final String APP_HOST = "japi.xiangfajr.com";
+
     //=== ali httpdns Account ID
     public static final String ALI_HTTPDNS_ACCOUND_ID = "";
 

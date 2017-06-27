@@ -34,7 +34,7 @@ import butterknife.OnClick;
  * Date: 2017/4/6 10:50
  * User: Administrator
  */
-public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAModel> implements SplashAContract.View {
+public class OkGoTestActivity extends BaseActivity<SplashAPresenter, SplashAModel> implements SplashAContract.View {
 
     //##########################  custom variables start ##########################################
 
@@ -89,7 +89,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
 
     @Override
     public int getLayoutId() {
-        return R.layout.testlibrary_activity_okgo_post;
+        return R.layout.testlibrary_activity_okgo_test;
     }
 
     @Override
@@ -111,7 +111,8 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     //获取到广告信息
     @Override
     public void returnQueryAdvert(QueryAdvertBean.DataBean bean) {
-        title.setText(JsonConvertHelper.toJson(bean));
+        MyLogUtil.json(JsonConvertHelper.toJson(bean));
+        title.setText(MyLogUtil.getFormatLog());
     }
 
     @Override
@@ -144,7 +145,7 @@ public class OkGoRequestActivity extends BaseActivity<SplashAPresenter, SplashAM
     public void onClick(View v) {
         int i1 = v.getId();
         if (i1 == R.id.selectImage) {// 选择图片
-            ImagePickActivity.start(OkGoRequestActivity.this, 5, ImagePickActivity.MODE_MULTIPLE,
+            ImagePickActivity.start(OkGoTestActivity.this, 5, ImagePickActivity.MODE_MULTIPLE,
                     true, true, false, ImagePickActivity.REQUEST_IMAGE);
         } else if (i1 == R.id.formUpload) {// 上传图片
             ArrayList<File> files = new ArrayList<>();

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.example.baselibrary.api.APIConstant;
-import com.example.baselibrary.api.BaseAPIMethod;
 import com.example.baselibrary.okgo.OkGoRequest;
 import com.example.baselibrary.okgo.utils.JsonCallback;
 import com.example.baselibrary.okgo.utils.JsonConvert;
@@ -26,7 +25,7 @@ import rx.Observable;
  * Created by conan on 2017/2/18.
  */
 
-public class APIMethod extends BaseAPIMethod {
+public class APIMethod {
 
     public static volatile APIMethod api;
 
@@ -53,7 +52,7 @@ public class APIMethod extends BaseAPIMethod {
         HashMap<String, Object> params = new HashMap<>();
 
         //===
-        return OkGoRequest.postJsonRequestDef(context, APIConstant.QUERYADVERT, getPublicParams(params)).getCall(new JsonConvert<QueryAdvertBean>() {
+        return OkGoRequest.postJsonRequestDef(context, APIConstant.QUERYADVERT, params).getCall(new JsonConvert<QueryAdvertBean>() {
         }, RxAdapter.<QueryAdvertBean>create());
     }
 

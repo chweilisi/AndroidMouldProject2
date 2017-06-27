@@ -59,13 +59,13 @@
         </activity>
 
         <activity
-            android:name=".view.OkGoRequestActivity"
+            android:name=".view.OkGoTestActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
             android:screenOrientation="portrait">
             <intent-filter>
                 <data
                     android:host="${APP_HOST}"
-                    android:path="/.view.OkGoRequestActivity"
+                    android:path="/.view.OkGoTestActivity"
                     android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -475,13 +475,29 @@
         </activity>
 
         <activity
-            android:name=".view.StateModeChangeActivity"
+            android:name=".view.DayNightActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
             android:screenOrientation="portrait">
             <intent-filter>
                 <data
                     android:host="${APP_HOST}"
-                    android:path="/.view.StateModeChangeActivity"
+                    android:path="/.view.DayNightActivity"
+                    android:port="2222"
+                    android:scheme="${APP_SCHEME}" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.DayNightAuthorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="${APP_HOST}"
+                    android:path="/.view.DayNightAuthorActivity"
                     android:port="2222"
                     android:scheme="${APP_SCHEME}" />
                 <category android:name="android.intent.category.DEFAULT" />

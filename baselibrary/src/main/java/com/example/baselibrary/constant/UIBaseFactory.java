@@ -35,7 +35,7 @@ public class UIBaseFactory {
     public static void startOkGoTestActivity(Activity activity, int requestCode) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_basemanager_scheme) +
                 "://" + activity.getString(R.string.baselib_basemanager_host) + ":" + activity.getString(R.string.baselib_basemanager_port) +
-                "/.view.OkGoRequestActivity"));
+                "/.view.OkGoTestActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
 
@@ -360,10 +360,10 @@ public class UIBaseFactory {
      * @param activity
      * @param requestCode
      */
-    public static void startStateModeChangeActivity(Activity activity, int requestCode) {
+    public static void startDayNightActivity(Activity activity, int requestCode) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(activity.getString(R.string.baselib_basemanager_scheme) +
                 "://" + activity.getString(R.string.baselib_basemanager_host) + ":" + activity.getString(R.string.baselib_basemanager_port) +
-                "/.view.StateModeChangeActivity"));
+                "/.view.DayNightActivity"));
         activity.startActivityForResult(intent, requestCode);
     }
 

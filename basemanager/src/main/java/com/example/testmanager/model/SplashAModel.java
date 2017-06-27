@@ -3,8 +3,6 @@ package com.example.testmanager.model;
 import android.content.Context;
 import android.graphics.Bitmap;
 
-import com.basemodule.local.sharedpref.SharedPrefUtils;
-import com.example.baselibrary.api.APIConstant;
 import com.example.baselibrary.baserx.RxSchedulers;
 import com.example.testmanager.api.APIMethod;
 import com.example.testmanager.bean.QueryAdvertBean;
@@ -42,19 +40,6 @@ public class SplashAModel implements SplashAContract.Model {
                     @Override
                     public QueryAdvertBean.DataBean call(QueryAdvertBean queryAdvertBean) {
                         QueryAdvertBean.DataBean bean_new = queryAdvertBean.getData();
-                        QueryAdvertBean.DataBean bean_old = SharedPrefUtils.getInstance().getHawkObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, null);
-                        if (bean_old == null || !bean_old.getKey().equals(bean_new.getKey())) {
-                            //首次获取广告信息, 初始化可显示次数，并保存
-                            bean_new.setLeftShowNum(bean_new.getShowNum() - 1);
-                        } else if (bean_old.getKey().equals(bean_new.getKey())) {
-                            //再次获取到相同的广告信息,更新该广告的可显示次数和默认信息
-                            if (bean_old.getLeftShowNum() > bean_new.getShowNum()) {
-                                bean_new.setLeftShowNum(bean_new.getShowNum() - 1);
-                            } else {
-                                bean_new.setLeftShowNum(bean_old.getLeftShowNum() - 1);
-                            }
-                        }
-                        SharedPrefUtils.getInstance().setHawkObject(APIConstant.KEY_SPLASH_ADVERTISEMENT, bean_new);
                         return bean_new;
                     }
                 }).compose(RxSchedulers.<QueryAdvertBean.DataBean>io_main());
